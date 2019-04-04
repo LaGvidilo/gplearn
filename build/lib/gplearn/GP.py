@@ -1,6 +1,6 @@
 #coding: utf-8
 import numpy as np
-from genetic import SymbolicRegressor#gplearn.
+from gplearn.genetic import SymbolicRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.utils.random import check_random_state
@@ -236,7 +236,7 @@ class GP_SymReg(object):
 		self.y_ = None
 		#('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','sin','cos','tan')
 		if function_set == "logic":
-			function_set = ("and","or","xor")
+			function_set = ("AnD","Or","XoR")
 		if function_set == "all":
 			function_set = ('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','inv','max','min','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt','hypot',"modulox")
 		self.est_gp = SymbolicRegressor(population_size=population_size,
