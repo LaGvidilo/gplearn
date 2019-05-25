@@ -16,7 +16,7 @@ import math
 
 __all__ = ['make_function']
 from sympy import *
-import sympy.mpmath as gg
+import mpmath as gg#sympy.
 #m, n = 2, 5.9
 def func1(a,b):
     return abs(a) * abs(b) #* (cos(a)+cos(b))
@@ -253,9 +253,9 @@ hypot1 = make_function(function=hypot, name='hypot', arity=2)
 modulo1 = make_function(function=modulox, name='modulox', arity=2)
 heaviside1 = make_function(function=heaviside, name='heaviside', arity=2)
 
-and1 = make_function(function=andB, name='AnD', arity=2)
-or1 = make_function(function=orB, name='Or', arity=2)
-xor1 = make_function(function=xorB, name='XoR', arity=2)
+and1 = make_function(function=andB, name='and', arity=2)
+or1 = make_function(function=orB, name='or', arity=2)
+xor1 = make_function(function=xorB, name='xor', arity=2)
 _function_map = {'add': add2,
                  'sub': sub2,
                  'mul': mul2,

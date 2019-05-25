@@ -1,6 +1,6 @@
 #coding: utf-8
 import numpy as np
-from gplearn.genetic import SymbolicRegressor
+from genetic import SymbolicRegressor#gplearn.
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.utils.random import check_random_state
@@ -233,10 +233,11 @@ class GP_SymReg(object):
 					p_hoist_mutation=0.05, p_point_mutation=0.1,
 					max_samples=0.9, verbose=1,
 					parsimony_coefficient=0.01, random_state=0, n_jobs=1):
+		self.BESTOF = 0
 		self.y_ = None
 		#('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','sin','cos','tan')
 		if function_set == "logic":
-			function_set = ("AnD","Or","XoR")
+			function_set = ("and","or","xor")
 		if function_set == "all":
 			function_set = ('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','inv','max','min','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt','hypot',"modulox")
 		self.est_gp = SymbolicRegressor(population_size=population_size,
@@ -252,6 +253,9 @@ class GP_SymReg(object):
 		print "ENTRAINEMENT..."
 		self.est_gp.fit(self.x_,self.y_)
 		print "ENTRAINEMENT TERMINE!"
+		self.BESTOF = self.est_gp.BESTOF
+		print "BESTOF:" , self.BESTOF
+
 
 	def predict(self,X=[16,19],scale=1.):
 		u = []

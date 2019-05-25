@@ -181,6 +181,7 @@ class BaseSymbolic(six.with_metaclass(ABCMeta, BaseEstimator)):
                  n_jobs=1,
                  verbose=0,
                  random_state=None):
+        self.BESTOF = 0
 
         self.population_size = population_size
         self.hall_of_fame = hall_of_fame
@@ -246,6 +247,10 @@ class BaseSymbolic(six.with_metaclass(ABCMeta, BaseEstimator)):
                                      run_details['best_fitness'][-1],
                                      oob_fitness,
                                      remaining_time))
+            self.BESTOF = run_details['best_fitness'][-1]
+            fff=open("lastBESTOF.txt",'w')
+            fff.write(str(self.BESTOF)+"\n")
+            fff.close()
 
     def fit(self, X, y, sample_weight=None):
         """Fit the Genetic Program according to X, y.
