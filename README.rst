@@ -35,6 +35,7 @@ Welcome to gplearn(NewMath version)!
 ===================
 
 NewMath GPLearn : By Rick Sanchez
+Use my GPCTSCRM.py for easy use
 
 NEW: GP.py(is a POO interface for work easy)
 ===================
