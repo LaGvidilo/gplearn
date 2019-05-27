@@ -1,6 +1,6 @@
 #coding: utf-8
 import numpy as np
-from genetic import SymbolicRegressor#gplearn.
+from gplearn.genetic import SymbolicRegressor
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.utils.random import check_random_state
