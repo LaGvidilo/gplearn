@@ -10,6 +10,7 @@
 		1D45BD9A23494581008510A9 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BD9923494581008510A9 /* main.mm */; };
 		1D45BDA52349462C008510A9 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDA32349462C008510A9 /* Python.framework */; };
 		1D45BDA62349462C008510A9 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDA42349462C008510A9 /* libpython2.7.tbd */; };
+		1D45BDA923494753008510A9 /* callscript.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BDA723494753008510A9 /* callscript.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		1D45BDA123494619008510A9 /* GPCTSCRM.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = GPCTSCRM.py; path = scripts/GPCTSCRM.py; sourceTree = "<group>"; };
 		1D45BDA32349462C008510A9 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		1D45BDA42349462C008510A9 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
+		1D45BDA723494753008510A9 /* callscript.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = callscript.cpp; sourceTree = "<group>"; };
+		1D45BDA823494753008510A9 /* callscript.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = callscript.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +72,8 @@
 				1D45BDA023494619008510A9 /* GPCTSCRM_Pred.py */,
 				1D45BDA123494619008510A9 /* GPCTSCRM.py */,
 				1D45BD9923494581008510A9 /* main.mm */,
+				1D45BDA723494753008510A9 /* callscript.cpp */,
+				1D45BDA823494753008510A9 /* callscript.hpp */,
 			);
 			path = gpltool;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1D45BDA923494753008510A9 /* callscript.cpp in Sources */,
 				1D45BD9A23494581008510A9 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
