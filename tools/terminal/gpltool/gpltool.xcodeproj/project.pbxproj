@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D45BD8023493F2B008510A9 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BD7F23493F2B008510A9 /* main.cpp */; };
-		1D45BD8823493F3D008510A9 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BD8723493F3D008510A9 /* Python.framework */; };
+		1D45BD9A23494581008510A9 /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BD9923494581008510A9 /* main.mm */; };
+		1D45BDA52349462C008510A9 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDA32349462C008510A9 /* Python.framework */; };
+		1D45BDA62349462C008510A9 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDA42349462C008510A9 /* libpython2.7.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		1D45BD7A23493F2A008510A9 /* CopyFiles */ = {
+		1D45BD9423494581008510A9 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
@@ -24,52 +25,59 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		1D45BD7C23493F2A008510A9 /* gpltool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gpltool; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D45BD7F23493F2B008510A9 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		1D45BD8723493F3D008510A9 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		1D45BD9623494581008510A9 /* gpltool */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = gpltool; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D45BD9923494581008510A9 /* main.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
+		1D45BDA023494619008510A9 /* GPCTSCRM_Pred.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = GPCTSCRM_Pred.py; path = scripts/GPCTSCRM_Pred.py; sourceTree = "<group>"; };
+		1D45BDA123494619008510A9 /* GPCTSCRM.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = GPCTSCRM.py; path = scripts/GPCTSCRM.py; sourceTree = "<group>"; };
+		1D45BDA32349462C008510A9 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		1D45BDA42349462C008510A9 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D45BD7923493F2A008510A9 /* Frameworks */ = {
+		1D45BD9323494581008510A9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D45BD8823493F3D008510A9 /* Python.framework in Frameworks */,
+				1D45BDA52349462C008510A9 /* Python.framework in Frameworks */,
+				1D45BDA62349462C008510A9 /* libpython2.7.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D45BD7323493F2A008510A9 = {
+		1D45BD8D23494581008510A9 = {
 			isa = PBXGroup;
 			children = (
-				1D45BD7E23493F2A008510A9 /* gpltool */,
-				1D45BD7D23493F2A008510A9 /* Products */,
-				1D45BD8623493F3D008510A9 /* Frameworks */,
+				1D45BD9823494581008510A9 /* gpltool */,
+				1D45BD9723494581008510A9 /* Products */,
+				1D45BDA22349462C008510A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		1D45BD7D23493F2A008510A9 /* Products */ = {
+		1D45BD9723494581008510A9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BD7C23493F2A008510A9 /* gpltool */,
+				1D45BD9623494581008510A9 /* gpltool */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D45BD7E23493F2A008510A9 /* gpltool */ = {
+		1D45BD9823494581008510A9 /* gpltool */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BD7F23493F2B008510A9 /* main.cpp */,
+				1D45BDA023494619008510A9 /* GPCTSCRM_Pred.py */,
+				1D45BDA123494619008510A9 /* GPCTSCRM.py */,
+				1D45BD9923494581008510A9 /* main.mm */,
 			);
 			path = gpltool;
 			sourceTree = "<group>";
 		};
-		1D45BD8623493F3D008510A9 /* Frameworks */ = {
+		1D45BDA22349462C008510A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BD8723493F3D008510A9 /* Python.framework */,
+				1D45BDA42349462C008510A9 /* libpython2.7.tbd */,
+				1D45BDA32349462C008510A9 /* Python.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -77,13 +85,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D45BD7B23493F2A008510A9 /* gpltool */ = {
+		1D45BD9523494581008510A9 /* gpltool */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D45BD8323493F2B008510A9 /* Build configuration list for PBXNativeTarget "gpltool" */;
+			buildConfigurationList = 1D45BD9D23494581008510A9 /* Build configuration list for PBXNativeTarget "gpltool" */;
 			buildPhases = (
-				1D45BD7823493F2A008510A9 /* Sources */,
-				1D45BD7923493F2A008510A9 /* Frameworks */,
-				1D45BD7A23493F2A008510A9 /* CopyFiles */,
+				1D45BD9223494581008510A9 /* Sources */,
+				1D45BD9323494581008510A9 /* Frameworks */,
+				1D45BD9423494581008510A9 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -91,53 +99,53 @@
 			);
 			name = gpltool;
 			productName = gpltool;
-			productReference = 1D45BD7C23493F2A008510A9 /* gpltool */;
+			productReference = 1D45BD9623494581008510A9 /* gpltool */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D45BD7423493F2A008510A9 /* Project object */ = {
+		1D45BD8E23494581008510A9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Rick Sanchez";
 				TargetAttributes = {
-					1D45BD7B23493F2A008510A9 = {
+					1D45BD9523494581008510A9 = {
 						CreatedOnToolsVersion = 10.3;
 					};
 				};
 			};
-			buildConfigurationList = 1D45BD7723493F2A008510A9 /* Build configuration list for PBXProject "gpltool" */;
+			buildConfigurationList = 1D45BD9123494581008510A9 /* Build configuration list for PBXProject "gpltool" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1D45BD7323493F2A008510A9;
-			productRefGroup = 1D45BD7D23493F2A008510A9 /* Products */;
+			mainGroup = 1D45BD8D23494581008510A9;
+			productRefGroup = 1D45BD9723494581008510A9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D45BD7B23493F2A008510A9 /* gpltool */,
+				1D45BD9523494581008510A9 /* gpltool */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D45BD7823493F2A008510A9 /* Sources */ = {
+		1D45BD9223494581008510A9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D45BD8023493F2B008510A9 /* main.cpp in Sources */,
+				1D45BD9A23494581008510A9 /* main.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1D45BD8123493F2B008510A9 /* Debug */ = {
+		1D45BD9B23494581008510A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -196,7 +204,7 @@
 			};
 			name = Debug;
 		};
-		1D45BD8223493F2B008510A9 /* Release */ = {
+		1D45BD9C23494581008510A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -248,20 +256,18 @@
 			};
 			name = Release;
 		};
-		1D45BD8423493F2B008510A9 /* Debug */ = {
+		1D45BD9E23494581008510A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		1D45BD8523493F2B008510A9 /* Release */ = {
+		1D45BD9F23494581008510A9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -269,25 +275,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D45BD7723493F2A008510A9 /* Build configuration list for PBXProject "gpltool" */ = {
+		1D45BD9123494581008510A9 /* Build configuration list for PBXProject "gpltool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D45BD8123493F2B008510A9 /* Debug */,
-				1D45BD8223493F2B008510A9 /* Release */,
+				1D45BD9B23494581008510A9 /* Debug */,
+				1D45BD9C23494581008510A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D45BD8323493F2B008510A9 /* Build configuration list for PBXNativeTarget "gpltool" */ = {
+		1D45BD9D23494581008510A9 /* Build configuration list for PBXNativeTarget "gpltool" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D45BD8423493F2B008510A9 /* Debug */,
-				1D45BD8523493F2B008510A9 /* Release */,
+				1D45BD9E23494581008510A9 /* Debug */,
+				1D45BD9F23494581008510A9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1D45BD7423493F2A008510A9 /* Project object */;
+	rootObject = 1D45BD8E23494581008510A9 /* Project object */;
 }
