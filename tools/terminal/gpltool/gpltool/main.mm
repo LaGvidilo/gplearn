@@ -33,12 +33,18 @@ int main(int argc, const char * argv[]) {
          string gommand = "python "+putin+"/vocal.py "+projectpath+"/"+it->second.name+".mp3 "+projectpath;
          std::system(gommand.c_str());
          */
+        /*
         NSBundle *bundle = [NSBundle mainBundle];
         //NSString *appPath = [bundle bundlePath];
         NSString *resourceFolderPath = [bundle resourcePath];
         string putin =[resourceFolderPath UTF8String];
-        
         cout << putin << endl;
+         */
+        
+        
+        //args recognize here
+        
+        
         
         
     }
