@@ -29,6 +29,7 @@
 		1DEFB5C12349E9F600ADB324 /* Season of the Witch Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BC2349E9F600ADB324 /* Season of the Witch Black.ttf */; };
 		1DEFB5C22349E9F600ADB324 /* hermeticspellbook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */; };
 		1DEFB5C32349E9F600ADB324 /* Font Alien.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */; };
+		1DEFB5C5234A1CAA00ADB324 /* MainController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5C4234A1CAA00ADB324 /* MainController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +59,8 @@
 		1DEFB5BC2349E9F600ADB324 /* Season of the Witch Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Season of the Witch Black.ttf"; path = "fonts/Season of the Witch Black.ttf"; sourceTree = "<group>"; };
 		1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hermeticspellbook.ttf; path = fonts/hermetic_spellbook/hermeticspellbook.ttf; sourceTree = "<group>"; };
 		1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Alien.ttf"; path = "fonts/alien_gantz/Font Alien.ttf"; sourceTree = "<group>"; };
+		1DEFB5C4234A1CAA00ADB324 /* MainController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainController.mm; sourceTree = "<group>"; };
+		1DEFB5C6234A1CBE00ADB324 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				1DE6CFF22349B74000A0356D /* Info.plist */,
 				1DE6CFF32349B74000A0356D /* main.m */,
 				1DE6CFF52349B74000A0356D /* SpellBook.entitlements */,
+				1DEFB5C4234A1CAA00ADB324 /* MainController.mm */,
+				1DEFB5C6234A1CBE00ADB324 /* MainController.h */,
 			);
 			path = SpellBook;
 			sourceTree = "<group>";
@@ -215,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE6CFF42349B74000A0356D /* main.m in Sources */,
+				1DEFB5C5234A1CAA00ADB324 /* MainController.mm in Sources */,
 				1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
