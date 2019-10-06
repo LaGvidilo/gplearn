@@ -30,6 +30,13 @@
 		1DEFB5C22349E9F600ADB324 /* hermeticspellbook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */; };
 		1DEFB5C32349E9F600ADB324 /* Font Alien.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */; };
 		1DEFB5C5234A1CAA00ADB324 /* MainController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5C4234A1CAA00ADB324 /* MainController.mm */; };
+		1DEFB5D9234A321800ADB324 /* sha512.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5CA234A321600ADB324 /* sha512.cpp */; };
+		1DEFB5DA234A321800ADB324 /* colliertheorem.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5CB234A321600ADB324 /* colliertheorem.cpp */; };
+		1DEFB5DB234A321800ADB324 /* skey.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5CD234A321600ADB324 /* skey.mm */; };
+		1DEFB5DC234A321800ADB324 /* base64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5CF234A321600ADB324 /* base64.cpp */; };
+		1DEFB5DD234A321800ADB324 /* slotctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D0234A321600ADB324 /* slotctrl.cpp */; };
+		1DEFB5DE234A321800ADB324 /* rpl1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D2234A321700ADB324 /* rpl1.cpp */; };
+		1DEFB5DF234A321800ADB324 /* cadimpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D3234A321700ADB324 /* cadimpl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +68,24 @@
 		1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Alien.ttf"; path = "fonts/alien_gantz/Font Alien.ttf"; sourceTree = "<group>"; };
 		1DEFB5C4234A1CAA00ADB324 /* MainController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MainController.mm; sourceTree = "<group>"; };
 		1DEFB5C6234A1CBE00ADB324 /* MainController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainController.h; sourceTree = "<group>"; };
+		1DEFB5C7234A321500ADB324 /* sha512.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sha512.h; sourceTree = "<group>"; };
+		1DEFB5C8234A321600ADB324 /* strtoken.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = strtoken.h; sourceTree = "<group>"; };
+		1DEFB5C9234A321600ADB324 /* colliertheorem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = colliertheorem.h; sourceTree = "<group>"; };
+		1DEFB5CA234A321600ADB324 /* sha512.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = sha512.cpp; sourceTree = "<group>"; };
+		1DEFB5CB234A321600ADB324 /* colliertheorem.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = colliertheorem.cpp; sourceTree = "<group>"; };
+		1DEFB5CC234A321600ADB324 /* functionsx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = functionsx.h; sourceTree = "<group>"; };
+		1DEFB5CD234A321600ADB324 /* skey.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = skey.mm; sourceTree = "<group>"; };
+		1DEFB5CE234A321600ADB324 /* rpl1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = rpl1.h; sourceTree = "<group>"; };
+		1DEFB5CF234A321600ADB324 /* base64.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = base64.cpp; sourceTree = "<group>"; };
+		1DEFB5D0234A321600ADB324 /* slotctrl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = slotctrl.cpp; sourceTree = "<group>"; };
+		1DEFB5D1234A321600ADB324 /* base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = base64.h; sourceTree = "<group>"; };
+		1DEFB5D2234A321700ADB324 /* rpl1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = rpl1.cpp; sourceTree = "<group>"; };
+		1DEFB5D3234A321700ADB324 /* cadimpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cadimpl.cpp; sourceTree = "<group>"; };
+		1DEFB5D4234A321700ADB324 /* cadimpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cadimpl.h; sourceTree = "<group>"; };
+		1DEFB5D5234A321700ADB324 /* slotctrl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = slotctrl.h; sourceTree = "<group>"; };
+		1DEFB5D6234A321700ADB324 /* like.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = like.h; sourceTree = "<group>"; };
+		1DEFB5D7234A321700ADB324 /* calculus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculus.h; sourceTree = "<group>"; };
+		1DEFB5D8234A321700ADB324 /* skey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skey.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +121,24 @@
 		1DE6CFE92349B73E00A0356D /* SpellBook */ = {
 			isa = PBXGroup;
 			children = (
+				1DEFB5CF234A321600ADB324 /* base64.cpp */,
+				1DEFB5D1234A321600ADB324 /* base64.h */,
+				1DEFB5D3234A321700ADB324 /* cadimpl.cpp */,
+				1DEFB5D4234A321700ADB324 /* cadimpl.h */,
+				1DEFB5D7234A321700ADB324 /* calculus.h */,
+				1DEFB5CB234A321600ADB324 /* colliertheorem.cpp */,
+				1DEFB5C9234A321600ADB324 /* colliertheorem.h */,
+				1DEFB5CC234A321600ADB324 /* functionsx.h */,
+				1DEFB5D6234A321700ADB324 /* like.h */,
+				1DEFB5D2234A321700ADB324 /* rpl1.cpp */,
+				1DEFB5CE234A321600ADB324 /* rpl1.h */,
+				1DEFB5CA234A321600ADB324 /* sha512.cpp */,
+				1DEFB5C7234A321500ADB324 /* sha512.h */,
+				1DEFB5D8234A321700ADB324 /* skey.h */,
+				1DEFB5CD234A321600ADB324 /* skey.mm */,
+				1DEFB5D0234A321600ADB324 /* slotctrl.cpp */,
+				1DEFB5D5234A321700ADB324 /* slotctrl.h */,
+				1DEFB5C8234A321600ADB324 /* strtoken.h */,
 				1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */,
 				1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */,
 				1DEFB5BA2349E9F600ADB324 /* hermeticspellbook3d.ttf */,
@@ -220,8 +263,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				1DE6CFF42349B74000A0356D /* main.m in Sources */,
+				1DEFB5DC234A321800ADB324 /* base64.cpp in Sources */,
+				1DEFB5DF234A321800ADB324 /* cadimpl.cpp in Sources */,
+				1DEFB5DE234A321800ADB324 /* rpl1.cpp in Sources */,
 				1DEFB5C5234A1CAA00ADB324 /* MainController.mm in Sources */,
 				1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */,
+				1DEFB5DD234A321800ADB324 /* slotctrl.cpp in Sources */,
+				1DEFB5DB234A321800ADB324 /* skey.mm in Sources */,
+				1DEFB5DA234A321800ADB324 /* colliertheorem.cpp in Sources */,
+				1DEFB5D9234A321800ADB324 /* sha512.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
