@@ -7,118 +7,127 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D45BDBA234992F2008510A9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BDB9234992F2008510A9 /* AppDelegate.m */; };
-		1D45BDBC234992F5008510A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDBB234992F5008510A9 /* Assets.xcassets */; };
-		1D45BDBF234992F5008510A9 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDBD234992F5008510A9 /* MainMenu.xib */; };
-		1D45BDC2234992F5008510A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BDC1234992F5008510A9 /* main.m */; };
-		1D45BDCC23499324008510A9 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDCA23499324008510A9 /* libpython2.7.tbd */; };
-		1D45BDCD23499324008510A9 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDCB23499324008510A9 /* Python.framework */; };
-		1D45BDDB2349B2D4008510A9 /* filesanim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDD82349B2D4008510A9 /* filesanim.txt */; };
-		1D45BDDC2349B2D4008510A9 /* filesanim1inv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */; };
-		1D45BDDD2349B2D4008510A9 /* filesanim3f1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */; };
-		1D45BDE02349B2F7008510A9 /* Pentacle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDE2349B2F7008510A9 /* Pentacle.png */; };
-		1D45BDE12349B2F7008510A9 /* spellbook_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDF2349B2F7008510A9 /* spellbook_128.png */; };
-		1D45BDE32349B301008510A9 /* pentacle_animated_invpentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */; };
-		1D45BDE52349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */; };
-		1D45BDE72349B321008510A9 /* logo-pentaclepentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */; };
-		1D45BDE92349B32C008510A9 /* spellbook_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE82349B32C008510A9 /* spellbook_512.png */; };
-		1D45BDEF2349B336008510A9 /* evil_fifty_year_old.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */; };
-		1D45BDF02349B336008510A9 /* Ancient_Game_Magic_Revive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */; };
-		1D45BDF12349B336008510A9 /* Magic_Game_Heal_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */; };
-		1D45BDF22349B336008510A9 /* Sword_Of_Light.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */; };
-		1D45BDF32349B336008510A9 /* Healing_Spell_Light_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */; };
+		1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6CFEB2349B73E00A0356D /* AppDelegate.m */; };
+		1DE6CFEE2349B74000A0356D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFED2349B74000A0356D /* Assets.xcassets */; };
+		1DE6CFF12349B74000A0356D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFEF2349B74000A0356D /* MainMenu.xib */; };
+		1DE6CFF42349B74000A0356D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6CFF32349B74000A0356D /* main.m */; };
+		1DE6D0002349B7D900A0356D /* Magic_Game_Heal_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFFB2349B7D800A0356D /* Magic_Game_Heal_Buff.wav */; };
+		1DE6D0012349B7D900A0356D /* evil_fifty_year_old.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFFC2349B7D900A0356D /* evil_fifty_year_old.wav */; };
+		1DE6D0022349B7D900A0356D /* Ancient_Game_Magic_Revive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFFD2349B7D900A0356D /* Ancient_Game_Magic_Revive.wav */; };
+		1DE6D0032349B7D900A0356D /* Healing_Spell_Light_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFFE2349B7D900A0356D /* Healing_Spell_Light_Buff.wav */; };
+		1DE6D0042349B7D900A0356D /* Sword_Of_Light.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFFF2349B7D900A0356D /* Sword_Of_Light.wav */; };
+		1DE6D0072349B7E300A0356D /* GPCTSCRM.py in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0052349B7E300A0356D /* GPCTSCRM.py */; };
+		1DE6D0082349B7E300A0356D /* GPCTSCRM_Pred.py in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0062349B7E300A0356D /* GPCTSCRM_Pred.py */; };
+		1DE6D0112349B80B00A0356D /* spellbook_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D00B2349B80A00A0356D /* spellbook_128.png */; };
+		1DE6D0122349B80B00A0356D /* filesanim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D00C2349B80A00A0356D /* filesanim.txt */; };
+		1DE6D0132349B80B00A0356D /* filesanim1inv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D00D2349B80A00A0356D /* filesanim1inv.txt */; };
+		1DE6D0142349B80B00A0356D /* filesanim3f1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D00E2349B80A00A0356D /* filesanim3f1.txt */; };
+		1DE6D0152349B80B00A0356D /* Pentacle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D00F2349B80A00A0356D /* Pentacle.png */; };
+		1DE6D0162349B80B00A0356D /* spellbook_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0102349B80A00A0356D /* spellbook_512.png */; };
+		1DE6D01E2349B89B00A0356D /* pentacle_-logo_animated_f1pentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D01D2349B89B00A0356D /* pentacle_-logo_animated_f1pentacle_ */; };
+		1DE6D0202349B8A400A0356D /* logo-pentaclepentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D01F2349B8A400A0356D /* logo-pentaclepentacle_ */; };
+		1DE6D0222349B8AD00A0356D /* pentacle_animated_invpentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0212349B8AD00A0356D /* pentacle_animated_invpentacle_ */; };
+		1DE6D0242349B8BF00A0356D /* gplearn in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0232349B8BF00A0356D /* gplearn */; };
+		1DE6D0282349B93A00A0356D /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE6D0262349B93A00A0356D /* Python.framework */; };
+		1DE6D0292349B93A00A0356D /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE6D0272349B93A00A0356D /* libpython2.7.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1D45BDB5234992F2008510A9 /* SpellBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D45BDB8234992F2008510A9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		1D45BDB9234992F2008510A9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		1D45BDBB234992F5008510A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1D45BDBE234992F5008510A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		1D45BDC0234992F5008510A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1D45BDC1234992F5008510A9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		1D45BDC3234992F5008510A9 /* SpellBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpellBook.entitlements; sourceTree = "<group>"; };
-		1D45BDCA23499324008510A9 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
-		1D45BDCB23499324008510A9 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
-		1D45BDD82349B2D4008510A9 /* filesanim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim.txt; path = images_res/filesanim.txt; sourceTree = "<group>"; };
-		1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim1inv.txt; path = images_res/filesanim1inv.txt; sourceTree = "<group>"; };
-		1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim3f1.txt; path = images_res/filesanim3f1.txt; sourceTree = "<group>"; };
-		1D45BDDE2349B2F7008510A9 /* Pentacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pentacle.png; path = images_res/Pentacle.png; sourceTree = "<group>"; };
-		1D45BDDF2349B2F7008510A9 /* spellbook_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_128.png; path = images_res/spellbook_128.png; sourceTree = "<group>"; };
-		1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pentacle_animated_invpentacle_; path = images_res/pentacle_animated_invpentacle_; sourceTree = "<group>"; };
-		1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pentacle_-logo_animated_f1pentacle_"; path = "images_res/pentacle_-logo_animated_f1pentacle_"; sourceTree = "<group>"; };
-		1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "logo-pentaclepentacle_"; path = "images_res/logo-pentaclepentacle_"; sourceTree = "<group>"; };
-		1D45BDE82349B32C008510A9 /* spellbook_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_512.png; path = images_res/spellbook_512.png; sourceTree = "<group>"; };
-		1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = evil_fifty_year_old.wav; path = sounds/evil_fifty_year_old.wav; sourceTree = "<group>"; };
-		1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Ancient_Game_Magic_Revive.wav; path = sounds/Ancient_Game_Magic_Revive.wav; sourceTree = "<group>"; };
-		1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Magic_Game_Heal_Buff.wav; path = sounds/Magic_Game_Heal_Buff.wav; sourceTree = "<group>"; };
-		1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sword_Of_Light.wav; path = sounds/Sword_Of_Light.wav; sourceTree = "<group>"; };
-		1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Healing_Spell_Light_Buff.wav; path = sounds/Healing_Spell_Light_Buff.wav; sourceTree = "<group>"; };
+		1DE6CFE72349B73E00A0356D /* SpellBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DE6CFEA2349B73E00A0356D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1DE6CFEB2349B73E00A0356D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1DE6CFED2349B74000A0356D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1DE6CFF02349B74000A0356D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		1DE6CFF22349B74000A0356D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1DE6CFF32349B74000A0356D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1DE6CFF52349B74000A0356D /* SpellBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpellBook.entitlements; sourceTree = "<group>"; };
+		1DE6CFFB2349B7D800A0356D /* Magic_Game_Heal_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Magic_Game_Heal_Buff.wav; path = sounds/Magic_Game_Heal_Buff.wav; sourceTree = "<group>"; };
+		1DE6CFFC2349B7D900A0356D /* evil_fifty_year_old.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = evil_fifty_year_old.wav; path = sounds/evil_fifty_year_old.wav; sourceTree = "<group>"; };
+		1DE6CFFD2349B7D900A0356D /* Ancient_Game_Magic_Revive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Ancient_Game_Magic_Revive.wav; path = sounds/Ancient_Game_Magic_Revive.wav; sourceTree = "<group>"; };
+		1DE6CFFE2349B7D900A0356D /* Healing_Spell_Light_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Healing_Spell_Light_Buff.wav; path = sounds/Healing_Spell_Light_Buff.wav; sourceTree = "<group>"; };
+		1DE6CFFF2349B7D900A0356D /* Sword_Of_Light.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sword_Of_Light.wav; path = sounds/Sword_Of_Light.wav; sourceTree = "<group>"; };
+		1DE6D0052349B7E300A0356D /* GPCTSCRM.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = GPCTSCRM.py; path = pythonres/GPCTSCRM.py; sourceTree = "<group>"; };
+		1DE6D0062349B7E300A0356D /* GPCTSCRM_Pred.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; name = GPCTSCRM_Pred.py; path = pythonres/GPCTSCRM_Pred.py; sourceTree = "<group>"; };
+		1DE6D00B2349B80A00A0356D /* spellbook_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_128.png; path = images_res/spellbook_128.png; sourceTree = "<group>"; };
+		1DE6D00C2349B80A00A0356D /* filesanim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim.txt; path = images_res/filesanim.txt; sourceTree = "<group>"; };
+		1DE6D00D2349B80A00A0356D /* filesanim1inv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim1inv.txt; path = images_res/filesanim1inv.txt; sourceTree = "<group>"; };
+		1DE6D00E2349B80A00A0356D /* filesanim3f1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim3f1.txt; path = images_res/filesanim3f1.txt; sourceTree = "<group>"; };
+		1DE6D00F2349B80A00A0356D /* Pentacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pentacle.png; path = images_res/Pentacle.png; sourceTree = "<group>"; };
+		1DE6D0102349B80A00A0356D /* spellbook_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_512.png; path = images_res/spellbook_512.png; sourceTree = "<group>"; };
+		1DE6D01D2349B89B00A0356D /* pentacle_-logo_animated_f1pentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pentacle_-logo_animated_f1pentacle_"; path = "images_res/pentacle_-logo_animated_f1pentacle_"; sourceTree = "<group>"; };
+		1DE6D01F2349B8A400A0356D /* logo-pentaclepentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "logo-pentaclepentacle_"; path = "images_res/logo-pentaclepentacle_"; sourceTree = "<group>"; };
+		1DE6D0212349B8AD00A0356D /* pentacle_animated_invpentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pentacle_animated_invpentacle_; path = images_res/pentacle_animated_invpentacle_; sourceTree = "<group>"; };
+		1DE6D0232349B8BF00A0356D /* gplearn */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gplearn; path = pythonres/gplearn; sourceTree = "<group>"; };
+		1DE6D0262349B93A00A0356D /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		1DE6D0272349B93A00A0356D /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1D45BDB2234992F2008510A9 /* Frameworks */ = {
+		1DE6CFE42349B73E00A0356D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D45BDCC23499324008510A9 /* libpython2.7.tbd in Frameworks */,
-				1D45BDCD23499324008510A9 /* Python.framework in Frameworks */,
+				1DE6D0282349B93A00A0356D /* Python.framework in Frameworks */,
+				1DE6D0292349B93A00A0356D /* libpython2.7.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1D45BDAC234992F2008510A9 = {
+		1DE6CFDE2349B73E00A0356D = {
 			isa = PBXGroup;
 			children = (
-				1D45BDB7234992F2008510A9 /* SpellBook */,
-				1D45BDB6234992F2008510A9 /* Products */,
-				1D45BDC923499324008510A9 /* Frameworks */,
+				1DE6CFE92349B73E00A0356D /* SpellBook */,
+				1DE6CFE82349B73E00A0356D /* Products */,
+				1DE6D0252349B93A00A0356D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		1D45BDB6234992F2008510A9 /* Products */ = {
+		1DE6CFE82349B73E00A0356D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BDB5234992F2008510A9 /* SpellBook.app */,
+				1DE6CFE72349B73E00A0356D /* SpellBook.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D45BDB7234992F2008510A9 /* SpellBook */ = {
+		1DE6CFE92349B73E00A0356D /* SpellBook */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */,
-				1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */,
-				1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */,
-				1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */,
-				1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */,
-				1D45BDE82349B32C008510A9 /* spellbook_512.png */,
-				1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */,
-				1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */,
-				1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */,
-				1D45BDDE2349B2F7008510A9 /* Pentacle.png */,
-				1D45BDDF2349B2F7008510A9 /* spellbook_128.png */,
-				1D45BDD82349B2D4008510A9 /* filesanim.txt */,
-				1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */,
-				1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */,
-				1D45BDB8234992F2008510A9 /* AppDelegate.h */,
-				1D45BDB9234992F2008510A9 /* AppDelegate.m */,
-				1D45BDBB234992F5008510A9 /* Assets.xcassets */,
-				1D45BDBD234992F5008510A9 /* MainMenu.xib */,
-				1D45BDC0234992F5008510A9 /* Info.plist */,
-				1D45BDC1234992F5008510A9 /* main.m */,
-				1D45BDC3234992F5008510A9 /* SpellBook.entitlements */,
+				1DE6D0232349B8BF00A0356D /* gplearn */,
+				1DE6D0212349B8AD00A0356D /* pentacle_animated_invpentacle_ */,
+				1DE6D01F2349B8A400A0356D /* logo-pentaclepentacle_ */,
+				1DE6D01D2349B89B00A0356D /* pentacle_-logo_animated_f1pentacle_ */,
+				1DE6D00C2349B80A00A0356D /* filesanim.txt */,
+				1DE6D00D2349B80A00A0356D /* filesanim1inv.txt */,
+				1DE6D00E2349B80A00A0356D /* filesanim3f1.txt */,
+				1DE6D00F2349B80A00A0356D /* Pentacle.png */,
+				1DE6D00B2349B80A00A0356D /* spellbook_128.png */,
+				1DE6D0102349B80A00A0356D /* spellbook_512.png */,
+				1DE6D0062349B7E300A0356D /* GPCTSCRM_Pred.py */,
+				1DE6D0052349B7E300A0356D /* GPCTSCRM.py */,
+				1DE6CFFD2349B7D900A0356D /* Ancient_Game_Magic_Revive.wav */,
+				1DE6CFFC2349B7D900A0356D /* evil_fifty_year_old.wav */,
+				1DE6CFFE2349B7D900A0356D /* Healing_Spell_Light_Buff.wav */,
+				1DE6CFFB2349B7D800A0356D /* Magic_Game_Heal_Buff.wav */,
+				1DE6CFFF2349B7D900A0356D /* Sword_Of_Light.wav */,
+				1DE6CFEA2349B73E00A0356D /* AppDelegate.h */,
+				1DE6CFEB2349B73E00A0356D /* AppDelegate.m */,
+				1DE6CFED2349B74000A0356D /* Assets.xcassets */,
+				1DE6CFEF2349B74000A0356D /* MainMenu.xib */,
+				1DE6CFF22349B74000A0356D /* Info.plist */,
+				1DE6CFF32349B74000A0356D /* main.m */,
+				1DE6CFF52349B74000A0356D /* SpellBook.entitlements */,
 			);
 			path = SpellBook;
 			sourceTree = "<group>";
 		};
-		1D45BDC923499324008510A9 /* Frameworks */ = {
+		1DE6D0252349B93A00A0356D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1D45BDCA23499324008510A9 /* libpython2.7.tbd */,
-				1D45BDCB23499324008510A9 /* Python.framework */,
+				1DE6D0272349B93A00A0356D /* libpython2.7.tbd */,
+				1DE6D0262349B93A00A0356D /* Python.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,13 +135,13 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1D45BDB4234992F2008510A9 /* SpellBook */ = {
+		1DE6CFE62349B73E00A0356D /* SpellBook */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1D45BDC6234992F5008510A9 /* Build configuration list for PBXNativeTarget "SpellBook" */;
+			buildConfigurationList = 1DE6CFF82349B74000A0356D /* Build configuration list for PBXNativeTarget "SpellBook" */;
 			buildPhases = (
-				1D45BDB1234992F2008510A9 /* Sources */,
-				1D45BDB2234992F2008510A9 /* Frameworks */,
-				1D45BDB3234992F2008510A9 /* Resources */,
+				1DE6CFE32349B73E00A0356D /* Sources */,
+				1DE6CFE42349B73E00A0356D /* Frameworks */,
+				1DE6CFE52349B73E00A0356D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -140,29 +149,24 @@
 			);
 			name = SpellBook;
 			productName = SpellBook;
-			productReference = 1D45BDB5234992F2008510A9 /* SpellBook.app */;
+			productReference = 1DE6CFE72349B73E00A0356D /* SpellBook.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1D45BDAD234992F2008510A9 /* Project object */ = {
+		1DE6CFDF2349B73E00A0356D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Rick Sanchez";
 				TargetAttributes = {
-					1D45BDB4234992F2008510A9 = {
+					1DE6CFE62349B73E00A0356D = {
 						CreatedOnToolsVersion = 10.3;
-						SystemCapabilities = {
-							com.apple.Sandbox = {
-								enabled = 0;
-							};
-						};
 					};
 				};
 			};
-			buildConfigurationList = 1D45BDB0234992F2008510A9 /* Build configuration list for PBXProject "SpellBook" */;
+			buildConfigurationList = 1DE6CFE22349B73E00A0356D /* Build configuration list for PBXProject "SpellBook" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -170,59 +174,62 @@
 				en,
 				Base,
 			);
-			mainGroup = 1D45BDAC234992F2008510A9;
-			productRefGroup = 1D45BDB6234992F2008510A9 /* Products */;
+			mainGroup = 1DE6CFDE2349B73E00A0356D;
+			productRefGroup = 1DE6CFE82349B73E00A0356D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1D45BDB4234992F2008510A9 /* SpellBook */,
+				1DE6CFE62349B73E00A0356D /* SpellBook */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1D45BDB3234992F2008510A9 /* Resources */ = {
+		1DE6CFE52349B73E00A0356D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D45BDBC234992F5008510A9 /* Assets.xcassets in Resources */,
-				1D45BDF12349B336008510A9 /* Magic_Game_Heal_Buff.wav in Resources */,
-				1D45BDDC2349B2D4008510A9 /* filesanim1inv.txt in Resources */,
-				1D45BDDB2349B2D4008510A9 /* filesanim.txt in Resources */,
-				1D45BDE72349B321008510A9 /* logo-pentaclepentacle_ in Resources */,
-				1D45BDF02349B336008510A9 /* Ancient_Game_Magic_Revive.wav in Resources */,
-				1D45BDE92349B32C008510A9 /* spellbook_512.png in Resources */,
-				1D45BDE32349B301008510A9 /* pentacle_animated_invpentacle_ in Resources */,
-				1D45BDF32349B336008510A9 /* Healing_Spell_Light_Buff.wav in Resources */,
-				1D45BDE12349B2F7008510A9 /* spellbook_128.png in Resources */,
-				1D45BDE02349B2F7008510A9 /* Pentacle.png in Resources */,
-				1D45BDE52349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ in Resources */,
-				1D45BDBF234992F5008510A9 /* MainMenu.xib in Resources */,
-				1D45BDEF2349B336008510A9 /* evil_fifty_year_old.wav in Resources */,
-				1D45BDDD2349B2D4008510A9 /* filesanim3f1.txt in Resources */,
-				1D45BDF22349B336008510A9 /* Sword_Of_Light.wav in Resources */,
+				1DE6D0042349B7D900A0356D /* Sword_Of_Light.wav in Resources */,
+				1DE6D0202349B8A400A0356D /* logo-pentaclepentacle_ in Resources */,
+				1DE6D0112349B80B00A0356D /* spellbook_128.png in Resources */,
+				1DE6D0002349B7D900A0356D /* Magic_Game_Heal_Buff.wav in Resources */,
+				1DE6D0132349B80B00A0356D /* filesanim1inv.txt in Resources */,
+				1DE6CFEE2349B74000A0356D /* Assets.xcassets in Resources */,
+				1DE6D0162349B80B00A0356D /* spellbook_512.png in Resources */,
+				1DE6D0142349B80B00A0356D /* filesanim3f1.txt in Resources */,
+				1DE6D01E2349B89B00A0356D /* pentacle_-logo_animated_f1pentacle_ in Resources */,
+				1DE6D0012349B7D900A0356D /* evil_fifty_year_old.wav in Resources */,
+				1DE6D0022349B7D900A0356D /* Ancient_Game_Magic_Revive.wav in Resources */,
+				1DE6D0122349B80B00A0356D /* filesanim.txt in Resources */,
+				1DE6D0072349B7E300A0356D /* GPCTSCRM.py in Resources */,
+				1DE6D0222349B8AD00A0356D /* pentacle_animated_invpentacle_ in Resources */,
+				1DE6D0032349B7D900A0356D /* Healing_Spell_Light_Buff.wav in Resources */,
+				1DE6D0152349B80B00A0356D /* Pentacle.png in Resources */,
+				1DE6D0082349B7E300A0356D /* GPCTSCRM_Pred.py in Resources */,
+				1DE6D0242349B8BF00A0356D /* gplearn in Resources */,
+				1DE6CFF12349B74000A0356D /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1D45BDB1234992F2008510A9 /* Sources */ = {
+		1DE6CFE32349B73E00A0356D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D45BDC2234992F5008510A9 /* main.m in Sources */,
-				1D45BDBA234992F2008510A9 /* AppDelegate.m in Sources */,
+				1DE6CFF42349B74000A0356D /* main.m in Sources */,
+				1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		1D45BDBD234992F5008510A9 /* MainMenu.xib */ = {
+		1DE6CFEF2349B74000A0356D /* MainMenu.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1D45BDBE234992F5008510A9 /* Base */,
+				1DE6CFF02349B74000A0356D /* Base */,
 			);
 			name = MainMenu.xib;
 			sourceTree = "<group>";
@@ -230,7 +237,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1D45BDC4234992F5008510A9 /* Debug */ = {
+		1DE6CFF62349B74000A0356D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -289,7 +296,7 @@
 			};
 			name = Debug;
 		};
-		1D45BDC5234992F5008510A9 /* Release */ = {
+		1DE6CFF72349B74000A0356D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -341,62 +348,70 @@
 			};
 			name = Release;
 		};
-		1D45BDC7234992F5008510A9 /* Debug */ = {
+		1DE6CFF92349B74000A0356D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SpellBook/SpellBook.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: cyrilcoelho67@gmail.com (LXP6A77KFW)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 32ZU94D59P;
 				INFOPLIST_FILE = SpellBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.informabox.SpellBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
-		1D45BDC8234992F5008510A9 /* Release */ = {
+		1DE6CFFA2349B74000A0356D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_ENTITLEMENTS = SpellBook/SpellBook.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: cyrilcoelho67@gmail.com (LXP6A77KFW)";
+				CODE_SIGN_INJECT_BASE_ENTITLEMENTS = NO;
+				CODE_SIGN_STYLE = Manual;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 32ZU94D59P;
 				INFOPLIST_FILE = SpellBook/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_BUNDLE_IDENTIFIER = fr.informabox.SpellBook;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1D45BDB0234992F2008510A9 /* Build configuration list for PBXProject "SpellBook" */ = {
+		1DE6CFE22349B73E00A0356D /* Build configuration list for PBXProject "SpellBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D45BDC4234992F5008510A9 /* Debug */,
-				1D45BDC5234992F5008510A9 /* Release */,
+				1DE6CFF62349B74000A0356D /* Debug */,
+				1DE6CFF72349B74000A0356D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1D45BDC6234992F5008510A9 /* Build configuration list for PBXNativeTarget "SpellBook" */ = {
+		1DE6CFF82349B74000A0356D /* Build configuration list for PBXNativeTarget "SpellBook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1D45BDC7234992F5008510A9 /* Debug */,
-				1D45BDC8234992F5008510A9 /* Release */,
+				1DE6CFF92349B74000A0356D /* Debug */,
+				1DE6CFFA2349B74000A0356D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1D45BDAD234992F2008510A9 /* Project object */;
+	rootObject = 1DE6CFDF2349B73E00A0356D /* Project object */;
 }
