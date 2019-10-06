@@ -89,7 +89,7 @@
                             <menuItem title="Exporter la formule..." id="ECc-WC-yta">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
-                            <menuItem title="Invocation..." id="ja1-tK-D6c">
+                            <menuItem title="Invocation..." enabled="NO" id="ja1-tK-D6c">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                             </menuItem>
                         </items>
@@ -109,10 +109,10 @@
                                         <menuItem title="Incantations" enabled="NO" id="Mpe-O9-g6A">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Seaux" id="Ugb-Mq-1dR">
+                                        <menuItem title="Seaux" enabled="NO" id="Ugb-Mq-1dR">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Mise a jours vers la version Maître..." enabled="NO" id="LsA-yu-avk">
+                                        <menuItem title="Mise a jours vers la version Maître..." id="LsA-yu-avk">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
                                     </items>
