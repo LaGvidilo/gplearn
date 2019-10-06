@@ -326,6 +326,38 @@
 			<key>uniqueIdentifier</key>
 			<string>BD218C26-26AE-45CA-8852-A4B797170D1F</string>
 		</dict>
+		<key>C33B6216-49BD-4229-AC4E-A0BEBDB172D4</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>C33B6216-49BD-4229-AC4E-A0BEBDB172D4.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SpellBook project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SpellBook</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug SpellBook</string>
+			<key>timeStartedRecording</key>
+			<real>592072424.353459</real>
+			<key>timeStoppedRecording</key>
+			<real>592072445.14804804</real>
+			<key>title</key>
+			<string>Debug SpellBook</string>
+			<key>uniqueIdentifier</key>
+			<string>C33B6216-49BD-4229-AC4E-A0BEBDB172D4</string>
+		</dict>
 		<key>D2000667-37C7-47D8-B638-10B683FB2FBF</key>
 		<dict>
 			<key>className</key>

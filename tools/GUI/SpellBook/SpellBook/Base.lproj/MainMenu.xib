@@ -15,6 +15,7 @@
         <customObject id="-3" userLabel="Application" customClass="NSObject"/>
         <customObject id="UYE-Cz-01p" userLabel="menu" customClass="skey">
             <connections>
+                <outlet property="cle" destination="XEc-nf-ptQ" id="K5P-sP-0rZ"/>
                 <outlet property="window" destination="c7q-8Z-e7F" id="ctC-XV-NXf"/>
             </connections>
         </customObject>
@@ -106,6 +107,9 @@
                         <items>
                             <menuItem title="S'enregistrer..." id="jsd-1Q-5gP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="showWindow:" target="UYE-Cz-01p" id="Onf-hG-LA3"/>
+                                </connections>
                             </menuItem>
                             <menuItem title="Contenu additionel" id="e1q-4X-peU">
                                 <modifierMask key="keyEquivalentModifierMask"/>
@@ -119,6 +123,9 @@
                                         </menuItem>
                                         <menuItem title="Mise a jours vers la version Maître..." id="LsA-yu-avk">
                                             <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="buyredirect:" target="UYE-Cz-01p" id="ISx-Ub-pM6"/>
+                                            </connections>
                                         </menuItem>
                                     </items>
                                 </menu>
@@ -600,29 +607,87 @@
         <window title="SERIAL KEY" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="c7q-8Z-e7F" userLabel="activation">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-            <rect key="contentRect" x="473" y="309" width="480" height="270"/>
+            <rect key="contentRect" x="473" y="309" width="480" height="201"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="wpi-fa-xUs">
-                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+            <view key="contentView" wantsLayer="YES" id="wpi-fa-xUs">
+                <rect key="frame" x="0.0" y="0.0" width="480" height="201"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4H9-xl-DjX">
-                        <rect key="frame" x="20" y="142" width="116" height="108"/>
+                        <rect key="frame" x="20" y="73" width="116" height="108"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <contentFilters>
+                            <ciFilter name="CIVignetteEffect">
+                                <configuration>
+                                    <ciVector key="inputCenter">
+                                        <real value="225"/>
+                                        <real value="83"/>
+                                    </ciVector>
+                                    <real key="inputFalloff" value="0.59999999999999998"/>
+                                    <null key="inputImage"/>
+                                    <real key="inputIntensity" value="1"/>
+                                    <real key="inputRadius" value="123"/>
+                                </configuration>
+                            </ciFilter>
+                            <ciFilter name="CISepiaTone">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputIntensity" value="1"/>
+                                </configuration>
+                            </ciFilter>
+                        </contentFilters>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="Pentacle" id="Wdh-fG-ll8"/>
                     </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tgo-RD-xX6">
-                        <rect key="frame" x="147" y="226" width="315" height="27"/>
+                        <rect key="frame" x="147" y="80" width="315" height="27"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <textFieldCell key="cell" lineBreakMode="clipping" title="Serial Key" id="27Z-tU-Tfh">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Serial Key" id="27Z-tU-Tfh">
                             <font key="font" size="13" name="SeasonoftheWitchBlack"/>
                             <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
+                    <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XEc-nf-ptQ">
+                        <rect key="frame" x="20" y="50" width="440" height="22"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" alignment="center" placeholderString="INSERT SERIAL KEY HERE" drawsBackground="YES" id="0yk-qZ-SK2">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ah-14-hse">
+                        <rect key="frame" x="204" y="19" width="74" height="23"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="roundTextured" title="VALIDATE" bezelStyle="texturedRounded" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sbU-zd-PfJ">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="validationkey:" target="UYE-Cz-01p" id="LFa-lP-jhd"/>
+                        </connections>
+                    </button>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kVx-XT-0Ga">
+                        <rect key="frame" x="144" y="164" width="318" height="17"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" selectable="YES" alignment="center" title="SpellBook by Rick Sanchez - 2019" id="vfS-MM-7TY">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1D-In-ciP">
+                        <rect key="frame" x="144" y="121" width="318" height="28"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="center" title="la mort est derriere" id="vhn-br-3JC">
+                            <font key="font" size="30" name="HermeticSpellbook"/>
+                            <color key="textColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="linkColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="197" y="974"/>
+            <point key="canvasLocation" x="197" y="939.5"/>
         </window>
     </objects>
     <resources>

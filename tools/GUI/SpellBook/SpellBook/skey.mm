@@ -2,7 +2,8 @@
 
 @implementation skey
 - (IBAction)showWindow:(id)sender {
-    
+    NSWindowController *nw = [[NSWindowController alloc] initWithWindow: window];
+    [nw showWindow:self];
 }
 - (IBAction)buyredirect:(id)sender{
 	NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Pop" ofType:@"wav"];
