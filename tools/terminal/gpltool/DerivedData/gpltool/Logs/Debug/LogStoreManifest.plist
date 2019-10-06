@@ -6,6 +6,70 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>39DA6388-FE94-4F68-8DEB-7C88793F6116</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>39DA6388-FE94-4F68-8DEB-7C88793F6116.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592013118.25092494</real>
+			<key>timeStoppedRecording</key>
+			<real>592013120.43051302</real>
+			<key>title</key>
+			<string>Debug gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>39DA6388-FE94-4F68-8DEB-7C88793F6116</string>
+		</dict>
+		<key>686D8393-AC9C-413B-A7C7-1627FDE8C37B</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>686D8393-AC9C-413B-A7C7-1627FDE8C37B.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592013080.64053202</real>
+			<key>timeStoppedRecording</key>
+			<real>592013082.655653</real>
+			<key>title</key>
+			<string>Debug gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>686D8393-AC9C-413B-A7C7-1627FDE8C37B</string>
+		</dict>
 		<key>8128F3B4-CCF6-4569-85F2-0E2E8751AFC0</key>
 		<dict>
 			<key>className</key>
@@ -37,6 +101,70 @@
 			<string>Debug gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>8128F3B4-CCF6-4569-85F2-0E2E8751AFC0</string>
+		</dict>
+		<key>8F0B05D2-ABEC-430D-A48B-92B299E3690F</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>8F0B05D2-ABEC-430D-A48B-92B299E3690F.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592013110.81419098</real>
+			<key>timeStoppedRecording</key>
+			<real>592013112.72590196</real>
+			<key>title</key>
+			<string>Debug gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>8F0B05D2-ABEC-430D-A48B-92B299E3690F</string>
+		</dict>
+		<key>C40392D2-ED23-4AAE-9BEF-C4101C55F010</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>C40392D2-ED23-4AAE-9BEF-C4101C55F010.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592013060.82862794</real>
+			<key>timeStoppedRecording</key>
+			<real>592013062.98621595</real>
+			<key>title</key>
+			<string>Debug gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>C40392D2-ED23-4AAE-9BEF-C4101C55F010</string>
 		</dict>
 	</dict>
 </dict>
