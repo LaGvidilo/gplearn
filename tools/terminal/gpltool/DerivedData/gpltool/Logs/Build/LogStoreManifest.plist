@@ -38,6 +38,38 @@
 			<key>uniqueIdentifier</key>
 			<string>183C6FB7-0145-4D49-89CB-1DBB5B73DECD</string>
 		</dict>
+		<key>25391649-6275-4816-B4A9-42F680D089F8</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>25391649-6275-4816-B4A9-42F680D089F8.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592016658.99811304</real>
+			<key>timeStoppedRecording</key>
+			<real>592016661.01025796</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>25391649-6275-4816-B4A9-42F680D089F8</string>
+		</dict>
 		<key>47D246D9-09CA-4F15-87A7-555206F1572F</key>
 		<dict>
 			<key>className</key>
@@ -101,6 +133,70 @@
 			<string>Build gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>484FBE07-C41C-47C7-98FD-F1CAB546B10E</string>
+		</dict>
+		<key>5E018345-A2F3-40C2-9423-4283F7897E5A</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>5E018345-A2F3-40C2-9423-4283F7897E5A.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592015133.89928997</real>
+			<key>timeStoppedRecording</key>
+			<real>592015135.49213195</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>5E018345-A2F3-40C2-9423-4283F7897E5A</string>
+		</dict>
+		<key>6A00369F-B231-4DFD-A5DF-8DBD14440BCC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>6A00369F-B231-4DFD-A5DF-8DBD14440BCC.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592014886.61306798</real>
+			<key>timeStoppedRecording</key>
+			<real>592014888.68396795</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>6A00369F-B231-4DFD-A5DF-8DBD14440BCC</string>
 		</dict>
 		<key>77CCF13F-3151-4918-B66C-E34B15C232F4</key>
 		<dict>
@@ -166,6 +262,70 @@
 			<key>uniqueIdentifier</key>
 			<string>7DD9D6CB-A35E-472B-9EC9-C79E78F85637</string>
 		</dict>
+		<key>88F3DB48-76E9-4E66-B039-FF5EA6F49128</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>88F3DB48-76E9-4E66-B039-FF5EA6F49128.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592015193.19034898</real>
+			<key>timeStoppedRecording</key>
+			<real>592015194.88312304</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>88F3DB48-76E9-4E66-B039-FF5EA6F49128</string>
+		</dict>
+		<key>97CCF3F5-4D28-4AE1-A606-092214D0BE66</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>97CCF3F5-4D28-4AE1-A606-092214D0BE66.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592015085.74486005</real>
+			<key>timeStoppedRecording</key>
+			<real>592015089.14264297</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>97CCF3F5-4D28-4AE1-A606-092214D0BE66</string>
+		</dict>
 		<key>CB9225A7-2BBF-410F-91D8-8F41513971A8</key>
 		<dict>
 			<key>className</key>
@@ -197,6 +357,38 @@
 			<string>Build gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>CB9225A7-2BBF-410F-91D8-8F41513971A8</string>
+		</dict>
+		<key>DA7912A6-5DC0-4BB8-A16E-B1DDB880CDEC</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>DA7912A6-5DC0-4BB8-A16E-B1DDB880CDEC.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592015241.60070598</real>
+			<key>timeStoppedRecording</key>
+			<real>592015243.36896801</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>DA7912A6-5DC0-4BB8-A16E-B1DDB880CDEC</string>
 		</dict>
 		<key>E08C7641-42BF-4EDF-B4F2-4D38942EC87C</key>
 		<dict>
