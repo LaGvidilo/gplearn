@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>ED17F174-5CFE-4FA9-AB50-2BC665449B4F</key>
+		<key>CBC98CA4-9EE6-4EA5-8077-00A1E01CA70A</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.tool</string>
 			<key>fileName</key>
-			<string>ED17F174-5CFE-4FA9-AB50-2BC665449B4F.xcactivitylog</string>
+			<string>CBC98CA4-9EE6-4EA5-8077-00A1E01CA70A.xcactivitylog</string>
 			<key>primaryObservable</key>
 			<dict>
 				<key>highLevelStatus</key>
@@ -24,13 +24,13 @@
 			<key>signature</key>
 			<string>gpltool-eqgtlxxbfuznbobxswxvbuassfpr</string>
 			<key>timeStartedRecording</key>
-			<real>592017869.71111906</real>
+			<real>592020367.80302405</real>
 			<key>timeStoppedRecording</key>
-			<real>592017872.24293005</real>
+			<real>592020371.39602995</real>
 			<key>title</key>
 			<string>Build target gpltool</string>
 			<key>uniqueIdentifier</key>
-			<string>ED17F174-5CFE-4FA9-AB50-2BC665449B4F</string>
+			<string>CBC98CA4-9EE6-4EA5-8077-00A1E01CA70A</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

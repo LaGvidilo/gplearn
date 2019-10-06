@@ -262,6 +262,38 @@
 			<key>uniqueIdentifier</key>
 			<string>484FBE07-C41C-47C7-98FD-F1CAB546B10E</string>
 		</dict>
+		<key>501CA2A2-D719-4FA2-ACAC-6DE18E48B4AE</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>501CA2A2-D719-4FA2-ACAC-6DE18E48B4AE.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592020360.03503203</real>
+			<key>timeStoppedRecording</key>
+			<real>592020360.105371</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>501CA2A2-D719-4FA2-ACAC-6DE18E48B4AE</string>
+		</dict>
 		<key>5E018345-A2F3-40C2-9423-4283F7897E5A</key>
 		<dict>
 			<key>className</key>
@@ -453,6 +485,38 @@
 			<string>Build gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>97CCF3F5-4D28-4AE1-A606-092214D0BE66</string>
+		</dict>
+		<key>B08F8CF2-FD16-4CFF-8BEF-3B72A008EB96</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>B08F8CF2-FD16-4CFF-8BEF-3B72A008EB96.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Archive gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592020367.676705</real>
+			<key>timeStoppedRecording</key>
+			<real>592020371.45669103</real>
+			<key>title</key>
+			<string>Archive gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>B08F8CF2-FD16-4CFF-8BEF-3B72A008EB96</string>
 		</dict>
 		<key>BB3DE362-E95D-4832-AD35-21E3A663D5F0</key>
 		<dict>

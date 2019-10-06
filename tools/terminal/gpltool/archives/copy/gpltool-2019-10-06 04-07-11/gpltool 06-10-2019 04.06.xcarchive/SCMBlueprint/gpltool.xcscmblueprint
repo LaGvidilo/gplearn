@@ -1,0 +1,26 @@
+{
+  "DVTSourceControlWorkspaceBlueprintLocationsKey" : {
+    "7F7E4C508A76FE3EE6F59AE3D7A8B2359CD8173A" : {
+      "DVTSourceControlBranchIdentifierKey" : "master",
+      "DVTSourceControlLocationRevisionKey" : "9776c3202a9a882df65dda558fc6c764d1974969",
+      "DVTSourceControlBranchOptionsKey" : 4,
+      "DVTSourceControlBranchRemoteNameKey" : "origin",
+      "DVTSourceControlWorkspaceBlueprintLocationTypeKey" : "DVTSourceControlBranch"
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "7F7E4C508A76FE3EE6F59AE3D7A8B2359CD8173A",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EF57C7A2-047A-44CD-A223-CEDEED7DA87A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "7F7E4C508A76FE3EE6F59AE3D7A8B2359CD8173A" : "gplearn\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "gpltool",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "tools\/terminal\/gpltool\/gpltool.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/LaGvidilo\/gplearn.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "7F7E4C508A76FE3EE6F59AE3D7A8B2359CD8173A"
+    }
+  ]
+}
