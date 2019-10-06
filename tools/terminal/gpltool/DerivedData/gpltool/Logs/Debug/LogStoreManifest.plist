@@ -6,6 +6,38 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>21B33FCE-DE54-439F-89F0-F2D34606952C</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>21B33FCE-DE54-439F-89F0-F2D34606952C.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592017449.02693498</real>
+			<key>timeStoppedRecording</key>
+			<real>592017451.45282102</real>
+			<key>title</key>
+			<string>Debug gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>21B33FCE-DE54-439F-89F0-F2D34606952C</string>
+		</dict>
 		<key>39DA6388-FE94-4F68-8DEB-7C88793F6116</key>
 		<dict>
 			<key>className</key>

@@ -34,6 +34,7 @@
 		1D45BDA42349462C008510A9 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
 		1D45BDA723494753008510A9 /* callscript.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = callscript.cpp; sourceTree = "<group>"; };
 		1D45BDA823494753008510A9 /* callscript.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = callscript.hpp; sourceTree = "<group>"; };
+		1D45BDAB234979A2008510A9 /* gplearn */ = {isa = PBXFileReference; lastKnownFileType = folder; name = gplearn; path = deps/gplearn; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +70,7 @@
 		1D45BD9823494581008510A9 /* gpltool */ = {
 			isa = PBXGroup;
 			children = (
+				1D45BDAB234979A2008510A9 /* gplearn */,
 				1D45BDA023494619008510A9 /* GPCTSCRM_Pred.py */,
 				1D45BDA123494619008510A9 /* GPCTSCRM.py */,
 				1D45BD9923494581008510A9 /* main.mm */,

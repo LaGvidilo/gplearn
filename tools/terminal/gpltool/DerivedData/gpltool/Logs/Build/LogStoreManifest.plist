@@ -6,6 +6,38 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
+		<key>04342A72-A40C-4D10-AAE6-E63BAC680F02</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>04342A72-A40C-4D10-AAE6-E63BAC680F02.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592017869.43103302</real>
+			<key>timeStoppedRecording</key>
+			<real>592017872.27944601</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>04342A72-A40C-4D10-AAE6-E63BAC680F02</string>
+		</dict>
 		<key>183C6FB7-0145-4D49-89CB-1DBB5B73DECD</key>
 		<dict>
 			<key>className</key>
@@ -101,6 +133,70 @@
 			<string>Build gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>25391649-6275-4816-B4A9-42F680D089F8</string>
+		</dict>
+		<key>2EB87798-B4F9-4C46-ACC9-2F2E2E1A9A29</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>2EB87798-B4F9-4C46-ACC9-2F2E2E1A9A29.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592017448.95497203</real>
+			<key>timeStoppedRecording</key>
+			<real>592017449.05896294</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>2EB87798-B4F9-4C46-ACC9-2F2E2E1A9A29</string>
+		</dict>
+		<key>31F2C4A8-033E-4E6C-91FB-FA03841B01F4</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>31F2C4A8-033E-4E6C-91FB-FA03841B01F4.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592018516.93166304</real>
+			<key>timeStoppedRecording</key>
+			<real>592018516.99392903</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>31F2C4A8-033E-4E6C-91FB-FA03841B01F4</string>
 		</dict>
 		<key>47D246D9-09CA-4F15-87A7-555206F1572F</key>
 		<dict>
@@ -357,6 +453,38 @@
 			<string>Build gpltool</string>
 			<key>uniqueIdentifier</key>
 			<string>97CCF3F5-4D28-4AE1-A606-092214D0BE66</string>
+		</dict>
+		<key>BB3DE362-E95D-4832-AD35-21E3A663D5F0</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>BB3DE362-E95D-4832-AD35-21E3A663D5F0.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592017848.15437102</real>
+			<key>timeStoppedRecording</key>
+			<real>592017848.31045699</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>BB3DE362-E95D-4832-AD35-21E3A663D5F0</string>
 		</dict>
 		<key>CB9225A7-2BBF-410F-91D8-8F41513971A8</key>
 		<dict>
