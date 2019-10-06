@@ -5,7 +5,7 @@ GPCTSCRM
 """
 __version__ = "1.1.parsed"
 
-import GP
+import gplearn.GP as GP
 
 print "Bienvenue dans GPCT-SRM Predict v"+ __version__ 
 
@@ -23,7 +23,7 @@ paramsecho = """
 			4 - Statistique
 			5 - Avance
 			"""
-
+import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('namemodel')
 parser.add_argument('datapredict')

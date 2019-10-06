@@ -5,7 +5,7 @@ GPCTSCRM
 """
 __version__ = "1.1.parsed"
 
-import GP
+import gplearn.GP as GP
 
 print "Bienvenue dans GPCT-SRM v"+ __version__ 
 
@@ -23,7 +23,7 @@ paramsecho = """
 			4 - Statistique
 			5 - Avance
 			"""
-
+import argparse
 parser = argparse.ArgumentParser()
 parser.add_argument('sizepop')
 parser.add_argument('numbergen')
@@ -37,26 +37,27 @@ parser.add_argument('maxsamples')
 parser.add_argument('parsimonycoefficient')
 parser.add_argument('csvfile')
 parser.add_argument('parammath')
+parser.add_argument('randomstate')
 args = parser.parse_args()
 
 def recherche():
-	sizepop = args.sizepop#input("Taille de la population?: ")
-	numbergen = args.numbergen#input("Nombre de generation?: ")
-	stpcrit = args.stpcrit#input("Critere d'arret de l'experience?: ")
-	njobs = args.njobs#input("Nombre de processus paralleles?: ")
+	sizepop = int(args.sizepop)#input("Taille de la population?: ")
+	numbergen = int(args.numbergen)#input("Nombre de generation?: ")
+	stpcrit = float(args.stpcrit)#input("Critere d'arret de l'experience?: ")
+	njobs = int(args.njobs)#input("Nombre de processus paralleles?: ")
 	if njobs>1:
 		verboz = 2
 	else:
 		verboz = 1
 
 	#Paramètres secondaires
-	crossover = args.crossover#input("p_crossover: ")
-	subtreemutation = args.subtreemutation#input("p_subtree_mutation: ")
-	hoistmutation = args.hoistmutation#input("p_hoist_mutation: ")
-	pointmutation = args.pointmutation#input("p_point_mutation: ")
-	maxsamples = args.maxsamples#input("max_samples: ")
-	parsimonycoefficient = args.parsimonycoefficient#input("parsimony_coefficient: ")
-	randomstate = args.randomstate#input("random_state: ")
+	crossover = float(args.crossover)#input("p_crossover: ")
+	subtreemutation = float(args.subtreemutation)#input("p_subtree_mutation: ")
+	hoistmutation = float(args.hoistmutation)#input("p_hoist_mutation: ")
+	pointmutation = float(args.pointmutation)#input("p_point_mutation: ")
+	maxsamples = float(args.maxsamples)#input("max_samples: ")
+	parsimonycoefficient = float(args.parsimonycoefficient)#input("parsimony_coefficient: ")
+	randomstate = int(args.randomstate)#input("random_state: ")
 
 	"""
 		warmstart=False
@@ -70,7 +71,7 @@ def recherche():
 		randomstate=0
 	"""
 
-	parammath = args.parammath#input("\n"+paramsecho+"\nParametre de calcul a utiliser?: ")
+	parammath = int(args.parammath)#input("\n"+paramsecho+"\nParametre de calcul a utiliser?: ")
 	#parammathdict[parammath]
 
 	gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], False, 
