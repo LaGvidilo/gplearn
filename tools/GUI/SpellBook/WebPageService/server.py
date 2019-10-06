@@ -5,7 +5,7 @@ import time
 import requests
 import json
 import sys
-import sqlite3
+#import sqlite3
 from flask import Flask ,session, redirect , request, make_response, jsonify
 from flask import render_template as template
 from threading import Thread, Lock
@@ -32,9 +32,6 @@ def locate():
 		pass
 		
 	return {'ip': "0.0.0.0"}
-
-
-SERVER_NAME = "eth.rigafterday.com:5000"
 
 DEBUG = True
 
@@ -142,7 +139,11 @@ def rulesconfidential():
 @app.route("/licence",methods=['GET'])
 def rulesconfidential():
 	return template("licence.html")
-	
+
+@app.route("/DLC",methods=['GET'])
+def rulesconfidential():
+	return template("licence.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
     # note that we set the 404 status explicitly
