@@ -13,6 +13,20 @@
 		1D45BDC2234992F5008510A9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D45BDC1234992F5008510A9 /* main.m */; };
 		1D45BDCC23499324008510A9 /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDCA23499324008510A9 /* libpython2.7.tbd */; };
 		1D45BDCD23499324008510A9 /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D45BDCB23499324008510A9 /* Python.framework */; };
+		1D45BDDB2349B2D4008510A9 /* filesanim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDD82349B2D4008510A9 /* filesanim.txt */; };
+		1D45BDDC2349B2D4008510A9 /* filesanim1inv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */; };
+		1D45BDDD2349B2D4008510A9 /* filesanim3f1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */; };
+		1D45BDE02349B2F7008510A9 /* Pentacle.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDE2349B2F7008510A9 /* Pentacle.png */; };
+		1D45BDE12349B2F7008510A9 /* spellbook_128.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDDF2349B2F7008510A9 /* spellbook_128.png */; };
+		1D45BDE32349B301008510A9 /* pentacle_animated_invpentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */; };
+		1D45BDE52349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */; };
+		1D45BDE72349B321008510A9 /* logo-pentaclepentacle_ in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */; };
+		1D45BDE92349B32C008510A9 /* spellbook_512.png in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDE82349B32C008510A9 /* spellbook_512.png */; };
+		1D45BDEF2349B336008510A9 /* evil_fifty_year_old.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */; };
+		1D45BDF02349B336008510A9 /* Ancient_Game_Magic_Revive.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */; };
+		1D45BDF12349B336008510A9 /* Magic_Game_Heal_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */; };
+		1D45BDF22349B336008510A9 /* Sword_Of_Light.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */; };
+		1D45BDF32349B336008510A9 /* Healing_Spell_Light_Buff.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +40,20 @@
 		1D45BDC3234992F5008510A9 /* SpellBook.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpellBook.entitlements; sourceTree = "<group>"; };
 		1D45BDCA23499324008510A9 /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
 		1D45BDCB23499324008510A9 /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
+		1D45BDD82349B2D4008510A9 /* filesanim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim.txt; path = images_res/filesanim.txt; sourceTree = "<group>"; };
+		1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim1inv.txt; path = images_res/filesanim1inv.txt; sourceTree = "<group>"; };
+		1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim3f1.txt; path = images_res/filesanim3f1.txt; sourceTree = "<group>"; };
+		1D45BDDE2349B2F7008510A9 /* Pentacle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pentacle.png; path = images_res/Pentacle.png; sourceTree = "<group>"; };
+		1D45BDDF2349B2F7008510A9 /* spellbook_128.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_128.png; path = images_res/spellbook_128.png; sourceTree = "<group>"; };
+		1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = pentacle_animated_invpentacle_; path = images_res/pentacle_animated_invpentacle_; sourceTree = "<group>"; };
+		1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "pentacle_-logo_animated_f1pentacle_"; path = "images_res/pentacle_-logo_animated_f1pentacle_"; sourceTree = "<group>"; };
+		1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "logo-pentaclepentacle_"; path = "images_res/logo-pentaclepentacle_"; sourceTree = "<group>"; };
+		1D45BDE82349B32C008510A9 /* spellbook_512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spellbook_512.png; path = images_res/spellbook_512.png; sourceTree = "<group>"; };
+		1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = evil_fifty_year_old.wav; path = sounds/evil_fifty_year_old.wav; sourceTree = "<group>"; };
+		1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Ancient_Game_Magic_Revive.wav; path = sounds/Ancient_Game_Magic_Revive.wav; sourceTree = "<group>"; };
+		1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Magic_Game_Heal_Buff.wav; path = sounds/Magic_Game_Heal_Buff.wav; sourceTree = "<group>"; };
+		1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Sword_Of_Light.wav; path = sounds/Sword_Of_Light.wav; sourceTree = "<group>"; };
+		1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Healing_Spell_Light_Buff.wav; path = sounds/Healing_Spell_Light_Buff.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +89,20 @@
 		1D45BDB7234992F2008510A9 /* SpellBook */ = {
 			isa = PBXGroup;
 			children = (
+				1D45BDEB2349B336008510A9 /* Ancient_Game_Magic_Revive.wav */,
+				1D45BDEA2349B336008510A9 /* evil_fifty_year_old.wav */,
+				1D45BDEE2349B336008510A9 /* Healing_Spell_Light_Buff.wav */,
+				1D45BDEC2349B336008510A9 /* Magic_Game_Heal_Buff.wav */,
+				1D45BDED2349B336008510A9 /* Sword_Of_Light.wav */,
+				1D45BDE82349B32C008510A9 /* spellbook_512.png */,
+				1D45BDE62349B321008510A9 /* logo-pentaclepentacle_ */,
+				1D45BDE42349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ */,
+				1D45BDE22349B301008510A9 /* pentacle_animated_invpentacle_ */,
+				1D45BDDE2349B2F7008510A9 /* Pentacle.png */,
+				1D45BDDF2349B2F7008510A9 /* spellbook_128.png */,
+				1D45BDD82349B2D4008510A9 /* filesanim.txt */,
+				1D45BDD92349B2D4008510A9 /* filesanim1inv.txt */,
+				1D45BDDA2349B2D4008510A9 /* filesanim3f1.txt */,
 				1D45BDB8234992F2008510A9 /* AppDelegate.h */,
 				1D45BDB9234992F2008510A9 /* AppDelegate.m */,
 				1D45BDBB234992F5008510A9 /* Assets.xcassets */,
@@ -144,7 +186,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D45BDBC234992F5008510A9 /* Assets.xcassets in Resources */,
+				1D45BDF12349B336008510A9 /* Magic_Game_Heal_Buff.wav in Resources */,
+				1D45BDDC2349B2D4008510A9 /* filesanim1inv.txt in Resources */,
+				1D45BDDB2349B2D4008510A9 /* filesanim.txt in Resources */,
+				1D45BDE72349B321008510A9 /* logo-pentaclepentacle_ in Resources */,
+				1D45BDF02349B336008510A9 /* Ancient_Game_Magic_Revive.wav in Resources */,
+				1D45BDE92349B32C008510A9 /* spellbook_512.png in Resources */,
+				1D45BDE32349B301008510A9 /* pentacle_animated_invpentacle_ in Resources */,
+				1D45BDF32349B336008510A9 /* Healing_Spell_Light_Buff.wav in Resources */,
+				1D45BDE12349B2F7008510A9 /* spellbook_128.png in Resources */,
+				1D45BDE02349B2F7008510A9 /* Pentacle.png in Resources */,
+				1D45BDE52349B30D008510A9 /* pentacle_-logo_animated_f1pentacle_ in Resources */,
 				1D45BDBF234992F5008510A9 /* MainMenu.xib in Resources */,
+				1D45BDEF2349B336008510A9 /* evil_fifty_year_old.wav in Resources */,
+				1D45BDDD2349B2D4008510A9 /* filesanim3f1.txt in Resources */,
+				1D45BDF22349B336008510A9 /* Sword_Of_Light.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
