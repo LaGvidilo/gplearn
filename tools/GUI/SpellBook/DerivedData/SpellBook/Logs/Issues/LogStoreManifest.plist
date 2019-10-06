@@ -5,7 +5,34 @@
 	<key>logFormatVersion</key>
 	<integer>10</integer>
 	<key>logs</key>
-	<dict/>
+	<dict>
+		<key>2CA33C92-9B64-4EB2-871C-ACC1B928996B</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
+			<key>fileName</key>
+			<string>2CA33C92-9B64-4EB2-871C-ACC1B928996B.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>signature</key>
+			<string>SpellBook-eamscvvyebeugxgctozycogifxkl</string>
+			<key>timeStartedRecording</key>
+			<real>592027250.86178398</real>
+			<key>timeStoppedRecording</key>
+			<real>592027277.18490195</real>
+			<key>title</key>
+			<string>Build target SpellBook</string>
+			<key>uniqueIdentifier</key>
+			<string>2CA33C92-9B64-4EB2-871C-ACC1B928996B</string>
+		</dict>
+	</dict>
 	<key>preserveOldLogs</key>
 	<true/>
 </dict>
