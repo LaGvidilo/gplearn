@@ -18,15 +18,15 @@ img=Image.open(infile).convert('RGBA')
 (l, h) = img.size
 
 try:
-	os.mkdir("logo-pentacle"+infile.split(".")[0])
+	os.mkdir("logo-pentacle")
 except:
 	pass
 
 f=open("filesanim.txt","w")
 for c1 in range(0,360):
 	newimg = img.rotate(c1)
-	newimg.save("logo-pentacle"+infile.split(".")[0]+"/img"+str(c1)+".png" , "PNG")
-	f.write("logo-pentacle"+infile.split(".")[0]+"/img"+str(c1)+".png\n")
+	newimg.save("logo-pentacle/"+"A1-"+str(c1)+".png" , "PNG")
+	f.write("A1-"+str(c1)+".png\n")
 	print(str(c1)+" ;")
 
 f.close()

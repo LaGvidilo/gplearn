@@ -18,7 +18,7 @@ img=Image.open(infile).convert('RGBA')
 (l, h) = img.size
 
 try:
-	os.mkdir("pentacle_-logo_animated_f1"+infile.split(".")[0])
+	os.mkdir("logo-pentacle3/")
 except:
 	pass
 
@@ -30,8 +30,8 @@ for c1 in map(int,np.arange(255,0,-1)):
 			r,g,b,a = img.getpixel((x, y))
 			r,g,b = r%c1,g%c1,b%c1
 			imageA.putpixel((x, y), (r,g,b,a))
-	imageA.save("pentacle_-logo_animated_f1"+infile.split(".")[0]+"/img"+str(c1)+".png" , "PNG")
-	f.write("pentacle_-logo_animated_f1"+infile.split(".")[0]+"/img"+str(c1)+".png\n")
+	imageA.save("logo-pentacle3/"+"A3-"+str(c1)+".png" , "PNG")
+	f.write("A3-"+str(c1)+".png\n")
 	print(str(c1)+" ;")
 
 f.close()

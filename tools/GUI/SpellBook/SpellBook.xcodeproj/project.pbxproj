@@ -21,6 +21,14 @@
 		1DE6D0242349B8BF00A0356D /* gplearn in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6D0232349B8BF00A0356D /* gplearn */; };
 		1DE6D0282349B93A00A0356D /* Python.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE6D0262349B93A00A0356D /* Python.framework */; };
 		1DE6D0292349B93A00A0356D /* libpython2.7.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DE6D0272349B93A00A0356D /* libpython2.7.tbd */; };
+		1DEFB5B72349C57F00ADB324 /* filesanim3f1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5B42349C57F00ADB324 /* filesanim3f1.txt */; };
+		1DEFB5B82349C57F00ADB324 /* filesanim.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5B52349C57F00ADB324 /* filesanim.txt */; };
+		1DEFB5B92349C57F00ADB324 /* filesanim1inv.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5B62349C57F00ADB324 /* filesanim1inv.txt */; };
+		1DEFB5BF2349E9F600ADB324 /* hermeticspellbook3d.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BA2349E9F600ADB324 /* hermeticspellbook3d.ttf */; };
+		1DEFB5C02349E9F600ADB324 /* hermeticspellbookital.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BB2349E9F600ADB324 /* hermeticspellbookital.ttf */; };
+		1DEFB5C12349E9F600ADB324 /* Season of the Witch Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BC2349E9F600ADB324 /* Season of the Witch Black.ttf */; };
+		1DEFB5C22349E9F600ADB324 /* hermeticspellbook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */; };
+		1DEFB5C32349E9F600ADB324 /* Font Alien.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +50,14 @@
 		1DE6D0232349B8BF00A0356D /* gplearn */ = {isa = PBXFileReference; lastKnownFileType = folder; path = gplearn; sourceTree = "<group>"; };
 		1DE6D0262349B93A00A0356D /* Python.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Python.framework; path = System/Library/Frameworks/Python.framework; sourceTree = SDKROOT; };
 		1DE6D0272349B93A00A0356D /* libpython2.7.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libpython2.7.tbd; path = usr/lib/libpython2.7.tbd; sourceTree = SDKROOT; };
+		1DEFB5B42349C57F00ADB324 /* filesanim3f1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim3f1.txt; path = images_res/filesanim3f1.txt; sourceTree = "<group>"; };
+		1DEFB5B52349C57F00ADB324 /* filesanim.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim.txt; path = images_res/filesanim.txt; sourceTree = "<group>"; };
+		1DEFB5B62349C57F00ADB324 /* filesanim1inv.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = filesanim1inv.txt; path = images_res/filesanim1inv.txt; sourceTree = "<group>"; };
+		1DEFB5BA2349E9F600ADB324 /* hermeticspellbook3d.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hermeticspellbook3d.ttf; path = fonts/hermetic_spellbook/hermeticspellbook3d.ttf; sourceTree = "<group>"; };
+		1DEFB5BB2349E9F600ADB324 /* hermeticspellbookital.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hermeticspellbookital.ttf; path = fonts/hermetic_spellbook/hermeticspellbookital.ttf; sourceTree = "<group>"; };
+		1DEFB5BC2349E9F600ADB324 /* Season of the Witch Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Season of the Witch Black.ttf"; path = "fonts/Season of the Witch Black.ttf"; sourceTree = "<group>"; };
+		1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = hermeticspellbook.ttf; path = fonts/hermetic_spellbook/hermeticspellbook.ttf; sourceTree = "<group>"; };
+		1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Font Alien.ttf"; path = "fonts/alien_gantz/Font Alien.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +93,14 @@
 		1DE6CFE92349B73E00A0356D /* SpellBook */ = {
 			isa = PBXGroup;
 			children = (
+				1DEFB5BE2349E9F600ADB324 /* Font Alien.ttf */,
+				1DEFB5BD2349E9F600ADB324 /* hermeticspellbook.ttf */,
+				1DEFB5BA2349E9F600ADB324 /* hermeticspellbook3d.ttf */,
+				1DEFB5BB2349E9F600ADB324 /* hermeticspellbookital.ttf */,
+				1DEFB5BC2349E9F600ADB324 /* Season of the Witch Black.ttf */,
+				1DEFB5B52349C57F00ADB324 /* filesanim.txt */,
+				1DEFB5B62349C57F00ADB324 /* filesanim1inv.txt */,
+				1DEFB5B42349C57F00ADB324 /* filesanim3f1.txt */,
 				1DE6D0232349B8BF00A0356D /* gplearn */,
 				1DE6D0062349B7E300A0356D /* GPCTSCRM_Pred.py */,
 				1DE6D0052349B7E300A0356D /* GPCTSCRM.py */,
@@ -162,12 +186,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DEFB5C32349E9F600ADB324 /* Font Alien.ttf in Resources */,
 				1DE6D0042349B7D900A0356D /* Sword_Of_Light.wav in Resources */,
 				1DE6D0002349B7D900A0356D /* Magic_Game_Heal_Buff.wav in Resources */,
+				1DEFB5BF2349E9F600ADB324 /* hermeticspellbook3d.ttf in Resources */,
 				1DE6CFEE2349B74000A0356D /* Assets.xcassets in Resources */,
+				1DEFB5C12349E9F600ADB324 /* Season of the Witch Black.ttf in Resources */,
+				1DEFB5B92349C57F00ADB324 /* filesanim1inv.txt in Resources */,
 				1DE6D0012349B7D900A0356D /* evil_fifty_year_old.wav in Resources */,
 				1DE6D0022349B7D900A0356D /* Ancient_Game_Magic_Revive.wav in Resources */,
+				1DEFB5C22349E9F600ADB324 /* hermeticspellbook.ttf in Resources */,
 				1DE6D0072349B7E300A0356D /* GPCTSCRM.py in Resources */,
+				1DEFB5B72349C57F00ADB324 /* filesanim3f1.txt in Resources */,
+				1DEFB5B82349C57F00ADB324 /* filesanim.txt in Resources */,
+				1DEFB5C02349E9F600ADB324 /* hermeticspellbookital.ttf in Resources */,
 				1DE6D0032349B7D900A0356D /* Healing_Spell_Light_Buff.wav in Resources */,
 				1DE6D0082349B7E300A0356D /* GPCTSCRM_Pred.py in Resources */,
 				1DE6D0242349B8BF00A0356D /* gplearn in Resources */,
