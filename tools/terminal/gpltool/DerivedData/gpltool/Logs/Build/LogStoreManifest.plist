@@ -38,6 +38,38 @@
 			<key>uniqueIdentifier</key>
 			<string>183C6FB7-0145-4D49-89CB-1DBB5B73DECD</string>
 		</dict>
+		<key>1B3D4380-AE7D-47E2-88DE-F9D47D66752F</key>
+		<dict>
+			<key>className</key>
+			<string>IDEActivityLogSection</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.BuildLog</string>
+			<key>fileName</key>
+			<string>1B3D4380-AE7D-47E2-88DE-F9D47D66752F.xcactivitylog</string>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>gpltool project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>gpltool</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Build gpltool</string>
+			<key>timeStartedRecording</key>
+			<real>592017186.33197498</real>
+			<key>timeStoppedRecording</key>
+			<real>592017188.53373206</real>
+			<key>title</key>
+			<string>Build gpltool</string>
+			<key>uniqueIdentifier</key>
+			<string>1B3D4380-AE7D-47E2-88DE-F9D47D66752F</string>
+		</dict>
 		<key>25391649-6275-4816-B4A9-42F680D089F8</key>
 		<dict>
 			<key>className</key>

@@ -70,41 +70,15 @@ int main(int argc, const char * argv[]) {
          string gommand = "python "+putin+"/vocal.py "+projectpath+"/"+it->second.name+".mp3 "+projectpath;
          std::system(gommand.c_str());
          */
-        /*
-        NSBundle *bundle = [NSBundle mainBundle];
-        //NSString *appPath = [bundle bundlePath];
-        NSString *resourceFolderPath = [bundle resourcePath];
-        string putin =[resourceFolderPath UTF8String];
-        cout << putin << endl;
-         */
-        
-        
-        //args recognize here
-        /*
-        0 = mode (Experience / Prediction)
-         PREDICT:
-            -namemodel
-            -datapredict
-         
-         EXPERIMENT:
-            -sizepop
-            -numbergen
-            -stpcrit
-            -njobs
-            -crossover
-            -subtreemutation
-            -hoistmutation
-            -pointmutation
-            -maxsamples
-            -parsimonycoefficient
-            -csvfile
-            -parammath
-            -randomstate
-        */
         if ( argc < 2 ){
             usage();
         }
         else{
+            NSBundle *bundle = [NSBundle mainBundle];
+            //NSString *appPath = [bundle bundlePath];
+            NSString *resourceFolderPath = [bundle resourcePath];
+            string pupupath =[resourceFolderPath UTF8String];
+            
             string mode = argv[1];
             string argument;
             if (mode == "PREDICT"){
@@ -126,7 +100,8 @@ int main(int argc, const char * argv[]) {
                 if ( (namemodel!="NONE") && (datapredict!="NONE") ){
                     cout << "Nom du model: " << namemodel << endl;
                     cout << "Sequence: \"" << datapredict << "\"" << endl;
-                    
+                    string gommand = "python "+pupupath+"/GPCTSCRM_Pred.py "+namemodel+" "+datapredict;
+                    std::system(gommand.c_str());
                 }
                 else {
                     cout << "ERREUR: parametres manquants!" << endl;
@@ -219,7 +194,8 @@ int main(int argc, const char * argv[]) {
                 }
                 if ( csvfile != "NONE" ){
                     //call script
-                    
+                    string gommand = "python "+pupupath+"/GPCTSCRM.py "+sizepop+" "+numbergen+" "+stpcrit+" "+njobs+" "+crossover+" "+subtreemutation+" "+hoistmutation+" "+pointmutation+" "+maxsamples+" "+parsimonycoefficient+" "+csvfile+" "+parammath+" "+randomstate;
+                    std::system(gommand.c_str());
                 }
             }
             else{

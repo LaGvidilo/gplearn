@@ -37,6 +37,7 @@ parser.add_argument('maxsamples')
 parser.add_argument('parsimonycoefficient')
 parser.add_argument('csvfile')
 parser.add_argument('parammath')
+parser.add_argument('randomstate')
 args = parser.parse_args()
 
 def recherche():
