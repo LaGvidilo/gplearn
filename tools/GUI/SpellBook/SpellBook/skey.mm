@@ -13,7 +13,7 @@
 }
 - (IBAction)validationkey:(id)sender{
 	string serialkey = [ [cle stringValue] UTF8String];
-	string data = "informaboxtechricksanchezgamests1";
+	string data = "informaboxtechricksanchezgamests1";//a changer
 	string decodedkey = base64_decode(serialkey);
 	//cout << decodedkey << endl;
 	string delim="-";
