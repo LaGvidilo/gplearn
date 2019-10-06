@@ -22,6 +22,7 @@ MODE <EXPERIMENT> :
    -randomstate <val> (random_state)
    -csvfile <pathfile> (CSV file path)
    -parammath <val> (parammath)
+   -randomstate <val> (random_state)
 
 ```
 
