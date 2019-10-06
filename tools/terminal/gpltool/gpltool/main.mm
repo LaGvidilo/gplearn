@@ -35,7 +35,7 @@ void usage(){
     cout << "   -parsimonycoefficient <val>" << endl;
     cout << "   -csvfile <pathfile>" << endl;
     cout << "   -parammath <val>" << endl << endl;
-    //cout << "   " << endl;
+    cout << "   -randomstate <val> (random_state)" << endl;
 }
 
 
@@ -82,6 +82,7 @@ int main(int argc, const char * argv[]) {
             -parsimonycoefficient
             -csvfile
             -parammath
+            -randomstate
         */
         if ( argc < 2 ){
             usage();
