@@ -45,7 +45,7 @@
             [alert2 runModal];
             ofstream fout("serial");
             string g = [ [cle stringValue] UTF8String];
-            fout << base64_encode(reinterpret_cast <const unsigned char *>( g.c_str() ), g.size() ) << endl;
+            fout << base64_encode(reinterpret_cast <const unsigned char *>( g.c_str() ), (int)g.size() ) << endl;
             fout.close();
             NSWindowController *nw = [[NSWindowController alloc] initWithWindow: window];
             [nw close];
@@ -67,24 +67,5 @@
 
 
 
-
-- (IBAction)newincantation:(id)sender{
-    
-}
-- (IBAction)closeincantation:(id)sender{
-    
-}
-- (IBAction)runincantation:(id)sender{
-    
-}
-- (IBAction)stopincantation:(id)sender{
-    
-}
-- (IBAction)exportformula:(id)sender{
-    
-}
-- (IBAction)invocation:(id)sender{
-    
-}
 
 @end

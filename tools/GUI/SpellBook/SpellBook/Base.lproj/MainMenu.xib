@@ -27,8 +27,20 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <customObject id="rCP-Fw-TJe" userLabel="MainController" customClass="MainController">
             <connections>
+                <outlet property="crossover" destination="YG6-9w-sUd" id="lMw-5O-grX"/>
                 <outlet property="filepathtext" destination="pY8-52-kJF" id="KD2-7a-2a2"/>
+                <outlet property="hoistmutation" destination="79u-RO-hso" id="7sD-wN-JNH"/>
+                <outlet property="maxsamples" destination="OQD-E2-5k9" id="f8K-98-RCG"/>
+                <outlet property="njobs" destination="TxV-ci-jOa" id="A4H-00-kyN"/>
+                <outlet property="numbergen" destination="4P8-o2-ozP" id="wlg-rn-nbg"/>
+                <outlet property="paramath" destination="hrH-Rg-Sjg" id="6yF-pj-rze"/>
+                <outlet property="parsimonucoef" destination="77A-v5-pWU" id="e3B-s6-5j6"/>
                 <outlet property="pentaview" destination="P5z-Rc-7Vw" id="KSc-Ee-O9s"/>
+                <outlet property="pointmutation" destination="7qo-Yl-PsN" id="Dwb-Tm-0sL"/>
+                <outlet property="randomstate" destination="WJ5-kg-bsY" id="ZCw-Ba-dEH"/>
+                <outlet property="sizepop" destination="uO2-dI-LGH" id="nsl-VM-ww5"/>
+                <outlet property="stpcrit" destination="saY-kE-j9W" id="1pe-PT-SfI"/>
+                <outlet property="subtreemutation" destination="n2Y-IR-Pmj" id="Kfq-Tn-iRg"/>
             </connections>
         </customObject>
         <menu title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
@@ -84,39 +96,39 @@
                             <menuItem title="Nouvelle incantation" id="V2H-CO-ICq">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="newincantation:" target="UYE-Cz-01p" id="25d-oK-PYT"/>
+                                    <action selector="newincantation:" target="rCP-Fw-TJe" id="Jxg-vK-dTN"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Fermer l'incantation" id="FyS-wI-fAs">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="closeincantation:" target="UYE-Cz-01p" id="4PN-cT-43o"/>
+                                    <action selector="closeincantation:" target="rCP-Fw-TJe" id="p4v-wZ-JfW"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="l0K-WI-dc9"/>
                             <menuItem title="Arrêter l'incantation" id="bUa-Sg-Pi8">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="stopincantation:" target="UYE-Cz-01p" id="AMc-QC-lL2"/>
+                                    <action selector="stopincantation:" target="rCP-Fw-TJe" id="WFV-OK-3xR"/>
                                 </connections>
                             </menuItem>
                             <menuItem title="Lancer l'incantation" id="q9C-WQ-ihl">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="runincantation:" target="UYE-Cz-01p" id="3aN-rf-IuW"/>
+                                    <action selector="runincantation:" target="rCP-Fw-TJe" id="gNZ-Y9-kcU"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="WMA-Kx-Xlu"/>
                             <menuItem title="Exporter la formule..." id="ECc-WC-yta">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="exportformula:" target="UYE-Cz-01p" id="OQF-oL-KfI"/>
+                                    <action selector="exportformula:" target="rCP-Fw-TJe" id="3Rk-M1-6Ns"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Invocation..." enabled="NO" id="ja1-tK-D6c">
+                            <menuItem title="Invocation..." hidden="YES" enabled="NO" id="ja1-tK-D6c">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
-                                    <action selector="invocation:" target="UYE-Cz-01p" id="kPf-L5-tFP"/>
+                                    <action selector="invocation:" target="rCP-Fw-TJe" id="btx-dQ-3AF"/>
                                 </connections>
                             </menuItem>
                         </items>

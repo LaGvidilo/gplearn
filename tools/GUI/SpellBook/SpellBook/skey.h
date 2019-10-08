@@ -13,10 +13,5 @@ using namespace std;
 - (IBAction)validationkey:(id)sender;
 
 
-- (IBAction)newincantation:(id)sender;
-- (IBAction)closeincantation:(id)sender;
-- (IBAction)runincantation:(id)sender;
-- (IBAction)stopincantation:(id)sender;
-- (IBAction)exportformula:(id)sender;
-- (IBAction)invocation:(id)sender;
+
 @end
