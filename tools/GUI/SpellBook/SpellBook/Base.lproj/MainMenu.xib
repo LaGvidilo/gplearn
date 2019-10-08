@@ -134,6 +134,31 @@
                         </items>
                     </menu>
                 </menuItem>
+                <menuItem title="Sort" id="rST-JQ-1li">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <menu key="submenu" title="Sort" id="DT5-cK-xsw">
+                        <items>
+                            <menuItem title="Sauvegarder" id="Lg9-DZ-lq5">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Selection d'un sort..." keyEquivalent="S" id="YXk-r6-fn8">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="gtl-pp-Z3M"/>
+                            <menuItem title="Ouvrir les données CSV du sort..." id="g0Z-At-ukA">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem title="Prediction..." id="KFO-Bi-4ju">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="L0t-v1-CAc"/>
+                            <menuItem title="Exporter le sort..." id="hf5-DV-Aw6">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem isSeparatorItem="YES" id="DMd-TX-Gwk"/>
                 <menuItem title="Licence" id="2Jt-hs-QX2">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Licence" id="BRi-uL-H3W">
@@ -624,7 +649,7 @@
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="201" y="77" width="1090" height="755"/>
             <rect key="screenRect" x="0.0" y="0.0" width="1440" height="877"/>
-            <view key="contentView" id="Dcj-ay-OCW">
+            <view key="contentView" wantsLayer="YES" id="Dcj-ay-OCW">
                 <rect key="frame" x="0.0" y="0.0" width="1090" height="755"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
@@ -633,9 +658,100 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="spellbookback" id="Ga6-uU-saV"/>
                     </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pPA-Is-qFz">
+                        <rect key="frame" x="357" y="583" width="134" height="136"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <contentFilters>
+                            <ciFilter name="CIDiscBlur">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputRadius" value="2"/>
+                                </configuration>
+                            </ciFilter>
+                            <ciFilter name="CIColorPosterize">
+                                <configuration>
+                                    <null key="inputImage"/>
+                                    <real key="inputLevels" value="1"/>
+                                </configuration>
+                            </ciFilter>
+                        </contentFilters>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="A1-0" id="0SN-08-8Ew"/>
+                    </imageView>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-DZ-OW7">
+                        <rect key="frame" x="619" y="583" width="419" height="136"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IUg-xp-wVg"/>
+                    </imageView>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5C-Br-b6N">
+                        <rect key="frame" x="617" y="359" width="423" height="216"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" alignment="center" title="Formule program/latex" id="Ihk-di-7nX">
+                            <font key="font" size="20" name="Luminari-Regular"/>
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-Tb-0Va">
+                        <rect key="frame" x="969" y="332" width="66" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="recessed" title="program" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5jQ-W0-H63">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="12"/>
+                        </buttonCell>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-Sg-ScQ">
+                        <rect key="frame" x="895" y="332" width="66" height="19"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="recessed" title="LaTeX" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="57y-Ko-h4M">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="12"/>
+                        </buttonCell>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-d2-9pE">
+                        <rect key="frame" x="619" y="335" width="161" height="16"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Score: --" id="w8Y-Oa-07h">
+                            <font key="font" metaFont="system"/>
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="de4-O7-JLh">
+                        <rect key="frame" x="114" y="695" width="238" height="25"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="j0x-Yd-gvv" id="5Ig-Ue-nF7">
+                            <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <menu key="menu" id="kO6-nw-KNR">
+                                <items>
+                                    <menuItem title="Item 1" state="on" id="j0x-Yd-gvv"/>
+                                    <menuItem title="Item 2" id="WH6-WX-b3o"/>
+                                    <menuItem title="Item 3" id="3Eh-D9-o9t"/>
+                                </items>
+                            </menu>
+                        </popUpButtonCell>
+                    </popUpButton>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kLM-qq-ifM">
+                        <rect key="frame" x="75" y="583" width="276" height="107"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textFieldCell key="cell" alignment="right" title="Nom du Sort" id="rTD-62-vf8">
+                            <font key="font" size="33" name="Herculanum"/>
+                            <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1l4-R3-HiZ">
+                        <rect key="frame" x="77" y="44" width="414" height="531"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="Description" drawsBackground="YES" allowsEditingTextAttributes="YES" id="y6b-eR-laI">
+                            <font key="font" size="16" name="Herculanum"/>
+                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
                 </subviews>
             </view>
-            <point key="canvasLocation" x="524" y="1202.5"/>
+            <point key="canvasLocation" x="487" y="1493.5"/>
         </window>
         <window title="SERIAL KEY" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="c7q-8Z-e7F" userLabel="activation">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" texturedBackground="YES"/>
@@ -722,8 +838,12 @@
             </view>
             <point key="canvasLocation" x="197" y="939.5"/>
         </window>
+        <menuItem title="Item" id="nn3-o1-5qd">
+            <modifierMask key="keyEquivalentModifierMask"/>
+        </menuItem>
     </objects>
     <resources>
+        <image name="A1-0" width="400" height="400"/>
         <image name="Pentacle" width="400" height="400"/>
         <image name="background" width="450" height="291"/>
         <image name="spellbookback" width="1600" height="1116"/>
