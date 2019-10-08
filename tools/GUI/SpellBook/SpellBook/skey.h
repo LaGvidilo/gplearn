@@ -1,7 +1,7 @@
 #import <Cocoa/Cocoa.h>
 #include "base64.h"
 #include "cadimpl.h"
-
+#include <string>
 
 @interface skey : NSResponder {
     IBOutlet NSWindow *window;

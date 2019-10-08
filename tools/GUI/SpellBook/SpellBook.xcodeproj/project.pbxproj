@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D890452234C364F000B2CC2 /* Tadada.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D890450234C364F000B2CC2 /* Tadada.wav */; };
+		1D890453234C364F000B2CC2 /* Computer-Error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 1D890451234C364F000B2CC2 /* Computer-Error.wav */; };
 		1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DE6CFEB2349B73E00A0356D /* AppDelegate.m */; };
 		1DE6CFEE2349B74000A0356D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFED2349B74000A0356D /* Assets.xcassets */; };
 		1DE6CFF12349B74000A0356D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DE6CFEF2349B74000A0356D /* MainMenu.xib */; };
@@ -40,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D890450234C364F000B2CC2 /* Tadada.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = Tadada.wav; path = sounds/Tadada.wav; sourceTree = "<group>"; };
+		1D890451234C364F000B2CC2 /* Computer-Error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = "Computer-Error.wav"; path = "sounds/Computer-Error.wav"; sourceTree = "<group>"; };
 		1DE6CFE72349B73E00A0356D /* SpellBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpellBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DE6CFEA2349B73E00A0356D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1DE6CFEB2349B73E00A0356D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		1DE6CFE92349B73E00A0356D /* SpellBook */ = {
 			isa = PBXGroup;
 			children = (
+				1D890451234C364F000B2CC2 /* Computer-Error.wav */,
+				1D890450234C364F000B2CC2 /* Tadada.wav */,
 				1DEFB5CF234A321600ADB324 /* base64.cpp */,
 				1DEFB5D1234A321600ADB324 /* base64.h */,
 				1DEFB5D3234A321700ADB324 /* cadimpl.cpp */,
@@ -241,6 +247,8 @@
 				1DE6CFEE2349B74000A0356D /* Assets.xcassets in Resources */,
 				1DEFB5C12349E9F600ADB324 /* Season of the Witch Black.ttf in Resources */,
 				1DEFB5B92349C57F00ADB324 /* filesanim1inv.txt in Resources */,
+				1D890452234C364F000B2CC2 /* Tadada.wav in Resources */,
+				1D890453234C364F000B2CC2 /* Computer-Error.wav in Resources */,
 				1DE6D0012349B7D900A0356D /* evil_fifty_year_old.wav in Resources */,
 				1DE6D0022349B7D900A0356D /* Ancient_Game_Magic_Revive.wav in Resources */,
 				1DEFB5C22349E9F600ADB324 /* hermeticspellbook.ttf in Resources */,

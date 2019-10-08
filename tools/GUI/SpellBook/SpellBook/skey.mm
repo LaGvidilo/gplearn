@@ -36,14 +36,25 @@
 		if (bloc.isValid()){
 			NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Tadada" ofType:@"wav"];
 			NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
-			[soundtmp play];	
+			[soundtmp play];
+            NSAlert *alert2 = [[NSAlert alloc] init];
+            [alert2 setMessageText:@"Votre logiciel est maintenant débloquer."];
+            [alert2 setInformativeText:@"Avertissement de succes."];
+            [alert2 addButtonWithTitle:@"OK"];
+            [alert2 setAlertStyle:NSWarningAlertStyle];
+            [alert2 runModal];
 		}	
 		else{
 			NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Computer-Error" ofType:@"wav"];
 			NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
-			[soundtmp play];	
+            [soundtmp play];
+            NSAlert *alert2 = [[NSAlert alloc] init];
+            [alert2 setMessageText:@"La clé n'est pas valide."];
+            [alert2 setInformativeText:@"Avertissement."];
+            [alert2 addButtonWithTitle:@"OK"];
+            [alert2 setAlertStyle:NSWarningAlertStyle];
+            [alert2 runModal];
 		}
 	}
-	
 }
 @end
