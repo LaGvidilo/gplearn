@@ -12,14 +12,14 @@
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://www.informaboxtech.fr/buy/sts1"]];
 }
 - (IBAction)validationkey:(id)sender{
-	string serialkey = [ [cle stringValue] UTF8String];
-	string data = "informaboxtechricksanchezgamests1";//a changer
-	string decodedkey = base64_decode(serialkey);
+    string serialkey = [ [cle stringValue] UTF8String];
+    string data = "informaboxtechricksanchezgamests1";//a changer
+    string decodedkey = base64_decode(serialkey);
 	//cout << decodedkey << endl;
-	string delim="-";
-	std::size_t found = decodedkey.find(delim);
-	string numstr = decodedkey.substr(0,found);
-	string nonstr = decodedkey.substr(found+1,decodedkey.size()-1);
+    string delim="-";
+    std::size_t found = decodedkey.find(delim);
+    string numstr = decodedkey.substr(0,found);
+    string nonstr = decodedkey.substr(found+1,decodedkey.size()-1);
 	int number;
 	int nonce;
 	stringstream SS;
@@ -43,6 +43,12 @@
             [alert2 addButtonWithTitle:@"OK"];
             [alert2 setAlertStyle:NSWarningAlertStyle];
             [alert2 runModal];
+            ofstream fout("serial");
+            string g = [ [cle stringValue] UTF8String];
+            fout << base64_encode(reinterpret_cast <const unsigned char *>( g.c_str() ), g.size() ) << endl;
+            fout.close();
+            NSWindowController *nw = [[NSWindowController alloc] initWithWindow: window];
+            [nw close];
 		}	
 		else{
 			NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Computer-Error" ofType:@"wav"];
@@ -57,4 +63,28 @@
 		}
 	}
 }
+
+
+
+
+
+- (IBAction)newincantation:(id)sender{
+    
+}
+- (IBAction)closeincantation:(id)sender{
+    
+}
+- (IBAction)runincantation:(id)sender{
+    
+}
+- (IBAction)stopincantation:(id)sender{
+    
+}
+- (IBAction)exportformula:(id)sender{
+    
+}
+- (IBAction)invocation:(id)sender{
+    
+}
+
 @end
