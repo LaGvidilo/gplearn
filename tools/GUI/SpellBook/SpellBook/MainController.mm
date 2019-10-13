@@ -84,36 +84,47 @@
  */
 
 - (IBAction)newincantation:(id)sender{
-    
-
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
+    [timerAnim invalidate];
+    
+    //init all in GUI
+    
+    
 }
 - (IBAction)closeincantation:(id)sender{
-
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
+    [timerAnim invalidate];
+    
+    //close incantation
+    
 }
 - (IBAction)runincantation:(id)sender{
-    
-    
+    //sound
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Ancient_Game_Magic_Revive" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
+    
+    //animation
     //A1
     numanim = 1;
     countFrame = 0;
     maxFrame = 359;
-
     [timerAnim invalidate];
-
     timerAnim = [NSTimer scheduledTimerWithTimeInterval:0.033
                                                  target:self
                                                selector:@selector(animated)
                                                userInfo:nil
                                                 repeats:YES];
+    
+    //traitement
+    
+    //lancement du processus
+    
+    
     
 }
 - (IBAction)stopincantation:(id)sender{
@@ -122,28 +133,55 @@
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
     [timerAnim invalidate];
+    
+    //stop incantation
+    
+    
 }
 - (IBAction)exportformula:(id)sender{
-    
+    //sound
     NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
-
+    //animation
     //A2
     numanim = 2;
     countFrame = 0;
     maxFrame = 359;
-
     [timerAnim invalidate];
-    
     timerAnim = [NSTimer scheduledTimerWithTimeInterval:0.033
                                                  target:self
                                                selector:@selector(animated)
                                                userInfo:nil
                                                 repeats:YES];
+    //NSOpen puis export formula
 }
 - (IBAction)invocation:(id)sender{
     
 }
 
+
+
+//sorts
+- (IBAction)savespell:(id)sender{
+
+}
+- (IBAction)opencsv:(id)sender{
+
+}
+- (IBAction)exportspell:(id)sender{
+
+}
+- (IBAction)selectspell:(id)sender{
+
+}
+- (IBAction)predictionspell:(id)sender{
+
+}
+
+
+
+- (IBAction)closespell:(id)sender{
+
+}
 @end

@@ -49,6 +49,12 @@ string filepath;
 - (IBAction)stopincantation:(id)sender;
 - (IBAction)exportformula:(id)sender;
 - (IBAction)invocation:(id)sender;
+- (IBAction)savespell:(id)sender;
+- (IBAction)opencsv:(id)sender;
+- (IBAction)exportspell:(id)sender;
+- (IBAction)selectspell:(id)sender;
+- (IBAction)predictionspell:(id)sender;
+- (IBAction)closespell:(id)sender;
 @end
 
 #endif /* MainController_h */

@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>6E833123-A7BC-476E-9DE1-EDEB22C6F9E7</key>
+		<key>9EEA98E0-ED48-4FBD-BD38-4DBED50A3F45</key>
 		<dict>
 			<key>className</key>
 			<string>DBGConsoleLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>6E833123-A7BC-476E-9DE1-EDEB22C6F9E7.xcactivitylog</string>
+			<string>9EEA98E0-ED48-4FBD-BD38-4DBED50A3F45.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -32,113 +32,13 @@
 			<key>signature</key>
 			<string>Debug SpellBook</string>
 			<key>timeStartedRecording</key>
-			<real>592200830.07639003</real>
+			<real>592246879.06170797</real>
 			<key>timeStoppedRecording</key>
-			<real>592200910.32557797</real>
+			<real>592246897.50636303</real>
 			<key>title</key>
 			<string>Debug SpellBook</string>
 			<key>uniqueIdentifier</key>
-			<string>6E833123-A7BC-476E-9DE1-EDEB22C6F9E7</string>
-		</dict>
-		<key>74D09428-EFED-4B31-9447-0A8822F62345</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>74D09428-EFED-4B31-9447-0A8822F62345.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>SpellBook project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>SpellBook</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Debug SpellBook</string>
-			<key>timeStartedRecording</key>
-			<real>592201061.15789402</real>
-			<key>timeStoppedRecording</key>
-			<real>592201084.02002704</real>
-			<key>title</key>
-			<string>Debug SpellBook</string>
-			<key>uniqueIdentifier</key>
-			<string>74D09428-EFED-4B31-9447-0A8822F62345</string>
-		</dict>
-		<key>B71A16C3-7B0C-4679-AAA9-2F56323E4429</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>B71A16C3-7B0C-4679-AAA9-2F56323E4429.xcactivitylog</string>
-			<key>hasPrimaryLog</key>
-			<true/>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>SpellBook project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>SpellBook</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Debug SpellBook</string>
-			<key>timeStartedRecording</key>
-			<real>592200938.64793897</real>
-			<key>timeStoppedRecording</key>
-			<real>592201014.38884699</real>
-			<key>title</key>
-			<string>Debug SpellBook</string>
-			<key>uniqueIdentifier</key>
-			<string>B71A16C3-7B0C-4679-AAA9-2F56323E4429</string>
-		</dict>
-		<key>C33B6216-49BD-4229-AC4E-A0BEBDB172D4</key>
-		<dict>
-			<key>className</key>
-			<string>DBGConsoleLog</string>
-			<key>documentTypeString</key>
-			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
-			<key>domainType</key>
-			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
-			<key>fileName</key>
-			<string>C33B6216-49BD-4229-AC4E-A0BEBDB172D4.xcactivitylog</string>
-			<key>primaryObservable</key>
-			<dict>
-				<key>highLevelStatus</key>
-				<string>S</string>
-			</dict>
-			<key>schemeIdentifier-containerName</key>
-			<string>SpellBook project</string>
-			<key>schemeIdentifier-schemeName</key>
-			<string>SpellBook</string>
-			<key>schemeIdentifier-sharedScheme</key>
-			<integer>1</integer>
-			<key>signature</key>
-			<string>Debug SpellBook</string>
-			<key>timeStartedRecording</key>
-			<real>592072424.353459</real>
-			<key>timeStoppedRecording</key>
-			<real>592072445.14804804</real>
-			<key>title</key>
-			<string>Debug SpellBook</string>
-			<key>uniqueIdentifier</key>
-			<string>C33B6216-49BD-4229-AC4E-A0BEBDB172D4</string>
+			<string>9EEA98E0-ED48-4FBD-BD38-4DBED50A3F45</string>
 		</dict>
 	</dict>
 </dict>
