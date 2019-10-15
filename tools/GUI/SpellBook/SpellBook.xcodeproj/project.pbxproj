@@ -39,6 +39,7 @@
 		1DEFB5DD234A321800ADB324 /* slotctrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D0234A321600ADB324 /* slotctrl.cpp */; };
 		1DEFB5DE234A321800ADB324 /* rpl1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D2234A321700ADB324 /* rpl1.cpp */; };
 		1DEFB5DF234A321800ADB324 /* cadimpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DEFB5D3234A321700ADB324 /* cadimpl.cpp */; };
+		1DFD8A0423551DE8005FF62C /* Coeur.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1DFD8A0223551DE8005FF62C /* Coeur.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,8 @@
 		1DEFB5D6234A321700ADB324 /* like.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = like.h; sourceTree = "<group>"; };
 		1DEFB5D7234A321700ADB324 /* calculus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = calculus.h; sourceTree = "<group>"; };
 		1DEFB5D8234A321700ADB324 /* skey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = skey.h; sourceTree = "<group>"; };
+		1DFD8A0223551DE8005FF62C /* Coeur.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Coeur.cpp; sourceTree = "<group>"; };
+		1DFD8A0323551DE8005FF62C /* Coeur.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Coeur.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,6 +173,8 @@
 				1DE6CFF52349B74000A0356D /* SpellBook.entitlements */,
 				1DEFB5C4234A1CAA00ADB324 /* MainController.mm */,
 				1DEFB5C6234A1CBE00ADB324 /* MainController.h */,
+				1DFD8A0223551DE8005FF62C /* Coeur.cpp */,
+				1DFD8A0323551DE8005FF62C /* Coeur.hpp */,
 			);
 			path = SpellBook;
 			sourceTree = "<group>";
@@ -275,6 +280,7 @@
 				1DEFB5DF234A321800ADB324 /* cadimpl.cpp in Sources */,
 				1DEFB5DE234A321800ADB324 /* rpl1.cpp in Sources */,
 				1DEFB5C5234A1CAA00ADB324 /* MainController.mm in Sources */,
+				1DFD8A0423551DE8005FF62C /* Coeur.cpp in Sources */,
 				1DE6CFEC2349B73E00A0356D /* AppDelegate.m in Sources */,
 				1DEFB5DD234A321800ADB324 /* slotctrl.cpp in Sources */,
 				1DEFB5DB234A321800ADB324 /* skey.mm in Sources */,

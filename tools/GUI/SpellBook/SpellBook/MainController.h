@@ -17,6 +17,7 @@ unsigned int numanim;
 int countFrame;
 int maxFrame;
 string filepath;
+string putinpath;
 @interface MainController : NSObject
 {
     IBOutlet NSTextField *filepathtext;

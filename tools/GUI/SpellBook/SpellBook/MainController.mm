@@ -53,6 +53,12 @@
     
 }
 - (void)awakeFromNib{
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSString *resourceFolderPath = [bundle resourcePath];
+    putinpath =[resourceFolderPath UTF8String];
+    //string gommand = "python "+putin+"/vocal.py "+projectpath+"/"+it->second.name+".mp3 "+projectpath;
+    //std::system(gommand.c_str());
+    
     [timerAnim invalidate];
     //A3
     numanim = 3;
@@ -184,4 +190,5 @@
 - (IBAction)closespell:(id)sender{
 
 }
+
 @end
