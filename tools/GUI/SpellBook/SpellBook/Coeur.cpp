@@ -9,8 +9,8 @@
 #include "Coeur.hpp"
 
 
-core::core(){
-    
+core::core(string ptnpath){
+    putin = ptnpath;
 }
 
 void core::setter(int tmp_sizepop, int tmp_numbergen,double tmp_stpcrit, int tmp_njobs,double tmp_crossover,double tmp_subtreemutation,double tmp_hoistmutation,double tmp_pointmutation,double tmp_maxsamples,double tmp_parsimonycoefficient,string tmp_csvfile,int tmp_parammath,int tmp_randomstate){
@@ -51,4 +51,27 @@ bool core::limitis(){
     'p_hoist_mutation and p_point_mutation should '
     'total to 1.0 or less.'*/
     return ( (crossover+subtreemutation+hoistmutation+pointmutation) > 1 );
+}
+
+
+void core::run(){
+    //string gommand = "python "+putin+"/vocal.py "+projectpath+"/"+it->second.name+".mp3 "+projectpath;
+    //std::system(gommand.c_str());
+    stringstream SS;
+    SS << "python " << putin  << "/GPCTSCRM.py ";
+    SS << sizepop << " ";
+    SS << numbergen << " ";
+    SS << stpcrit << " ";
+    SS << njobs << " ";
+    SS << crossover << " ";
+    SS << subtreemutation << " ";
+    SS << hoistmutation << " ";
+    SS << pointmutation << " ";
+    SS << maxsamples << " ";
+    SS << parsimonycoefficient << " ";
+    SS << csvfile << " ";
+    SS << parammath << " ";
+    SS << randomstate;
+    string gommand = SS.str();
+    std::system(gommand.c_str());
 }
