@@ -67,8 +67,8 @@
             NSLog(@"%@", NSStrPath);
             string fname = [NSStrPath UTF8String];
             
-            putinpath = fname;
-            coeur = core(putinpath);
+            filepath = fname;
+            coeur = core(filepath);
             [self->filepathtext setStringValue:NSStrPath];
         }
     }];
@@ -129,7 +129,7 @@
     [maxsamples setDoubleValue:0.9];
     [parsimonucoef setDoubleValue:0.01];
     [filepathtext setStringValue:@""];
-    [paramath setIntValue:1];
+    [paramath itemAtIndex:0];
     [randomstate setIntValue:0];
     
     coeur.initAll();
@@ -169,12 +169,15 @@
            [maxsamples setDoubleValue:0.9];
            [parsimonucoef setDoubleValue:0.01];
            [filepathtext setStringValue:@""];
-           [paramath setIntValue:1];
+           [paramath itemAtIndex:0];
            [randomstate setIntValue:0];
            
            coeur.initAll();
        }
     
+}
+- (void)processus{
+    coeur.run();
 }
 - (IBAction)runincantation:(id)sender{
     //sound
@@ -210,17 +213,38 @@
      IBOutlet NSPopUpButton *paramath;
      IBOutlet NSPopUpButton *randomstate;
      */
-    coeur.setter([sizepop intValue], [numbergen intValue],[stpcrit doubleValue], [njobs intValue],[crossover doubleValue],[subtreemutation doubleValue],[hoistmutation doubleValue],[pointmutation doubleValue],[maxsamples doubleValue],[parsimonucoef doubleValue] ,[filepath UTF8String],[paramath intValue],[randomstate intValue]);
+    
+    /*cout << [ [sizepop titleOfSelectedItem] intValue];
+    cout<<"--"<<[ [numbergen titleOfSelectedItem] intValue];
+    cout<<"--"<<[ [stpcrit titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [njobs titleOfSelectedItem] intValue];
+    cout<<"--"<<[ [crossover titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [subtreemutation titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [hoistmutation titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [pointmutation titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [maxsamples titleOfSelectedItem] doubleValue];
+    cout<<"--"<<[ [parsimonucoef titleOfSelectedItem] doubleValue];
+    cout<<"--"<<filepath;
+    cout<<"--"<<(int)[paramath indexOfSelectedItem];
+    cout<<"--"<<[ [randomstate titleOfSelectedItem] intValue];*/
+    coeur.setter([ [sizepop titleOfSelectedItem] intValue], [ [numbergen titleOfSelectedItem] intValue], [ [stpcrit titleOfSelectedItem] doubleValue], [ [njobs titleOfSelectedItem] intValue], [ [crossover titleOfSelectedItem] doubleValue], [ [subtreemutation titleOfSelectedItem] doubleValue], [ [hoistmutation titleOfSelectedItem] doubleValue], [ [pointmutation titleOfSelectedItem] doubleValue], [ [maxsamples titleOfSelectedItem] doubleValue], [ [parsimonucoef titleOfSelectedItem] doubleValue], filepath, (int)[paramath indexOfSelectedItem], [ [randomstate titleOfSelectedItem] intValue]);
     
     if (not(coeur.limitis())){
         //lancement du processus
+        //coeur.run();
+        //[NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
         
-        
+        athread = [[NSThread alloc] initWithTarget:self selector:@selector(processus) object:nil];
+        [athread start];
+        //coeur.run();
     }
     else{
         //message d'erreur
-        
-        
+        NSAlert *alert = [[NSAlert alloc] init];
+           [alert setMessageText:@"The sum of p_crossover, p_subtree_mutation, p_hoist_mutation and p_point_mutation should total to 1.0 or less !"];
+           [alert setInformativeText:@"ERROR !"];
+           [alert addButtonWithTitle:@"OK"];
+           [alert runModal];
     }
     
     
@@ -233,7 +257,7 @@
     [timerAnim invalidate];
     
     //stop incantation
-    
+    [athread cancel];
     
 }
 - (IBAction)exportformula:(id)sender{
@@ -322,7 +346,7 @@
            [maxsamples setDoubleValue:0.9];
            [parsimonucoef setDoubleValue:0.01];
            [filepathtext setStringValue:@""];
-           [paramath setIntValue:1];
+           [paramath itemAtIndex:0];
            [randomstate setIntValue:0];
            
            coeur.initAll();

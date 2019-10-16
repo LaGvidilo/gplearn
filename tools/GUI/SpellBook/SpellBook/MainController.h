@@ -23,10 +23,12 @@ core coeur;
 @interface MainController : NSObject
 {
     IBOutlet NSTextField *filepathtext;
-    NSString *filepath;
+    //NSString *filepath;
     IBOutlet NSImageView *pentaview;
     
     NSTimer *timerAnim;
+    
+    NSThread *athread;
     
     
     //incantation outlets
@@ -44,6 +46,7 @@ core coeur;
     IBOutlet NSPopUpButton *randomstate;
     
 }
+- (void)processus;
 - (IBAction)browsecsv:(id)sender;//ok
 //- (void)awakeFromNib;
 - (IBAction)newincantation:(id)sender;//ok
