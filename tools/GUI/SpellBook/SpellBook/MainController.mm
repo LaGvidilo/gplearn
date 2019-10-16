@@ -50,12 +50,34 @@
     if ( (numanim==3) && (countFrame==0) ) { [timerAnim invalidate]; }
 }
 - (IBAction)browsecsv:(id)sender{
-    
+    NSOpenPanel*    panel = [NSOpenPanel openPanel];
+    NSArray  * fileTypes = [NSArray arrayWithObjects:@"csv",@"CSV",nil];
+    //ProjViewController *otherViewController=[[ProjViewController alloc] init]
+    [panel setCanChooseFiles:YES];
+    [panel setCanChooseDirectories:NO];
+    [panel setAllowedFileTypes:fileTypes];;
+    //[self->tableproj setDataSource:otherViewController];
+    //[ [otherViewController array] removeAllObjects];
+    //[self->tableproj reloadData];
+    //[ [ otherViewController table] reloadData];
+    [panel beginWithCompletionHandler:^(NSInteger result){
+        if (result == NSModalResponseOK)//NSFileHandlingPanelOKButton
+        {
+            NSString *NSStrPath  = [panel.URLs.firstObject path];
+            NSLog(@"%@", NSStrPath);
+            string fname = [NSStrPath UTF8String];
+            
+            putinpath = fname;
+            coeur = core(putinpath);
+            [self->filepathtext setStringValue:NSStrPath];
+        }
+    }];
 }
 - (void)awakeFromNib{
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *resourceFolderPath = [bundle resourcePath];
     putinpath =[resourceFolderPath UTF8String];
+    coeur = core(putinpath);
     //string gommand = "python "+putin+"/vocal.py "+projectpath+"/"+it->second.name+".mp3 "+projectpath;
     //std::system(gommand.c_str());
     
@@ -96,7 +118,21 @@
     [timerAnim invalidate];
     
     //init all in GUI
+    [sizepop setIntValue:100];
+    [numbergen setIntValue:10];
+    [stpcrit setDoubleValue:0.1];
+    [njobs setIntValue:1];
+    [crossover setDoubleValue:0.7];
+    [subtreemutation setDoubleValue:0.1];
+    [hoistmutation setDoubleValue:0.5];
+    [pointmutation setDoubleValue:0.1];
+    [maxsamples setDoubleValue:0.9];
+    [parsimonucoef setDoubleValue:0.01];
+    [filepathtext setStringValue:@""];
+    [paramath setIntValue:1];
+    [randomstate setIntValue:0];
     
+    coeur.initAll();
     
 }
 - (IBAction)closeincantation:(id)sender{
@@ -106,6 +142,21 @@
     [timerAnim invalidate];
     
     //close incantation
+    [sizepop setIntValue:100];
+    [numbergen setIntValue:10];
+    [stpcrit setDoubleValue:0.1];
+    [njobs setIntValue:1];
+    [crossover setDoubleValue:0.7];
+    [subtreemutation setDoubleValue:0.1];
+    [hoistmutation setDoubleValue:0.5];
+    [pointmutation setDoubleValue:0.1];
+    [maxsamples setDoubleValue:0.9];
+    [parsimonucoef setDoubleValue:0.01];
+    [filepathtext setStringValue:@""];
+    [paramath setIntValue:1];
+    [randomstate setIntValue:0];
+    
+    coeur.initAll();
     
 }
 - (IBAction)runincantation:(id)sender{
@@ -127,9 +178,33 @@
                                                 repeats:YES];
     
     //traitement
+    /*
+     //incantation outlets
+     IBOutlet NSPopUpButton *sizepop;
+     IBOutlet NSPopUpButton *numbergen;
+     IBOutlet NSPopUpButton *stpcrit;
+     IBOutlet NSPopUpButton *njobs;
+     IBOutlet NSPopUpButton *crossover;
+     IBOutlet NSPopUpButton *subtreemutation;
+     IBOutlet NSPopUpButton *hoistmutation;
+     IBOutlet NSPopUpButton *pointmutation;
+     IBOutlet NSPopUpButton *maxsamples;
+     IBOutlet NSPopUpButton *parsimonucoef;
+     IBOutlet NSPopUpButton *paramath;
+     IBOutlet NSPopUpButton *randomstate;
+     */
+    coeur.setter([sizepop intValue], [numbergen intValue],[stpcrit doubleValue], [njobs intValue],[crossover doubleValue],[subtreemutation doubleValue],[hoistmutation doubleValue],[pointmutation doubleValue],[maxsamples doubleValue],[parsimonucoef doubleValue] ,[filepath UTF8String],[paramath intValue],[randomstate intValue]);
     
-    //lancement du processus
-    
+    if (not(coeur.limitis())){
+        //lancement du processus
+        
+        
+    }
+    else{
+        //message d'erreur
+        
+        
+    }
     
     
 }
@@ -170,7 +245,16 @@
 
 //sorts
 - (IBAction)savespell:(id)sender{
-
+    NSSavePanel*    panel = [NSSavePanel savePanel];
+    [panel setAllowedFileTypes:[NSArray arrayWithObjects:@"OSEF",@"osef",nil]];
+    [panel beginWithCompletionHandler:^(NSInteger result){
+        if (result == NSModalResponseOK)//NSFileHandlingPanelOKButton
+        {
+            NSString *NSStrPath  = [panel.URL path];
+            string PATHO = [NSStrPath UTF8String];
+            coeur.save(PATHO);
+        }
+    }];
 }
 - (IBAction)opencsv:(id)sender{
 
@@ -188,7 +272,7 @@
 
 
 - (IBAction)closespell:(id)sender{
-
+    
 }
 
 @end

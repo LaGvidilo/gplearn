@@ -12,12 +12,14 @@
 #import <Cocoa/Cocoa.h>
 #import <Foundation/Foundation.h>
 #include <sstream>
+#include "Coeur.hpp"
 using namespace std;
 unsigned int numanim;
 int countFrame;
 int maxFrame;
 string filepath;
 string putinpath;
+core coeur;
 @interface MainController : NSObject
 {
     IBOutlet NSTextField *filepathtext;
@@ -50,7 +52,7 @@ string putinpath;
 - (IBAction)stopincantation:(id)sender;
 - (IBAction)exportformula:(id)sender;
 - (IBAction)invocation:(id)sender;
-- (IBAction)savespell:(id)sender;
+- (IBAction)savespell:(id)sender;//ok
 - (IBAction)opencsv:(id)sender;
 - (IBAction)exportspell:(id)sender;
 - (IBAction)selectspell:(id)sender;
