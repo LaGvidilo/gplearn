@@ -22,6 +22,20 @@ string putinpath;
 core coeur;
 @interface MainController : NSObject
 {
+    //menu
+    IBOutlet NSMenuItem *itemexportformule;
+    IBOutlet NSMenuItem *itemnewincantation;
+    IBOutlet NSMenuItem *itemcloseincantation;
+    IBOutlet NSMenuItem *itemstartincantation;
+    IBOutlet NSMenuItem *itemstopincantation;
+    IBOutlet NSMenuItem *itemsavespell;
+    IBOutlet NSMenuItem *itemselectspell;
+    IBOutlet NSMenuItem *itemopenspell;
+    IBOutlet NSMenuItem *itempredictspell;
+    IBOutlet NSMenuItem *itemexportspell;
+    
+    
+    
     IBOutlet NSTextField *filepathtext;
     //NSString *filepath;
     IBOutlet NSImageView *pentaview;

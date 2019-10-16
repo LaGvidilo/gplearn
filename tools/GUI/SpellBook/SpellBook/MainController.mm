@@ -70,6 +70,7 @@
             filepath = fname;
             //coeur = core(filepath);
             [self->filepathtext setStringValue:NSStrPath];
+            [self->itemstartincantation setTarget:self];
         }
     }];
 }
@@ -92,6 +93,18 @@
                                                selector:@selector(animated)
                                                userInfo:nil
                                                 repeats:YES];
+    
+    [self->itemexportformule setTarget:nil];
+    [self->itemnewincantation setTarget:self];
+    [self->itemcloseincantation setTarget:self];
+    [self->itemstartincantation setTarget:nil];
+    [self->itemstopincantation setTarget:nil];
+    [self->itemsavespell setTarget:nil];
+    [self->itemselectspell setTarget:self];
+    [self->itemopenspell setTarget:nil];
+    [self->itempredictspell setTarget:nil];
+    [self->itemexportspell setTarget:nil];
+    
 }
 
 
@@ -133,7 +146,16 @@
     [randomstate setIntValue:0];
     
     coeur.initAll();
-    
+    [self->itemexportformule setTarget:nil];
+    [self->itemnewincantation setTarget:self];
+    [self->itemcloseincantation setTarget:self];
+    [self->itemstartincantation setTarget:nil];
+    [self->itemstopincantation setTarget:nil];
+    [self->itemsavespell setTarget:nil];
+    [self->itemselectspell setTarget:self];
+    [self->itemopenspell setTarget:nil];
+    [self->itempredictspell setTarget:nil];
+    [self->itemexportspell setTarget:nil];
 }
 - (IBAction)closeincantation:(id)sender{
     NSAlert *alert = [[NSAlert alloc] init];
@@ -173,11 +195,37 @@
            [randomstate setIntValue:0];
            
            coeur.initAll();
+           [self->itemexportformule setTarget:nil];
+           [self->itemnewincantation setTarget:self];
+           [self->itemcloseincantation setTarget:self];
+           [self->itemstartincantation setTarget:nil];
+           [self->itemstopincantation setTarget:nil];
+           [self->itemsavespell setTarget:nil];
+           [self->itemselectspell setTarget:self];
+           [self->itemopenspell setTarget:nil];
+           [self->itempredictspell setTarget:nil];
+           [self->itemexportspell setTarget:nil];
        }
     
 }
 - (void)processus{
     coeur.run();
+    [timerAnim invalidate];
+    NSAlert *alert = [[NSAlert alloc] init];
+       [alert setMessageText:@"Le calcul est terminé, c'est le moment de sauvegarder !"];
+       [alert setInformativeText:@"Projet et finalisation."];
+       [alert addButtonWithTitle:@"OK"];
+       [alert runModal];
+    [self->itemexportformule setTarget:self];
+    [self->itemnewincantation setTarget:self];
+    [self->itemcloseincantation setTarget:self];
+    [self->itemstartincantation setTarget:nil];
+    [self->itemstopincantation setTarget:nil];
+    [self->itemsavespell setTarget:self];
+    [self->itemselectspell setTarget:self];
+    [self->itemopenspell setTarget:self];
+    [self->itempredictspell setTarget:self];
+    [self->itemexportspell setTarget:self];
 }
 - (IBAction)runincantation:(id)sender{
     //sound
@@ -191,7 +239,7 @@
     countFrame = 0;
     maxFrame = 359;
     [timerAnim invalidate];
-    timerAnim = [NSTimer scheduledTimerWithTimeInterval:0.033
+    timerAnim = [NSTimer scheduledTimerWithTimeInterval:0.020
                                                  target:self
                                                selector:@selector(animated)
                                                userInfo:nil
@@ -246,7 +294,16 @@
            [alert addButtonWithTitle:@"OK"];
            [alert runModal];
     }
-    
+    [self->itemexportformule setTarget:nil];
+    [self->itemnewincantation setTarget:nil];
+    [self->itemcloseincantation setTarget:nil];
+    [self->itemstartincantation setTarget:nil];
+    [self->itemstopincantation setTarget:self];
+    [self->itemsavespell setTarget:nil];
+    [self->itemselectspell setTarget:nil];
+    [self->itemopenspell setTarget:nil];
+    [self->itempredictspell setTarget:nil];
+    [self->itemexportspell setTarget:nil];
     
 }
 - (IBAction)stopincantation:(id)sender{
@@ -258,7 +315,16 @@
     
     //stop incantation
     [athread cancel];
-    
+    [self->itemexportformule setTarget:nil];
+    [self->itemnewincantation setTarget:self];
+    [self->itemcloseincantation setTarget:self];
+    [self->itemstartincantation setTarget:self];
+    [self->itemstopincantation setTarget:nil];
+    [self->itemsavespell setTarget:nil];
+    [self->itemselectspell setTarget:self];
+    [self->itemopenspell setTarget:nil];
+    [self->itempredictspell setTarget:nil];
+    [self->itemexportspell setTarget:nil];
 }
 - (IBAction)exportformula:(id)sender{
     //sound
@@ -350,7 +416,29 @@
            [randomstate setIntValue:0];
            
            coeur.initAll();
+           [self->itemexportformule setTarget:nil];
+           [self->itemnewincantation setTarget:self];
+           [self->itemcloseincantation setTarget:self];
+           [self->itemstartincantation setTarget:nil];
+           [self->itemstopincantation setTarget:nil];
+           [self->itemsavespell setTarget:nil];
+           [self->itemselectspell setTarget:self];
+           [self->itemopenspell setTarget:nil];
+           [self->itempredictspell setTarget:nil];
+           [self->itemexportspell setTarget:nil];
        }
 }
 
 @end
+/*
+ IBOutlet NSMenuItem *itemexportformule;
+ IBOutlet NSMenuItem *itemnewincantation;
+ IBOutlet NSMenuItem *itemcloseincantation;
+ IBOutlet NSMenuItem *itemstartincantation;
+ IBOutlet NSMenuItem *itemstopincantation;
+ IBOutlet NSMenuItem *itemsavespell;
+ IBOutlet NSMenuItem *itemselectspell;
+ IBOutlet NSMenuItem *itemopenspell;
+ IBOutlet NSMenuItem *itempredictspell;
+ IBOutlet NSMenuItem *itemexportspell;
+ */

@@ -210,6 +210,40 @@
 			<key>uniqueIdentifier</key>
 			<string>52C1A47B-74CA-4C5A-B8A0-C3D218CFEF37</string>
 		</dict>
+		<key>5D2B3BCA-45ED-4B1B-986B-EA9DF24B7497</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>5D2B3BCA-45ED-4B1B-986B-EA9DF24B7497.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SpellBook project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SpellBook</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug SpellBook</string>
+			<key>timeStartedRecording</key>
+			<real>592885042.77685905</real>
+			<key>timeStoppedRecording</key>
+			<real>592885391.69813299</real>
+			<key>title</key>
+			<string>Debug SpellBook</string>
+			<key>uniqueIdentifier</key>
+			<string>5D2B3BCA-45ED-4B1B-986B-EA9DF24B7497</string>
+		</dict>
 		<key>622C973E-F67D-47EF-A2AE-504A8ACCFB87</key>
 		<dict>
 			<key>className</key>
@@ -277,6 +311,40 @@
 			<string>Debug SpellBook</string>
 			<key>uniqueIdentifier</key>
 			<string>6A57C73E-0D6C-4BEF-8903-28B61BBCA6D1</string>
+		</dict>
+		<key>7188BD34-360A-453A-9208-C31AA8E61CA5</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>7188BD34-360A-453A-9208-C31AA8E61CA5.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SpellBook project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SpellBook</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug SpellBook</string>
+			<key>timeStartedRecording</key>
+			<real>592884877.29517603</real>
+			<key>timeStoppedRecording</key>
+			<real>592885019.87978804</real>
+			<key>title</key>
+			<string>Debug SpellBook</string>
+			<key>uniqueIdentifier</key>
+			<string>7188BD34-360A-453A-9208-C31AA8E61CA5</string>
 		</dict>
 		<key>76C72624-FBDB-403D-8519-2EEEFF934646</key>
 		<dict>

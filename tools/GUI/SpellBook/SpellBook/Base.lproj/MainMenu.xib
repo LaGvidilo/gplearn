@@ -30,6 +30,16 @@
                 <outlet property="crossover" destination="YG6-9w-sUd" id="lMw-5O-grX"/>
                 <outlet property="filepathtext" destination="pY8-52-kJF" id="KD2-7a-2a2"/>
                 <outlet property="hoistmutation" destination="79u-RO-hso" id="7sD-wN-JNH"/>
+                <outlet property="itemcloseincantation" destination="FyS-wI-fAs" id="Erk-0L-sPs"/>
+                <outlet property="itemexportformule" destination="ECc-WC-yta" id="9Pu-Jx-h5g"/>
+                <outlet property="itemexportspell" destination="hf5-DV-Aw6" id="QjU-wq-B58"/>
+                <outlet property="itemnewincantation" destination="V2H-CO-ICq" id="iOh-Vd-3bi"/>
+                <outlet property="itemopenspell" destination="g0Z-At-ukA" id="CHF-zy-akb"/>
+                <outlet property="itempredictspell" destination="KFO-Bi-4ju" id="4sL-QV-sfq"/>
+                <outlet property="itemsavespell" destination="Lg9-DZ-lq5" id="egx-qF-V6Y"/>
+                <outlet property="itemselectspell" destination="YXk-r6-fn8" id="441-Wn-q7j"/>
+                <outlet property="itemstartincantation" destination="q9C-WQ-ihl" id="Tei-aR-k2n"/>
+                <outlet property="itemstopincantation" destination="bUa-Sg-Pi8" id="a4f-23-oIM"/>
                 <outlet property="maxsamples" destination="OQD-E2-5k9" id="f8K-98-RCG"/>
                 <outlet property="njobs" destination="TxV-ci-jOa" id="A4H-00-kyN"/>
                 <outlet property="numbergen" destination="4P8-o2-ozP" id="wlg-rn-nbg"/>
