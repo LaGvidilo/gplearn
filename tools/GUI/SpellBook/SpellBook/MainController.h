@@ -46,8 +46,8 @@ core coeur;
 }
 - (IBAction)browsecsv:(id)sender;//ok
 //- (void)awakeFromNib;
-- (IBAction)newincantation:(id)sender;
-- (IBAction)closeincantation:(id)sender;
+- (IBAction)newincantation:(id)sender;//ok
+- (IBAction)closeincantation:(id)sender;//ok
 - (IBAction)runincantation:(id)sender;
 - (IBAction)stopincantation:(id)sender;
 - (IBAction)exportformula:(id)sender;
@@ -57,7 +57,7 @@ core coeur;
 - (IBAction)exportspell:(id)sender;
 - (IBAction)selectspell:(id)sender;
 - (IBAction)predictionspell:(id)sender;
-- (IBAction)closespell:(id)sender;
+- (IBAction)closespell:(id)sender;//ok
 @end
 
 #endif /* MainController_h */

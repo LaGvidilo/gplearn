@@ -136,27 +136,44 @@
     
 }
 - (IBAction)closeincantation:(id)sender{
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
-    NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
-    [soundtmp play];
-    [timerAnim invalidate];
-    
-    //close incantation
-    [sizepop setIntValue:100];
-    [numbergen setIntValue:10];
-    [stpcrit setDoubleValue:0.1];
-    [njobs setIntValue:1];
-    [crossover setDoubleValue:0.7];
-    [subtreemutation setDoubleValue:0.1];
-    [hoistmutation setDoubleValue:0.5];
-    [pointmutation setDoubleValue:0.1];
-    [maxsamples setDoubleValue:0.9];
-    [parsimonucoef setDoubleValue:0.01];
-    [filepathtext setStringValue:@""];
-    [paramath setIntValue:1];
-    [randomstate setIntValue:0];
-    
-    coeur.initAll();
+    NSAlert *alert = [[NSAlert alloc] init];
+       [alert setMessageText:@"Voulez vous fermer ce projet ?\nCECI FERMERA LE PROJET SI OUVERT."];
+       [alert setInformativeText:@"Projet et initialisation."];
+       [alert addButtonWithTitle:@"Non"];
+       [alert addButtonWithTitle:@"Oui, Je confirme"];
+       [alert setAlertStyle:NSWarningAlertStyle];
+       //[alert runModal];
+       NSInteger result;
+
+       // Run the alert as a sheet on the main window
+       result = [alert runModal];
+       if (result==NSAlertFirstButtonReturn){
+           NSLog(@"Ne fait rien");
+       }
+       else if (result==NSAlertSecondButtonReturn){
+           NSLog(@"Fermeture -> Nouveau");
+           NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
+           NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
+           [soundtmp play];
+           [timerAnim invalidate];
+           
+           //close incantation
+           [sizepop setIntValue:100];
+           [numbergen setIntValue:10];
+           [stpcrit setDoubleValue:0.1];
+           [njobs setIntValue:1];
+           [crossover setDoubleValue:0.7];
+           [subtreemutation setDoubleValue:0.1];
+           [hoistmutation setDoubleValue:0.5];
+           [pointmutation setDoubleValue:0.1];
+           [maxsamples setDoubleValue:0.9];
+           [parsimonucoef setDoubleValue:0.01];
+           [filepathtext setStringValue:@""];
+           [paramath setIntValue:1];
+           [randomstate setIntValue:0];
+           
+           coeur.initAll();
+       }
     
 }
 - (IBAction)runincantation:(id)sender{
@@ -272,7 +289,44 @@
 
 
 - (IBAction)closespell:(id)sender{
-    
+    NSAlert *alert = [[NSAlert alloc] init];
+       [alert setMessageText:@"Voulez vous fermer ce projet ?\nCECI FERMERA LE PROJET SI OUVERT."];
+       [alert setInformativeText:@"Projet et initialisation."];
+       [alert addButtonWithTitle:@"Non"];
+       [alert addButtonWithTitle:@"Oui, Je confirme"];
+       [alert setAlertStyle:NSWarningAlertStyle];
+       //[alert runModal];
+       NSInteger result;
+
+       // Run the alert as a sheet on the main window
+       result = [alert runModal];
+       if (result==NSAlertFirstButtonReturn){
+           NSLog(@"Ne fait rien");
+       }
+       else if (result==NSAlertSecondButtonReturn){
+           NSLog(@"Fermeture -> Nouveau");
+           NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Sword_Of_Light" ofType:@"wav"];
+           NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
+           [soundtmp play];
+           [timerAnim invalidate];
+           
+           //close incantation
+           [sizepop setIntValue:100];
+           [numbergen setIntValue:10];
+           [stpcrit setDoubleValue:0.1];
+           [njobs setIntValue:1];
+           [crossover setDoubleValue:0.7];
+           [subtreemutation setDoubleValue:0.1];
+           [hoistmutation setDoubleValue:0.5];
+           [pointmutation setDoubleValue:0.1];
+           [maxsamples setDoubleValue:0.9];
+           [parsimonucoef setDoubleValue:0.01];
+           [filepathtext setStringValue:@""];
+           [paramath setIntValue:1];
+           [randomstate setIntValue:0];
+           
+           coeur.initAll();
+       }
 }
 
 @end
