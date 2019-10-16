@@ -59,7 +59,7 @@ def to_texpng(file="tmp.png" ,nX=1 ,program="y=sub(mul(add(div(div(X0, X0), sub(
 	f.close()
 
 def reinitrel(X,program):
-	from math import *
+	#from math import *
 	from operator import inv, neg
 	for i in range(0,len(X)):
 		exec("X"+str(i)+"="+str(X[i]*1.0))	

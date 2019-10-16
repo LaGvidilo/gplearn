@@ -68,7 +68,7 @@
             string fname = [NSStrPath UTF8String];
             
             filepath = fname;
-            coeur = core(filepath);
+            //coeur = core(filepath);
             [self->filepathtext setStringValue:NSStrPath];
         }
     }];
@@ -181,9 +181,9 @@
 }
 - (IBAction)runincantation:(id)sender{
     //sound
-    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Ancient_Game_Magic_Revive" ofType:@"wav"];
+    /*NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Ancient_Game_Magic_Revive" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
-    [soundtmp play];
+    [soundtmp play];*/
     
     //animation
     //A1
@@ -227,7 +227,7 @@
     cout<<"--"<<filepath;
     cout<<"--"<<(int)[paramath indexOfSelectedItem];
     cout<<"--"<<[ [randomstate titleOfSelectedItem] intValue];*/
-    coeur.setter([ [sizepop titleOfSelectedItem] intValue], [ [numbergen titleOfSelectedItem] intValue], [ [stpcrit titleOfSelectedItem] doubleValue], [ [njobs titleOfSelectedItem] intValue], [ [crossover titleOfSelectedItem] doubleValue], [ [subtreemutation titleOfSelectedItem] doubleValue], [ [hoistmutation titleOfSelectedItem] doubleValue], [ [pointmutation titleOfSelectedItem] doubleValue], [ [maxsamples titleOfSelectedItem] doubleValue], [ [parsimonucoef titleOfSelectedItem] doubleValue], filepath, (int)[paramath indexOfSelectedItem], [ [randomstate titleOfSelectedItem] intValue]);
+    coeur.setter([ [sizepop titleOfSelectedItem] intValue], [ [numbergen titleOfSelectedItem] intValue], [ [stpcrit titleOfSelectedItem] doubleValue], [ [njobs titleOfSelectedItem] intValue], [ [crossover titleOfSelectedItem] doubleValue], [ [subtreemutation titleOfSelectedItem] doubleValue], [ [hoistmutation titleOfSelectedItem] doubleValue], [ [pointmutation titleOfSelectedItem] doubleValue], [ [maxsamples titleOfSelectedItem] doubleValue], [ [parsimonucoef titleOfSelectedItem] doubleValue], filepath, 1 + (int)[paramath indexOfSelectedItem], [ [randomstate titleOfSelectedItem] intValue]);
     
     if (not(coeur.limitis())){
         //lancement du processus
