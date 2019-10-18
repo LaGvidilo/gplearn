@@ -41,6 +41,7 @@
                 <outlet property="itemselectspell" destination="YXk-r6-fn8" id="441-Wn-q7j"/>
                 <outlet property="itemstartincantation" destination="q9C-WQ-ihl" id="Tei-aR-k2n"/>
                 <outlet property="itemstopincantation" destination="bUa-Sg-Pi8" id="a4f-23-oIM"/>
+                <outlet property="logdisplay" destination="uNM-Yo-gsw" id="p3v-GI-dAM"/>
                 <outlet property="maxsamples" destination="OQD-E2-5k9" id="f8K-98-RCG"/>
                 <outlet property="njobs" destination="TxV-ci-jOa" id="A4H-00-kyN"/>
                 <outlet property="numbergen" destination="4P8-o2-ozP" id="wlg-rn-nbg"/>
@@ -191,17 +192,17 @@
                     </menu>
                 </menuItem>
                 <menuItem isSeparatorItem="YES" id="DMd-TX-Gwk"/>
-                <menuItem title="Licence" id="2Jt-hs-QX2">
+                <menuItem title="Licence" hidden="YES" enabled="NO" id="2Jt-hs-QX2">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <menu key="submenu" title="Licence" id="BRi-uL-H3W">
                         <items>
-                            <menuItem title="S'enregistrer..." id="jsd-1Q-5gP">
+                            <menuItem title="S'enregistrer..." enabled="NO" id="jsd-1Q-5gP">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="showWindow:" target="UYE-Cz-01p" id="Onf-hG-LA3"/>
                                 </connections>
                             </menuItem>
-                            <menuItem title="Contenu additionel" id="e1q-4X-peU">
+                            <menuItem title="Contenu additionel" enabled="NO" id="e1q-4X-peU">
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Contenu additionel" id="XbG-Rk-Na0">
                                     <items>
@@ -211,7 +212,7 @@
                                         <menuItem title="Seaux" enabled="NO" id="Ugb-Mq-1dR">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                         </menuItem>
-                                        <menuItem title="Mise a jours vers la version Maître..." id="LsA-yu-avk">
+                                        <menuItem title="Mise a jours vers la version Maître..." enabled="NO" id="LsA-yu-avk">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="buyredirect:" target="UYE-Cz-01p" id="ISx-Ub-pM6"/>
@@ -735,13 +736,8 @@
                         </contentFilters>
                         <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="A1-0" id="0SN-08-8Ew"/>
                     </imageView>
-                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ucg-DZ-OW7">
-                        <rect key="frame" x="619" y="583" width="419" height="136"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="IUg-xp-wVg"/>
-                    </imageView>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X5C-Br-b6N">
-                        <rect key="frame" x="617" y="359" width="423" height="216"/>
+                        <rect key="frame" x="614" y="611" width="423" height="113"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" alignment="center" title="Formule program/latex" id="Ihk-di-7nX">
                             <font key="font" size="20" name="Luminari-Regular"/>
@@ -750,23 +746,15 @@
                         </textFieldCell>
                     </textField>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zX8-Tb-0Va">
-                        <rect key="frame" x="969" y="332" width="66" height="19"/>
+                        <rect key="frame" x="969" y="586" width="66" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                         <buttonCell key="cell" type="recessed" title="program" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="5jQ-W0-H63">
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
                             <font key="font" metaFont="systemBold" size="12"/>
                         </buttonCell>
                     </button>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-Sg-ScQ">
-                        <rect key="frame" x="895" y="332" width="66" height="19"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="recessed" title="LaTeX" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="57y-Ko-h4M">
-                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
-                            <font key="font" metaFont="systemBold" size="12"/>
-                        </buttonCell>
-                    </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0vX-d2-9pE">
-                        <rect key="frame" x="619" y="335" width="161" height="16"/>
+                        <rect key="frame" x="614" y="587" width="161" height="16"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Score: --" id="w8Y-Oa-07h">
                             <font key="font" metaFont="system"/>
@@ -798,20 +786,46 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                     </textField>
-                    <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1l4-R3-HiZ">
-                        <rect key="frame" x="77" y="44" width="414" height="531"/>
+                    <scrollView fixedFrame="YES" borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jkb-dP-od9">
+                        <rect key="frame" x="77" y="47" width="504" height="528"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <clipView key="contentView" ambiguous="YES" drawsBackground="NO" copiesOnScroll="NO" id="xaV-NM-sow">
+                            <rect key="frame" x="0.0" y="0.0" width="504" height="528"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <textView ambiguous="YES" editable="NO" importsGraphics="NO" richText="NO" verticallyResizable="YES" spellingCorrection="YES" smartInsertDelete="YES" id="uNM-Yo-gsw">
+                                    <rect key="frame" x="0.0" y="0.0" width="504" height="528"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <color key="textColor" name="systemRedColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <size key="minSize" width="504" height="528"/>
+                                    <size key="maxSize" width="781" height="10000000"/>
+                                    <color key="insertionPointColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                                </textView>
+                            </subviews>
+                        </clipView>
+                        <scroller key="horizontalScroller" hidden="YES" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="ztg-ez-AZj">
+                            <rect key="frame" x="-100" y="-100" width="240" height="16"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                        <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="NO" id="bNE-Xh-BEu">
+                            <rect key="frame" x="488" y="0.0" width="16" height="528"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                        </scroller>
+                    </scrollView>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UF1-Sg-ScQ">
+                        <rect key="frame" x="895" y="586" width="66" height="19"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" state="on" borderStyle="bezel" alignment="left" title="Description" drawsBackground="YES" allowsEditingTextAttributes="YES" id="y6b-eR-laI">
-                            <font key="font" size="16" name="Herculanum"/>
-                            <color key="textColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                        </textFieldCell>
-                    </textField>
+                        <buttonCell key="cell" type="recessed" title="LaTeX" bezelStyle="recessed" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="57y-Ko-h4M">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                            <font key="font" metaFont="systemBold" size="12"/>
+                        </buttonCell>
+                    </button>
                 </subviews>
             </view>
             <point key="canvasLocation" x="487" y="1493.5"/>
         </window>
-        <window title="SERIAL KEY" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="c7q-8Z-e7F" userLabel="activation">
+        <window title="SERIAL KEY" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" hasShadow="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" frameAutosaveName="" animationBehavior="default" titlebarAppearsTransparent="YES" id="c7q-8Z-e7F" userLabel="activation">
             <windowStyleMask key="styleMask" titled="YES" miniaturizable="YES" texturedBackground="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="473" y="309" width="480" height="201"/>

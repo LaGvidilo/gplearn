@@ -42,6 +42,9 @@ std::thread t;
 
 @interface MainController : NSObject
 {
+    //page incant
+    IBOutlet NSTextView *logdisplay;
+    
     //menu
     IBOutlet NSMenuItem *itemexportformule;
     IBOutlet NSMenuItem *itemnewincantation;

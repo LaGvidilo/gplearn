@@ -41,7 +41,14 @@
 }
  */
 - (void)animated{
-
+    ifstream file("outlog.txt");
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    string datac = buffer.str();
+    file.close();
+    NSString *logmsg = [NSString stringWithCString:datac.c_str() encoding:NSUTF8StringEncoding];
+    [logdisplay setString:logmsg];
+    [logdisplay scrollToEndOfDocument:nil];
     //A1-(0->359)
     stringstream SS1;
     SS1 << "A"<<numanim <<"-"<<countFrame;
@@ -96,6 +103,7 @@
     }];
 }
 - (void)awakeFromNib{
+    std::system("rm outlog.txt");
     NSBundle *bundle = [NSBundle mainBundle];
     NSString *resourceFolderPath = [bundle resourcePath];
     putinpath =[resourceFolderPath UTF8String];
