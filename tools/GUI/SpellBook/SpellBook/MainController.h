@@ -20,6 +20,7 @@ int maxFrame;
 string filepath;
 string putinpath;
 core coeur;
+dispatch_queue_t myQueue;
 @interface MainController : NSObject
 {
     //menu
@@ -33,6 +34,7 @@ core coeur;
     IBOutlet NSMenuItem *itemopenspell;
     IBOutlet NSMenuItem *itempredictspell;
     IBOutlet NSMenuItem *itemexportspell;
+    IBOutlet NSMenuItem *itemloadincantation;
     
     
     
@@ -41,7 +43,7 @@ core coeur;
     IBOutlet NSImageView *pentaview;
     
     NSTimer *timerAnim;
-    
+    NSTimer *subtimer;
     NSThread *athread;
     
     
@@ -70,6 +72,7 @@ core coeur;
 - (IBAction)exportformula:(id)sender;
 - (IBAction)invocation:(id)sender;
 - (IBAction)savespell:(id)sender;//ok
+- (IBAction)loadspell:(id)sender;//ok
 - (IBAction)opencsv:(id)sender;
 - (IBAction)exportspell:(id)sender;
 - (IBAction)selectspell:(id)sender;

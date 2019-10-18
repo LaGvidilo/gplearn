@@ -11,6 +11,7 @@
 
 core::core(string ptnpath){
     putin = ptnpath;
+    fin = false;
 }
 
 void core::setter(int tmp_sizepop, int tmp_numbergen,double tmp_stpcrit, int tmp_njobs,double tmp_crossover,double tmp_subtreemutation,double tmp_hoistmutation,double tmp_pointmutation,double tmp_maxsamples,double tmp_parsimonycoefficient,string tmp_csvfile,int tmp_parammath,int tmp_randomstate){
@@ -44,6 +45,7 @@ void core::initAll(){
     csvfile="";
     parammath=1;
     randomstate=0;
+    fin=false;
 }
 
 bool core::limitis(){
@@ -74,6 +76,7 @@ void core::run(){
     SS << randomstate;
     string gommand = SS.str();
     std::system(gommand.c_str());
+    fin = true;
 }
 
 

@@ -33,6 +33,7 @@
                 <outlet property="itemcloseincantation" destination="FyS-wI-fAs" id="Erk-0L-sPs"/>
                 <outlet property="itemexportformule" destination="ECc-WC-yta" id="9Pu-Jx-h5g"/>
                 <outlet property="itemexportspell" destination="hf5-DV-Aw6" id="QjU-wq-B58"/>
+                <outlet property="itemloadincantation" destination="hst-Pz-mrS" id="rK8-te-gIf"/>
                 <outlet property="itemnewincantation" destination="V2H-CO-ICq" id="iOh-Vd-3bi"/>
                 <outlet property="itemopenspell" destination="g0Z-At-ukA" id="CHF-zy-akb"/>
                 <outlet property="itempredictspell" destination="KFO-Bi-4ju" id="4sL-QV-sfq"/>
@@ -113,6 +114,12 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <connections>
                                     <action selector="closeincantation:" target="rCP-Fw-TJe" id="p4v-wZ-JfW"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Charger une incantation..." id="hst-Pz-mrS">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="loadspell:" target="rCP-Fw-TJe" id="pHL-QC-lZU"/>
                                 </connections>
                             </menuItem>
                             <menuItem isSeparatorItem="YES" id="l0K-WI-dc9"/>

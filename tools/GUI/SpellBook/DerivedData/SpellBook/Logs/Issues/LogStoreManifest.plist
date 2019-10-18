@@ -6,7 +6,7 @@
 	<integer>10</integer>
 	<key>logs</key>
 	<dict>
-		<key>14B4DF58-2717-4A48-A9A3-9FDB095394B8</key>
+		<key>C4D88110-0CE4-41A9-83FE-5F3C676D6831</key>
 		<dict>
 			<key>className</key>
 			<string>IDEActivityLogMajorGroupSection</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.target.product-type.application</string>
 			<key>fileName</key>
-			<string>14B4DF58-2717-4A48-A9A3-9FDB095394B8.xcactivitylog</string>
+			<string>C4D88110-0CE4-41A9-83FE-5F3C676D6831.xcactivitylog</string>
 			<key>hasPrimaryLog</key>
 			<true/>
 			<key>primaryObservable</key>
@@ -26,13 +26,13 @@
 			<key>signature</key>
 			<string>SpellBook-eamscvvyebeugxgctozycogifxkl</string>
 			<key>timeStartedRecording</key>
-			<real>592885419.86368799</real>
+			<real>592924549.69588101</real>
 			<key>timeStoppedRecording</key>
-			<real>592885425.34957302</real>
+			<real>592924555.18773496</real>
 			<key>title</key>
 			<string>Build target SpellBook</string>
 			<key>uniqueIdentifier</key>
-			<string>14B4DF58-2717-4A48-A9A3-9FDB095394B8</string>
+			<string>C4D88110-0CE4-41A9-83FE-5F3C676D6831</string>
 		</dict>
 	</dict>
 	<key>preserveOldLogs</key>

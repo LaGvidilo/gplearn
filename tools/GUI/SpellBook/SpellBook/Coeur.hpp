@@ -35,9 +35,10 @@ private:
     int parammath;
     double randomstate;
     string putin;
+    bool fin;
 public:
     core(){
-        
+        fin=false;
     }
     core(string ptnpath);
     
@@ -47,6 +48,9 @@ public:
     void run();//ok
     void save(string filepath);
     void load(string filepath);
+    bool ended(){
+        return fin;
+    }
 };
 
 

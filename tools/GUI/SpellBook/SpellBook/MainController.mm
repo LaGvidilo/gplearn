@@ -48,6 +48,26 @@
     SS1.str("");
     countFrame = (countFrame+1) % (maxFrame+1);
     if ( (numanim==3) && (countFrame==0) ) { [timerAnim invalidate]; }
+    
+    if (coeur.ended()){
+        [timerAnim invalidate];
+        NSAlert *alert = [[NSAlert alloc] init];
+           [alert setMessageText:@"Le calcul est terminé, c'est le moment de sauvegarder !"];
+           [alert setInformativeText:@"Projet et finalisation."];
+           [alert addButtonWithTitle:@"OK"];
+           [alert runModal];
+        [self->itemexportformule setTarget:self];
+        [self->itemnewincantation setTarget:self];
+        [self->itemcloseincantation setTarget:self];
+        [self->itemstartincantation setTarget:nil];
+        [self->itemstopincantation setTarget:nil];
+        [self->itemsavespell setTarget:self];
+        [self->itemselectspell setTarget:self];
+        [self->itemopenspell setTarget:self];
+        [self->itempredictspell setTarget:self];
+        [self->itemexportspell setTarget:self];
+        [self->itemloadincantation setTarget:self];
+    }
 }
 - (IBAction)browsecsv:(id)sender{
     NSOpenPanel*    panel = [NSOpenPanel openPanel];
@@ -104,7 +124,7 @@
     [self->itemopenspell setTarget:nil];
     [self->itempredictspell setTarget:nil];
     [self->itemexportspell setTarget:nil];
-    
+    [self->itemloadincantation setTarget:self];
 }
 
 
@@ -156,6 +176,7 @@
     [self->itemopenspell setTarget:nil];
     [self->itempredictspell setTarget:nil];
     [self->itemexportspell setTarget:nil];
+    [self->itemloadincantation setTarget:self];
 }
 - (IBAction)closeincantation:(id)sender{
     NSAlert *alert = [[NSAlert alloc] init];
@@ -205,33 +226,27 @@
            [self->itemopenspell setTarget:nil];
            [self->itempredictspell setTarget:nil];
            [self->itemexportspell setTarget:nil];
+           [self->itemloadincantation setTarget:self];
        }
     
 }
 - (void)processus{
-    coeur.run();
-    [timerAnim invalidate];
-    NSAlert *alert = [[NSAlert alloc] init];
-       [alert setMessageText:@"Le calcul est terminé, c'est le moment de sauvegarder !"];
-       [alert setInformativeText:@"Projet et finalisation."];
-       [alert addButtonWithTitle:@"OK"];
-       [alert runModal];
-    [self->itemexportformule setTarget:self];
-    [self->itemnewincantation setTarget:self];
-    [self->itemcloseincantation setTarget:self];
-    [self->itemstartincantation setTarget:nil];
-    [self->itemstopincantation setTarget:nil];
-    [self->itemsavespell setTarget:self];
-    [self->itemselectspell setTarget:self];
-    [self->itemopenspell setTarget:self];
-    [self->itempredictspell setTarget:self];
-    [self->itemexportspell setTarget:self];
+    //coeur.run();
+    cout << "truc" <<endl;
+}
+- (void)launchingator{
+    cout << "merde"<<endl;
+    int i=0;
+    while(true){
+        i = (i +1) % 5000;
+        cout << "=="<<i<<endl;
+    }
 }
 - (IBAction)runincantation:(id)sender{
     //sound
-    /*NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Ancient_Game_Magic_Revive" ofType:@"wav"];
+    NSString *resourcePath = [[NSBundle mainBundle] pathForResource:@"Ancient_Game_Magic_Revive" ofType:@"wav"];
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
-    [soundtmp play];*/
+    [soundtmp play];
     
     //animation
     //A1
@@ -282,8 +297,24 @@
         //coeur.run();
         //[NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
         
-        athread = [[NSThread alloc] initWithTarget:self selector:@selector(processus) object:nil];
-        [athread start];
+        //athread = [[NSThread alloc] initWithTarget:self selector:@selector(processus) object:nil];
+        //[athread start];
+        /*
+         [subtimer invalidate];
+         subtimer = [NSTimer scheduledTimerWithTimeInterval:0.020
+                                                      target:
+                                                    selector:@selector(launchingator)
+                                                    userInfo:nil
+                                                     repeats:NO];
+         */
+        
+        myQueue = dispatch_queue_create("someDescription", NULL);
+        dispatch_async(myQueue, ^{
+            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(launchingator) userInfo:nil repeats:NO];
+            [[NSRunLoop currentRunLoop] run];
+        });
+        
+        
         //coeur.run();
     }
     else{
@@ -304,6 +335,7 @@
     [self->itemopenspell setTarget:nil];
     [self->itempredictspell setTarget:nil];
     [self->itemexportspell setTarget:nil];
+    [self->itemloadincantation setTarget:nil];
     
 }
 - (IBAction)stopincantation:(id)sender{
@@ -312,9 +344,13 @@
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
     [timerAnim invalidate];
-    
+    dispatch_suspend(myQueue);
     //stop incantation
-    [athread cancel];
+    //[athread cancel];
+    //  [subtimer invalidate];
+    //[athread release];
+    //athread = nil;
+    //athread = nil;
     [self->itemexportformule setTarget:nil];
     [self->itemnewincantation setTarget:self];
     [self->itemcloseincantation setTarget:self];
@@ -325,6 +361,7 @@
     [self->itemopenspell setTarget:nil];
     [self->itempredictspell setTarget:nil];
     [self->itemexportspell setTarget:nil];
+    [self->itemloadincantation setTarget:self];
 }
 - (IBAction)exportformula:(id)sender{
     //sound
@@ -362,6 +399,38 @@
             coeur.save(PATHO);
         }
     }];
+}
+- (IBAction)loadspell:(id)sender{
+    NSOpenPanel*    panel = [NSOpenPanel openPanel];
+     NSArray  * fileTypes = [NSArray arrayWithObjects:@"osef",@"OSEF",nil];
+     //ProjViewController *otherViewController=[[ProjViewController alloc] init]
+     [panel setCanChooseFiles:YES];
+     [panel setCanChooseDirectories:NO];
+     [panel setAllowedFileTypes:fileTypes];;
+     //[self->tableproj setDataSource:otherViewController];
+     //[ [otherViewController array] removeAllObjects];
+     //[self->tableproj reloadData];
+     //[ [ otherViewController table] reloadData];
+     [panel beginWithCompletionHandler:^(NSInteger result){
+         if (result == NSModalResponseOK)//NSFileHandlingPanelOKButton
+         {
+             NSString *NSStrPath  = [panel.URLs.firstObject path];
+             string PATHO = [NSStrPath UTF8String];
+             coeur.load(PATHO);
+             
+             [self->itemexportformule setTarget:nil];
+             [self->itemnewincantation setTarget:self];
+             [self->itemcloseincantation setTarget:self];
+             [self->itemstartincantation setTarget:nil];
+             [self->itemstopincantation setTarget:nil];
+             [self->itemsavespell setTarget:nil];
+             [self->itemselectspell setTarget:self];
+             [self->itemopenspell setTarget:nil];
+             [self->itempredictspell setTarget:nil];
+             [self->itemexportspell setTarget:nil];
+             [self->itemloadincantation setTarget:self];
+         }
+     }];
 }
 - (IBAction)opencsv:(id)sender{
 
@@ -426,6 +495,7 @@
            [self->itemopenspell setTarget:nil];
            [self->itempredictspell setTarget:nil];
            [self->itemexportspell setTarget:nil];
+           [self->itemloadincantation setTarget:self];
        }
 }
 
