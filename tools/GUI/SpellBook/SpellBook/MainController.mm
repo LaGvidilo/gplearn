@@ -231,8 +231,17 @@
     
 }
 - (void)processus{
-    //coeur.run();
-    cout << "truc" <<endl;
+    string com = coeur.run();
+    
+    NSString * str = [NSString stringWithCString:com.c_str() encoding:NSUTF8StringEncoding];;
+    NSArray * arr = [str componentsSeparatedByString:@" "];
+    task = [[NSTask alloc] init];
+    task.launchPath = @"/usr/bin/python";
+    task.arguments = arr;
+    //task.standardOutput = pipe;
+
+    [task launch];
+    //cout << "truc" <<endl;
 }
 - (void)launchingator{
     cout << "merde"<<endl;
@@ -297,8 +306,8 @@
         //coeur.run();
         //[NSThread detachNewThreadSelector:@selector(startTheBackgroundJob) toTarget:self withObject:nil];
         
-        //athread = [[NSThread alloc] initWithTarget:self selector:@selector(processus) object:nil];
-        //[athread start];
+        athread = [[NSThread alloc] initWithTarget:self selector:@selector(processus) object:nil];
+        [athread start];
         /*
          [subtimer invalidate];
          subtimer = [NSTimer scheduledTimerWithTimeInterval:0.020
@@ -307,13 +316,24 @@
                                                     userInfo:nil
                                                      repeats:NO];
          */
-        
+        /*
+        cout << "Launching a thread\n";
+        int state = 99;
+        task_struct task(state);
+        cout << "Launching a thread\n";
+        t = std::thread(task);
+        cout << "detaching the thread\n";
+        t.detach();
+        //cout << "joining the thread\n";
+        //t.join();*/
+        /*
         myQueue = dispatch_queue_create("someDescription", NULL);
         dispatch_async(myQueue, ^{
-            [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(launchingator) userInfo:nil repeats:NO];
-            [[NSRunLoop currentRunLoop] run];
+            //[NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(launchingator) userInfo:nil repeats:NO];
+            //[[NSRunLoop currentRunLoop] run];
+            [self processus];
         });
-        
+        */
         
         //coeur.run();
     }
@@ -344,7 +364,10 @@
     NSSound *soundtmp = [[NSSound alloc] initWithContentsOfFile:resourcePath byReference:YES];
     [soundtmp play];
     [timerAnim invalidate];
-    dispatch_suspend(myQueue);
+    //dispatch_suspend(myQueue);
+    [athread cancel];
+    [task terminate];
+    
     //stop incantation
     //[athread cancel];
     //  [subtimer invalidate];

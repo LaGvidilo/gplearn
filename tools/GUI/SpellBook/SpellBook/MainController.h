@@ -13,6 +13,7 @@
 #import <Foundation/Foundation.h>
 #include <sstream>
 #include "Coeur.hpp"
+#include <thread>
 using namespace std;
 unsigned int numanim;
 int countFrame;
@@ -21,6 +22,24 @@ string filepath;
 string putinpath;
 core coeur;
 dispatch_queue_t myQueue;
+NSTask *task;
+struct task_struct
+{
+    int& i;
+    task_struct(int& ii):i(ii){
+        cout << "task_struct constructor i = " << i << endl;
+    }
+
+    void operator()()
+    {
+        cout << " core->run()\n";
+        coeur.run();
+    }
+};
+
+std::thread t;
+
+
 @interface MainController : NSObject
 {
     //menu

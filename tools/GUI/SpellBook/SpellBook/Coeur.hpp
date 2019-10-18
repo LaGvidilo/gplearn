@@ -45,7 +45,7 @@ public:
     void initAll();//ok
     void setter(int tmp_sizepop, int tmp_numbergen,double tmp_stpcrit, int tmp_njobs,double tmp_crossover,double tmp_subtreemutation,double tmp_hoistmutation,double tmp_pointmutation,double tmp_maxsamples,double tmp_parsimonycoefficient,string tmp_csvfile,int tmp_parammath,int tmp_randomstate);//ok
     bool limitis();//ok
-    void run();//ok
+    string run();//ok
     void save(string filepath);
     void load(string filepath);
     bool ended(){
