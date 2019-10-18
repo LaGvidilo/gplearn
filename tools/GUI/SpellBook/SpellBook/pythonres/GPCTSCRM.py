@@ -44,58 +44,58 @@ def recherche():
     f = open("outlog.txt","w")
     f.write("START LOG\n")
     f.close()
-	sizepop = int(args.sizepop)#input("Taille de la population?: ")
-	numbergen = int(args.numbergen)#input("Nombre de generation?: ")
-	stpcrit = float(args.stpcrit)#input("Critere d'arret de l'experience?: ")
-	njobs = int(args.njobs)#input("Nombre de processus paralleles?: ")
-	if njobs>1:
-		verboz = 2
-	else:
-		verboz = 1
+    sizepop = int(args.sizepop)#input("Taille de la population?: ")
+    numbergen = int(args.numbergen)#input("Nombre de generation?: ")
+    stpcrit = float(args.stpcrit)#input("Critere d'arret de l'experience?: ")
+    njobs = int(args.njobs)#input("Nombre de processus paralleles?: ")
+    if njobs>1:
+        verboz = 2
+    else:
+        verboz = 1
 
-	#Paramètres secondaires
-	crossover = float(args.crossover)#input("p_crossover: ")
-	subtreemutation = float(args.subtreemutation)#input("p_subtree_mutation: ")
-	hoistmutation = float(args.hoistmutation)#input("p_hoist_mutation: ")
-	pointmutation = float(args.pointmutation)#input("p_point_mutation: ")
-	maxsamples = float(args.maxsamples)#input("max_samples: ")
-	parsimonycoefficient = float(args.parsimonycoefficient)#input("parsimony_coefficient: ")
-	randomstate = int(args.randomstate)#input("random_state: ")
+    #Paramètres secondaires
+    crossover = float(args.crossover)#input("p_crossover: ")
+    subtreemutation = float(args.subtreemutation)#input("p_subtree_mutation: ")
+    hoistmutation = float(args.hoistmutation)#input("p_hoist_mutation: ")
+    pointmutation = float(args.pointmutation)#input("p_point_mutation: ")
+    maxsamples = float(args.maxsamples)#input("max_samples: ")
+    parsimonycoefficient = float(args.parsimonycoefficient)#input("parsimony_coefficient: ")
+    randomstate = int(args.randomstate)#input("random_state: ")
 
-	"""
-		warmstart=False
-		crossover=0.7
-		subtreemutation=0.1
-		hoistmutation=0.05
-		pointmutation=0.1
-		maxsamples=0.9
-		verboz=1
-		parsimonycoefficient=0.01
-		randomstate=0
-	"""
+    """
+        warmstart=False
+        crossover=0.7
+        subtreemutation=0.1
+        hoistmutation=0.05
+        pointmutation=0.1
+        maxsamples=0.9
+        verboz=1
+        parsimonycoefficient=0.01
+        randomstate=0
+    """
 
-	parammath = int(args.parammath)#input("\n"+paramsecho+"\nParametre de calcul a utiliser?: ")
-	#parammathdict[parammath]
+    parammath = int(args.parammath)#input("\n"+paramsecho+"\nParametre de calcul a utiliser?: ")
+    #parammathdict[parammath]
 
-	gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], False, 
-			crossover, subtreemutation, hoistmutation, pointmutation, maxsamples,
-			verboz, parsimonycoefficient, randomstate, njobs)
+    gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], False,
+            crossover, subtreemutation, hoistmutation, pointmutation, maxsamples,
+            verboz, parsimonycoefficient, randomstate, njobs)
 
-	#print "Fichier CSV contenant les données a traiter?: ",
-	namef1 = args.csvfile#raw_input()
+    #print "Fichier CSV contenant les données a traiter?: ",
+    namef1 = args.csvfile#raw_input()
 
-	gp.load_csv(namef1)
-	print "Le traitement va commencer..."
-	gp.learn()
-	namef2 = str(namef1.split(".")[0])
-	print "Programme termine!"
-	gp.save(namef2+".model")
-	print "Sauvegarde du programme..."
-	idiotstr = "y="+str(gp.get_program())
-	print idiotstr
-	nbx = gp.nbX
-	GP.to_texpng(namef2+".png", nbx, idiotstr)
-	print "Voici le programme: ", gp.print_program()
+    gp.load_csv(namef1)
+    print "Le traitement va commencer..."
+    gp.learn()
+    namef2 = str(namef1.split(".")[0])
+    print "Programme termine!"
+    gp.save(namef2+".model")
+    print "Sauvegarde du programme..."
+    idiotstr = "y="+str(gp.get_program())
+    print idiotstr
+    nbx = gp.nbX
+    GP.to_texpng(namef2+".png", nbx, idiotstr)
+    print "Voici le programme: ", gp.print_program()
 
 recherche()
 

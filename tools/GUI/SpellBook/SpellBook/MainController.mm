@@ -41,6 +41,7 @@
 }
  */
 - (void)animated{
+
     //A1-(0->359)
     stringstream SS1;
     SS1 << "A"<<numanim <<"-"<<countFrame;
@@ -248,6 +249,11 @@
     //NSFileHandle *file;
     //file = [pipe fileHandleForReading];
     [task launch];
+    while(true){
+    if (not [task isRunning]){
+        coeur.toend();
+    }
+    }
     //cout << "truc" <<endl;
 }
 - (void)launchingator{

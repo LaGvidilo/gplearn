@@ -48,6 +48,7 @@ public:
     string run();//ok
     void save(string filepath);
     void load(string filepath);
+    void toend(){fin=true;}
     bool ended(){
         return fin;
     }
