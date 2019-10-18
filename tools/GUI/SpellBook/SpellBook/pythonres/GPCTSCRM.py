@@ -41,6 +41,9 @@ parser.add_argument('randomstate')
 args = parser.parse_args()
 
 def recherche():
+    f = open("outlog.txt","w")
+    f.write("START LOG\n")
+    f.close()
 	sizepop = int(args.sizepop)#input("Taille de la population?: ")
 	numbergen = int(args.numbergen)#input("Nombre de generation?: ")
 	stpcrit = float(args.stpcrit)#input("Critere d'arret de l'experience?: ")

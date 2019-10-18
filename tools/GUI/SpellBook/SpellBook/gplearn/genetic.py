@@ -29,6 +29,13 @@ from .utils import check_random_state, NotFittedError
 
 __all__ = ['SymbolicRegressor', 'SymbolicTransformer']
 
+def print2(txt):
+    fff = open("outlog.txt", 'a')
+    fff.write(txt+"\n")
+    fff.close()
+
+
+
 MAX_INT = np.iinfo(np.int32).max
 
 
@@ -223,6 +230,11 @@ class BaseSymbolic(six.with_metaclass(ABCMeta, BaseEstimator)):
             line_format = '{:>4} {:>8} {:>16} {:>8} {:>16} {:>16} {:>10}'
             print(line_format.format('Gen', 'Length', 'Fitness', 'Length',
                                      'Fitness', 'OOB Fitness', 'Time Left'))
+            print2('    |{:^25}|{:^42}|'.format('Population Average',
+                                               'Best Individual'))
+            print2('-' * 4 + ' ' + '-' * 25 + ' ' + '-' * 42 + ' ' + '-' * 10)
+            print2(line_format.format('Gen', 'Length', 'Fitness', 'Length',
+                                     'Fitness', 'OOB Fitness', 'Time Left'))
 
         else:
             # Estimate remaining time for run
@@ -247,6 +259,13 @@ class BaseSymbolic(six.with_metaclass(ABCMeta, BaseEstimator)):
                                      run_details['best_fitness'][-1],
                                      oob_fitness,
                                      remaining_time))
+            print2(line_format.format(run_details['generation'][-1],
+                run_details['average_length'][-1],
+                run_details['average_fitness'][-1],
+                run_details['best_length'][-1],
+                run_details['best_fitness'][-1],
+                oob_fitness,
+                remaining_time))
             self.BESTOF = run_details['best_fitness'][-1]
             fff=open("lastBESTOF.txt",'w')
             fff.write(str(self.BESTOF)+"\n")

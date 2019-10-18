@@ -43,6 +43,9 @@ def amener():
 			z = ''.join(c for c in IN if (c.isdigit() or c==","))
 			z = z.split(",")
 			z = map(float, z)
+            f = open("outlogpred.txt","w")
+            f.write("Resultat: " + str(gp.predict(z)))
+            f.close()
 			print "Resultat: ", str(gp.predict(z))
 
 

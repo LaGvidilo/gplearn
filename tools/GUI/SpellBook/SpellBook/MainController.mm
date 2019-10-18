@@ -232,14 +232,21 @@
 }
 - (void)processus{
     string com = coeur.run();
-    
+    //NSPipe* pipe = [NSPipe pipe];
     NSString * str = [NSString stringWithCString:com.c_str() encoding:NSUTF8StringEncoding];;
     NSArray * arr = [str componentsSeparatedByString:@" "];
     task = [[NSTask alloc] init];
     task.launchPath = @"/usr/bin/python";
     task.arguments = arr;
-    //task.standardOutput = pipe;
 
+    //[task setStandardOutput:pipe];
+    //file = [pipe fileHandleForReading];
+    //NSPipe *pipe;
+    //pipe = [NSPipe pipe];
+    //[task setStandardOutput: pipe];
+    //[task setStandardError: pipe];
+    //NSFileHandle *file;
+    //file = [pipe fileHandleForReading];
     [task launch];
     //cout << "truc" <<endl;
 }
@@ -365,9 +372,14 @@
     [soundtmp play];
     [timerAnim invalidate];
     //dispatch_suspend(myQueue);
+    
+    //NSData *data;
+    //data = [file readDataToEndOfFile];
+    //NSString *response = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+    
     [athread cancel];
     [task terminate];
-    
+    //cout << [response UTF8String] << endl;
     //stop incantation
     //[athread cancel];
     //  [subtimer invalidate];

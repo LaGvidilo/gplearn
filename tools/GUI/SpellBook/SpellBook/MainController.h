@@ -54,9 +54,9 @@ std::thread t;
     IBOutlet NSMenuItem *itempredictspell;
     IBOutlet NSMenuItem *itemexportspell;
     IBOutlet NSMenuItem *itemloadincantation;
-    
-    
-    
+    NSPipe *pipe;
+    NSString *output;
+    NSFileHandle* file;
     IBOutlet NSTextField *filepathtext;
     //NSString *filepath;
     IBOutlet NSImageView *pentaview;
