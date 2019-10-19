@@ -155,3 +155,35 @@ void core::save(string filepath){
 void core::load(string filepath){
     
 }
+
+
+
+
+coreData core::get_coreData(){
+    return genData;
+}
+void core::setFormule(string LaTeX, string Program){
+    genData.latex = LaTeX;
+    genData.program = Program;
+}
+
+void core::toend(){
+    fin=true;
+}
+bool core::ended(){
+    return fin;
+}
+
+
+void core::setModelFilePath(string filepath){
+    
+}
+void core::setImageFilePath(string filepath){
+    
+}
+void core::setModel(string b64Data){
+    genData.b64Model = b64Data;
+}
+void core::setImage(string b64Data){
+    genData.b64Image = b64Data;
+}

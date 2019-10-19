@@ -19,6 +19,13 @@
 #include "base64.h"
 using namespace std;
 
+struct coreData{
+    string b64Image;
+    string program;
+    string latex;
+    string b64Model;
+};
+
 class core{
 private:
     int sizepop;
@@ -36,6 +43,7 @@ private:
     double randomstate;
     string putin;
     bool fin;
+    coreData genData;
 public:
     core(){
         fin=false;
@@ -48,10 +56,17 @@ public:
     string run();//ok
     void save(string filepath);
     void load(string filepath);
-    void toend(){fin=true;}
-    bool ended(){
-        return fin;
-    }
+    
+    
+    coreData get_coreData();
+    void setFormule(string LaTeX, string Program);
+    void setModelFilePath(string filepath);
+    void setImageFilePath(string filepath);
+    void setModel(string b64Data);
+    void setImage(string b64Data);
+    
+    void toend();
+    bool ended();
 };
 
 
