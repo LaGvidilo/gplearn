@@ -24,6 +24,7 @@ struct coreData{
     string program;
     string latex;
     string b64Model;
+    string name;
 };
 
 class core{
@@ -58,15 +59,16 @@ public:
     void load(string filepath);
     
     
-    coreData get_coreData();
-    void setFormule(string LaTeX, string Program);
-    void setModelFilePath(string filepath);
-    void setImageFilePath(string filepath);
-    void setModel(string b64Data);
-    void setImage(string b64Data);
+    coreData get_coreData();//ok
+    void setFormule(string LaTeX, string Program);//ok
+    void setModelfromFilePath(string filepath);//ok
+    void setImagefromFilePath(string filepath);//ok
+    void setModel(string b64Data);//ok
+    void setImage(string b64Data);//ok
+    void setName(string name);//ok
     
-    void toend();
-    bool ended();
+    void toend();//ok
+    bool ended();//ok
 };
 
 

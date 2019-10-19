@@ -108,6 +108,40 @@
 			<key>uniqueIdentifier</key>
 			<string>1B6A2329-C96A-4782-8580-80262658908F</string>
 		</dict>
+		<key>24704BE0-F6F3-4D93-80B1-769955865010</key>
+		<dict>
+			<key>className</key>
+			<string>DBGConsoleLog</string>
+			<key>documentTypeString</key>
+			<string>com.apple.dt.IDE.DebuggerLogContentType</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>24704BE0-F6F3-4D93-80B1-769955865010.xcactivitylog</string>
+			<key>hasPrimaryLog</key>
+			<true/>
+			<key>primaryObservable</key>
+			<dict>
+				<key>highLevelStatus</key>
+				<string>S</string>
+			</dict>
+			<key>schemeIdentifier-containerName</key>
+			<string>SpellBook project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>SpellBook</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Debug SpellBook</string>
+			<key>timeStartedRecording</key>
+			<real>593146690.71066499</real>
+			<key>timeStoppedRecording</key>
+			<real>593146748.76417804</real>
+			<key>title</key>
+			<string>Debug SpellBook</string>
+			<key>uniqueIdentifier</key>
+			<string>24704BE0-F6F3-4D93-80B1-769955865010</string>
+		</dict>
 		<key>3E0B20E3-CC21-467F-9192-F24D43986B78</key>
 		<dict>
 			<key>className</key>

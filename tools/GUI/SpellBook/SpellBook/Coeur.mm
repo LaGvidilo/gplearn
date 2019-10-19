@@ -174,12 +174,24 @@ bool core::ended(){
     return fin;
 }
 
-
-void core::setModelFilePath(string filepath){
-    
+void core::setName(string name){
+    genData.name = name;
 }
-void core::setImageFilePath(string filepath){
-    
+void core::setModelfromFilePath(string filepath){
+    ifstream file(csvfile.c_str());
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    string dataraw = base64_encode( reinterpret_cast<const unsigned char *>(buffer.str().c_str()), (unsigned int) buffer.str().size() );
+    file.close();
+    genData.b64Model = dataraw;
+}
+void core::setImagefromFilePath(string filepath){
+    ifstream file(csvfile.c_str());
+    std::stringstream buffer;
+    buffer << file.rdbuf();
+    string dataraw = base64_encode( reinterpret_cast<const unsigned char *>(buffer.str().c_str()), (unsigned int) buffer.str().size() );
+    file.close();
+    genData.b64Image = dataraw;
 }
 void core::setModel(string b64Data){
     genData.b64Model = b64Data;

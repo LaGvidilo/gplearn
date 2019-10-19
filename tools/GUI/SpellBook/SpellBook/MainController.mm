@@ -60,7 +60,7 @@
     if (coeur.ended()){
         [timerAnim invalidate];
         NSAlert *alert = [[NSAlert alloc] init];
-           [alert setMessageText:@"Le calcul est terminé, c'est le moment de sauvegarder !"];
+           [alert setMessageText:@"Le calcul est terminé, c'est le moment !"];
            [alert setInformativeText:@"Projet et finalisation."];
            [alert addButtonWithTitle:@"OK"];
            [alert runModal];
@@ -75,6 +75,8 @@
         [self->itempredictspell setTarget:self];
         [self->itemexportspell setTarget:self];
         [self->itemloadincantation setTarget:self];
+        NSArray *fileURLs = [NSArray arrayWithObjects:[NSString stringWithCString:filepath.c_str() encoding:NSUTF8StringEncoding], /* ... */ nil];
+        [[NSWorkspace sharedWorkspace] activateFileViewerSelectingURLs:fileURLs];
     }
 }
 - (IBAction)browsecsv:(id)sender{
