@@ -9,7 +9,7 @@ computer program. It is used for creating and evolving programs used in the
 #
 # License: BSD 3 clause
 
-from copy import deepcopy
+from copy import deepcopy as copy
 
 import numpy as np
 from sklearn.utils.random import sample_without_replacement
