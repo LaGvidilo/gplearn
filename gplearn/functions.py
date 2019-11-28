@@ -12,7 +12,7 @@ own custom functions.
 
 import numpy as np
 from joblib import wrap_non_picklable_objects
-from sklearn.externals import six
+#from sklearn.externals import six
 import operator
 import math
 
