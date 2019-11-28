@@ -45,13 +45,13 @@ then evolved from the one that came before it by selecting the fittest
 individuals from the population to undergo genetic operations.
 
 ``gplearn`` retains the familiar scikit-learn ``fit``/``predict`` API and
-works with the existing scikit-learn `pipeline <http://scikit-learn.org/stable/modules/pipeline.html>`_
+works with the existing scikit-learn `pipeline <https://scikit-learn.org/stable/modules/compose.html>`_
 and `grid search <http://scikit-learn.org/stable/modules/grid_search.html>`_
 modules. You can get started with ``gplearn`` as simply as::
 
     est = SymbolicRegressor()
     est.fit(X_train, y_train)
-    y_pred = est_gp.predict(X_test, y_test)
+    y_pred = est.predict(X_test)
 
 However, don't let that stop you from exploring all the ways that the evolution
 can be tailored to your problem. The package attempts to squeeze a lot of
@@ -59,19 +59,15 @@ functionality into a scikit-learn-style API. While there are a lot of
 parameters to tweak, reading the documentation here should make the more
 relevant ones clear for your problem.
 
-``gplearn`` currently supports regression through the :class:`SymbolicRegressor`
-as well as transformation for automated feature engineering with the
-:class:`SymbolicTransformer`, which is designed to support regression problems,
-but should also work for binary classification. Future versions of the package
-will expand this class to support more complicated multi-target classification
-problems, and much more is planned too.
+``gplearn`` supports regression through the :class:`SymbolicRegressor`, binary
+classification with the :class:`SymbolicClassifier`, as well as transformation
+for automated feature engineering with the :class:`SymbolicTransformer`, which
+is designed to support regression problems, but should also work for binary
+classification.
 
-``gplearn`` is built on scikit-learn and a fairly recent copy (0.18.1+) is required
+``gplearn`` is built on scikit-learn and a fairly recent copy (0.20.0+) is required
 for installation. If you come across any issues in running or installing the
 package, `please submit a bug report <https://github.com/trevorstephens/gplearn/issues>`_.
-
-I hope you get some excellent results from using ``gplearn``! If you do, please
-`drop me a line on my blog <http://trevorstephens.com>`_ about how you used it.
 
 Next up, read some more details about :ref:`what Genetic Programming is <intro>`,
 and how it works...

@@ -8,33 +8,33 @@ gplearn.genetic.SymbolicRegressor and gplearn.genetic.SymbolicTransformer."""
 
 import pickle
 import sys
+from io import StringIO
 
 import numpy as np
 from scipy.stats import pearsonr, spearmanr
-from sklearn.externals.six.moves import StringIO
-from sklearn.datasets import load_boston
+from sklearn.datasets import load_boston, load_breast_cancer
 from sklearn.metrics import mean_absolute_error
 from sklearn.model_selection import GridSearchCV
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.utils.estimator_checks import check_estimator
-from sklearn.utils.testing import assert_false, assert_true
 from sklearn.utils.testing import assert_greater
 from sklearn.utils.testing import assert_equal, assert_almost_equal
-from sklearn.utils.testing import assert_array_equal
-from sklearn.utils.testing import assert_array_almost_equal
-from sklearn.utils.testing import assert_raises
-from sklearn.utils.testing import assert_warns
+from sklearn.utils.testing import assert_array_equal, assert_array_almost_equal
+from sklearn.utils.testing import assert_raises, assert_warns
 from sklearn.utils.validation import check_random_state
 
-from gplearn.genetic import SymbolicRegressor, SymbolicTransformer
+from gplearn.genetic import SymbolicClassifier, SymbolicRegressor
+from gplearn.genetic import SymbolicTransformer
 from gplearn.fitness import weighted_pearson, weighted_spearman
 from gplearn._program import _Program
 from gplearn.fitness import _fitness_map
 from gplearn.functions import (add2, sub2, mul2, div2, sqrt1, log1, abs1, max2,
                                min2)
 from gplearn.functions import _Function
+from gplearn.tests.check_estimator import custom_check_estimator
+from gplearn.tests.check_estimator import rewritten_check_estimator
 
 # load the boston dataset and randomly permute it
 rng = check_random_state(0)
@@ -43,17 +43,41 @@ perm = rng.permutation(boston.target.size)
 boston.data = boston.data[perm]
 boston.target = boston.target[perm]
 
+# load the breast cancer dataset and randomly permute it
+rng = check_random_state(0)
+cancer = load_breast_cancer()
+perm = rng.permutation(cancer.target.size)
+cancer.data = cancer.data[perm]
+cancer.target = cancer.target[perm]
 
-def test_sklearn_estimator_checks_regressor():
+
+def test_sklearn_regressor_checks():
     """Run the sklearn estimator validation checks on SymbolicRegressor"""
 
-    check_estimator(SymbolicRegressor)
+    check_estimator(SymbolicRegressor(population_size=1000,
+                                      generations=5))
 
 
-def test_sklearn_estimator_checks_transformer():
+def test_sklearn_classifier_checks():
+    """Run the sklearn estimator validation checks on SymbolicClassifier"""
+
+    custom_check_estimator(SymbolicClassifier(population_size=50,
+                                              generations=5))
+
+
+def test_sklearn_customized_checks():
+    """Run custom binary estimator validation checks on SymbolicClassifier"""
+
+    rewritten_check_estimator(SymbolicClassifier(population_size=50,
+                                                 generations=5))
+
+
+def test_sklearn_transformer_checks():
     """Run the sklearn estimator validation checks on SymbolicTransformer"""
 
-    check_estimator(SymbolicTransformer)
+    check_estimator(SymbolicTransformer(population_size=50,
+                                        hall_of_fame=10,
+                                        generations=5))
 
 
 def test_weighted_correlations():
@@ -72,7 +96,7 @@ def test_weighted_correlations():
     assert_almost_equal(scipy_pearson, gplearn_pearson)
     # Check with irregular weights (should be different)
     gplearn_pearson = weighted_pearson(x1, x2, w2)
-    assert_true(abs(scipy_pearson - gplearn_pearson) > 0.01)
+    assert(abs(scipy_pearson - gplearn_pearson) > 0.01)
 
     # Spearman's correlation coefficient
     scipy_spearman = spearmanr(x1, x2)[0]
@@ -81,7 +105,7 @@ def test_weighted_correlations():
     assert_almost_equal(scipy_spearman, gplearn_spearman)
     # Check with irregular weights (should be different)
     gplearn_spearman = weighted_pearson(x1, x2, w2)
-    assert_true(abs(scipy_spearman - gplearn_spearman) > 0.01)
+    assert(abs(scipy_spearman - gplearn_spearman) > 0.01)
 
 
 def test_program_init_method():
@@ -99,19 +123,19 @@ def test_program_init_method():
               'parsimony_coefficient': 0.1}
     random_state = check_random_state(415)
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='full',
                                  random_state=random_state, **params))
     full_length = np.mean([gp.length_ for gp in programs])
     full_depth = np.mean([gp.depth_ for gp in programs])
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='half and half',
                                  random_state=random_state, **params))
     hnh_length = np.mean([gp.length_ for gp in programs])
     hnh_depth = np.mean([gp.depth_ for gp in programs])
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='grow',
                                  random_state=random_state, **params))
     grow_length = np.mean([gp.length_ for gp in programs])
@@ -138,24 +162,24 @@ def test_program_init_depth():
               'parsimony_coefficient': 0.1}
     random_state = check_random_state(415)
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='full',
                                  random_state=random_state, **params))
     full_depth = np.bincount([gp.depth_ for gp in programs])
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='half and half',
                                  random_state=random_state, **params))
     hnh_depth = np.bincount([gp.depth_ for gp in programs])
     programs = []
-    for i in range(20):
+    for _ in range(20):
         programs.append(_Program(init_method='grow',
                                  random_state=random_state, **params))
     grow_depth = np.bincount([gp.depth_ for gp in programs])
 
-    assert_true(full_depth[-1] == 20)
-    assert_false(hnh_depth[-1] == 20)
-    assert_false(grow_depth[-1] == 20)
+    assert(full_depth[-1] == 20)
+    assert(hnh_depth[-1] != 20)
+    assert(grow_depth[-1] != 20)
 
 
 def test_validate_program():
@@ -179,17 +203,17 @@ def test_validate_program():
     # This one should be fine
     _ = _Program(function_set, arities, init_depth, init_method, n_features,
                  const_range, metric, p_point_replace, parsimony_coefficient,
-                 random_state, test_gp)
+                 random_state, program=test_gp)
 
     # Now try a couple that shouldn't be
     assert_raises(ValueError, _Program, function_set, arities, init_depth,
                   init_method, n_features, const_range, metric,
                   p_point_replace, parsimony_coefficient, random_state,
-                  test_gp[:-1])
+                  program=test_gp[:-1])
     assert_raises(ValueError, _Program, function_set, arities, init_depth,
                   init_method, n_features, const_range, metric,
                   p_point_replace, parsimony_coefficient, random_state,
-                  test_gp + [1])
+                  program=test_gp + [1])
 
 
 def test_print_overloading():
@@ -220,7 +244,23 @@ def test_print_overloading():
         sys.stdout = orig_stdout
 
     lisp = "mul(div(X8, X1), sub(X9, 0.500))"
-    assert_true(output == lisp)
+    assert(output == lisp)
+
+    # Test with feature names
+    params['feature_names'] = [str(n) for n in range(10)]
+    gp = _Program(random_state=random_state, program=test_gp, **params)
+
+    orig_stdout = sys.stdout
+    try:
+        out = StringIO()
+        sys.stdout = out
+        print(gp)
+        output = out.getvalue().strip()
+    finally:
+        sys.stdout = orig_stdout
+
+    lisp = "mul(div(8, 1), sub(9, 0.500))"
+    assert(output == lisp)
 
 
 def test_export_graphviz():
@@ -242,7 +282,8 @@ def test_export_graphviz():
     gp = _Program(random_state=random_state, program=test_gp, **params)
     output = gp.export_graphviz()
     tree = 'digraph program {\n' \
-           'node [style=filled]0 [label="mul", fillcolor="#136ed4"] ;\n' \
+           'node [style=filled]\n' \
+           '0 [label="mul", fillcolor="#136ed4"] ;\n' \
            '1 [label="div", fillcolor="#136ed4"] ;\n' \
            '2 [label="X8", fillcolor="#60a6f6"] ;\n' \
            '3 [label="X1", fillcolor="#60a6f6"] ;\n' \
@@ -251,12 +292,22 @@ def test_export_graphviz():
            '5 [label="X9", fillcolor="#60a6f6"] ;\n' \
            '6 [label="0.500", fillcolor="#60a6f6"] ;\n' \
            '4 -> 6 ;\n4 -> 5 ;\n0 -> 4 ;\n0 -> 1 ;\n}'
-    assert_true(output == tree)
+    assert(output == tree)
+
+    # Test with feature names
+    params['feature_names'] = [str(n) for n in range(10)]
+    gp = _Program(random_state=random_state, program=test_gp, **params)
+    output = gp.export_graphviz()
+    tree = tree.replace('X', '')
+    assert(output == tree)
 
     # Test with fade_nodes
+    params['feature_names'] = None
+    gp = _Program(random_state=random_state, program=test_gp, **params)
     output = gp.export_graphviz(fade_nodes=[0, 1, 2, 3])
     tree = 'digraph program {\n' \
-           'node [style=filled]0 [label="mul", fillcolor="#cecece"] ;\n' \
+           'node [style=filled]\n' \
+           '0 [label="mul", fillcolor="#cecece"] ;\n' \
            '1 [label="div", fillcolor="#cecece"] ;\n' \
            '2 [label="X8", fillcolor="#cecece"] ;\n' \
            '3 [label="X1", fillcolor="#cecece"] ;\n' \
@@ -265,15 +316,31 @@ def test_export_graphviz():
            '5 [label="X9", fillcolor="#60a6f6"] ;\n' \
            '6 [label="0.500", fillcolor="#60a6f6"] ;\n' \
            '4 -> 6 ;\n4 -> 5 ;\n0 -> 4 ;\n0 -> 1 ;\n}'
-    assert_true(output == tree)
+    assert(output == tree)
 
     # Test a degenerative single-node program
     test_gp = [1]
     gp = _Program(random_state=random_state, program=test_gp, **params)
     output = gp.export_graphviz()
     tree = 'digraph program {\n' \
-           'node [style=filled]0 [label="X1", fillcolor="#60a6f6"] ;\n}'
-    assert_true(output == tree)
+           'node [style=filled]\n' \
+           '0 [label="X1", fillcolor="#60a6f6"] ;\n}'
+    assert(output == tree)
+
+
+def test_invalid_feature_names():
+    """Check invalid feature names raise errors"""
+
+    for Symbolic in (SymbolicRegressor, SymbolicTransformer):
+
+        # Check invalid length feature_names
+        est = Symbolic(feature_names=['foo', 'bar'])
+        assert_raises(ValueError, est.fit, boston.data, boston.target)
+
+        # Check invalid type feature_name
+        feature_names = [str(n) for n in range(12)] + [0]
+        est = Symbolic(feature_names=feature_names)
+        assert_raises(ValueError, est.fit, boston.data, boston.target)
 
 
 def test_execute():
@@ -395,7 +462,7 @@ def test_genetic_operations():
     assert_equal(gp.program, test_gp)
 
 
-def test_program_input_validation():
+def test_input_validation():
     """Check that guarded input validation raises errors"""
 
     for Symbolic in (SymbolicRegressor, SymbolicTransformer):
@@ -417,11 +484,11 @@ def test_program_input_validation():
         est = Symbolic(const_range='ni')
         assert_raises(ValueError, est.fit, boston.data, boston.target)
         # And check acceptable, but strange, representations of const_range
-        est = Symbolic(generations=2, const_range=(2, 2))
+        est = Symbolic(population_size=100, generations=1, const_range=(2, 2))
         est.fit(boston.data, boston.target)
-        est = Symbolic(generations=2, const_range=None)
+        est = Symbolic(population_size=100, generations=1, const_range=None)
         est.fit(boston.data, boston.target)
-        est = Symbolic(generations=2, const_range=(4, 2))
+        est = Symbolic(population_size=100, generations=1, const_range=(4, 2))
         est.fit(boston.data, boston.target)
 
         # Check invalid init_depth
@@ -438,7 +505,7 @@ def test_program_input_validation():
         est = Symbolic(init_depth=(4, 2))
         assert_raises(ValueError, est.fit, boston.data, boston.target)
         # And check acceptable, but strange, representations of init_depth
-        est = Symbolic(generations=2, init_depth=(2, 2))
+        est = Symbolic(population_size=100, generations=1, init_depth=(2, 2))
         est.fit(boston.data, boston.target)
 
     # Check hall_of_fame and n_components for transformer
@@ -453,26 +520,97 @@ def test_program_input_validation():
 
     # Check regressor metrics
     for m in ['mean absolute error', 'mse', 'rmse', 'pearson', 'spearman']:
-        est = SymbolicRegressor(generations=2, metric=m)
+        est = SymbolicRegressor(population_size=100, generations=1, metric=m)
         est.fit(boston.data, boston.target)
     # And check a fake one
-    est = SymbolicRegressor(generations=2, metric='the larch')
+    est = SymbolicRegressor(metric='the larch')
     assert_raises(ValueError, est.fit, boston.data, boston.target)
     # Check transformer metrics
     for m in ['pearson', 'spearman']:
-        est = SymbolicTransformer(generations=2, metric=m)
+        est = SymbolicTransformer(population_size=100, generations=1, metric=m)
         est.fit(boston.data, boston.target)
     # And check the regressor metrics as well as a fake one
     for m in ['mean absolute error', 'mse', 'rmse', 'the larch']:
-        est = SymbolicTransformer(generations=2, metric=m)
+        est = SymbolicTransformer(metric=m)
         assert_raises(ValueError, est.fit, boston.data, boston.target)
+
+
+def test_input_validation_classifier():
+    """Check that guarded input validation raises errors"""
+
+    # Check too much proba
+    est = SymbolicClassifier(p_point_mutation=.5)
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+
+    # Check invalid init_method
+    est = SymbolicClassifier(init_method='ni')
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+
+    # Check invalid const_ranges
+    est = SymbolicClassifier(const_range=2)
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(const_range=[2, 2])
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(const_range=(2, 2, 2))
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(const_range='ni')
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    # And check acceptable, but strange, representations of const_range
+    est = SymbolicClassifier(population_size=100, generations=1,
+                             const_range=(2, 2))
+    est.fit(cancer.data, cancer.target)
+    est = SymbolicClassifier(population_size=100, generations=1,
+                             const_range=None)
+    est.fit(cancer.data, cancer.target)
+    est = SymbolicClassifier(population_size=100, generations=1,
+                             const_range=(4, 2))
+    est.fit(cancer.data, cancer.target)
+
+    # Check invalid init_depth
+    est = SymbolicClassifier(init_depth=2)
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(init_depth=2)
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(init_depth=[2, 2])
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(init_depth=(2, 2, 2))
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(init_depth='ni')
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(init_depth=(4, 2))
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    # And check acceptable, but strange, representations of init_depth
+    est = SymbolicClassifier(population_size=100, generations=1,
+                             init_depth=(2, 2))
+    est.fit(cancer.data, cancer.target)
+
+    # Check classifier metrics
+    for m in ['log loss']:
+        est = SymbolicClassifier(population_size=100, generations=1, metric=m)
+        est.fit(cancer.data, cancer.target)
+    # And check a fake one
+    est = SymbolicClassifier(metric='the larch')
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+
+    # Check classifier transformers
+    for t in ['sigmoid']:
+        est = SymbolicClassifier(population_size=100, generations=1,
+                                 transformer=t)
+        est.fit(cancer.data, cancer.target)
+    # And check an incompatible one with wrong arity
+    est = SymbolicClassifier(transformer=sub2)
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    # And check a fake one
+    est = SymbolicClassifier(transformer='the larch')
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
 
 
 def test_none_const_range():
     """Check that const_range=None produces no constants"""
 
     # Check with None as const_range
-    est = SymbolicRegressor(const_range=None, generations=2)
+    est = SymbolicRegressor(population_size=100, generations=2,
+                            const_range=None)
     est.fit(boston.data, boston.target)
     float_count = 0
     for generation in est._programs:
@@ -480,12 +618,12 @@ def test_none_const_range():
             if program is None:
                 continue
             for element in program.program:
-                if type(element) == float:
+                if isinstance(element, float):
                     float_count += 1
-    assert_true(float_count == 0)
+    assert(float_count == 0)
 
     # Check with default const_range
-    est = SymbolicRegressor(generations=2)
+    est = SymbolicRegressor(population_size=100, generations=2)
     est.fit(boston.data, boston.target)
     float_count = 0
     for generation in est._programs:
@@ -493,32 +631,63 @@ def test_none_const_range():
             if program is None:
                 continue
             for element in program.program:
-                if type(element) == float:
+                if isinstance(element, float):
                     float_count += 1
-    assert_true(float_count > 1)
+    assert(float_count > 1)
 
 
-def test_sample_weight():
+def test_sample_weight_and_class_weight():
     """Check sample_weight param works"""
 
     # Check constant sample_weight has no effect
     sample_weight = np.ones(boston.target.shape[0])
-    est1 = SymbolicRegressor(generations=2, random_state=0)
+    est1 = SymbolicRegressor(population_size=100, generations=2,
+                             random_state=0)
     est1.fit(boston.data, boston.target)
-    est2 = SymbolicRegressor(generations=2, random_state=0)
+    est2 = SymbolicRegressor(population_size=100, generations=2,
+                             random_state=0)
     est2.fit(boston.data, boston.target, sample_weight=sample_weight)
     # And again with a scaled sample_weight
-    est3 = SymbolicRegressor(generations=2, random_state=0)
+    est3 = SymbolicRegressor(population_size=100, generations=2,
+                             random_state=0)
     est3.fit(boston.data, boston.target, sample_weight=sample_weight * 1.1)
 
     assert_almost_equal(est1._program.fitness_, est2._program.fitness_)
     assert_almost_equal(est1._program.fitness_, est3._program.fitness_)
 
+    # And again for the classifier
+    sample_weight = np.ones(cancer.target.shape[0])
+    est1 = SymbolicClassifier(population_size=100, generations=2,
+                              random_state=0)
+    est1.fit(cancer.data, cancer.target)
+    est2 = SymbolicClassifier(population_size=100, generations=2,
+                              random_state=0)
+    est2.fit(cancer.data, cancer.target, sample_weight=sample_weight)
+    # And again with a scaled sample_weight
+    est3 = SymbolicClassifier(population_size=100, generations=2,
+                              random_state=0)
+    est3.fit(cancer.data, cancer.target, sample_weight=sample_weight * 1.1)
+    # And then using class weight to do the same thing
+    est4 = SymbolicClassifier(class_weight={0: 1, 1: 1}, population_size=100,
+                              generations=2, random_state=0)
+    est4.fit(cancer.data, cancer.target)
+    est5 = SymbolicClassifier(class_weight={0: 1.1, 1: 1.1},
+                              population_size=100, generations=2,
+                              random_state=0)
+    est5.fit(cancer.data, cancer.target)
+
+    assert_almost_equal(est1._program.fitness_, est2._program.fitness_)
+    assert_almost_equal(est1._program.fitness_, est3._program.fitness_)
+    assert_almost_equal(est1._program.fitness_, est4._program.fitness_)
+    assert_almost_equal(est1._program.fitness_, est5._program.fitness_)
+
     # And again for the transformer
     sample_weight = np.ones(boston.target.shape[0])
-    est1 = SymbolicTransformer(generations=2, random_state=0)
+    est1 = SymbolicTransformer(population_size=100, generations=2,
+                               random_state=0)
     est1 = est1.fit_transform(boston.data, boston.target)
-    est2 = SymbolicTransformer(generations=2, random_state=0)
+    est2 = SymbolicTransformer(population_size=100, generations=2,
+                               random_state=0)
     est2 = est2.fit_transform(boston.data, boston.target,
                               sample_weight=sample_weight)
 
@@ -528,70 +697,76 @@ def test_sample_weight():
 def test_trigonometric():
     """Check that using trig functions work and that results differ"""
 
-    est1 = SymbolicRegressor(random_state=0)
+    est1 = SymbolicRegressor(population_size=100, generations=2,
+                             random_state=0)
     est1.fit(boston.data[:400, :], boston.target[:400])
     est1 = mean_absolute_error(est1.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    est2 = SymbolicRegressor(function_set=['add', 'sub', 'mul', 'div',
+    est2 = SymbolicRegressor(population_size=100, generations=2,
+                             function_set=['add', 'sub', 'mul', 'div',
                                            'sin', 'cos', 'tan'],
                              random_state=0)
     est2.fit(boston.data[:400, :], boston.target[:400])
     est2 = mean_absolute_error(est2.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    assert_true(abs(est1 - est2) > 0.01)
+    assert(abs(est1 - est2) > 0.01)
 
 
 def test_subsample():
     """Check that subsample work and that results differ"""
 
-    est1 = SymbolicRegressor(max_samples=1.0, random_state=0)
+    est1 = SymbolicRegressor(population_size=100, generations=2,
+                             max_samples=1.0, random_state=0)
     est1.fit(boston.data[:400, :], boston.target[:400])
     est1 = mean_absolute_error(est1.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    est2 = SymbolicRegressor(max_samples=0.7, random_state=0)
+    est2 = SymbolicRegressor(population_size=100, generations=2,
+                             max_samples=0.5, random_state=0)
     est2.fit(boston.data[:400, :], boston.target[:400])
     est2 = mean_absolute_error(est2.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    assert_true(abs(est1 - est2) > 0.01)
+    assert(abs(est1 - est2) > 0.01)
 
 
 def test_parsimony_coefficient():
     """Check that parsimony coefficients work and that results differ"""
 
-    est1 = SymbolicRegressor(parsimony_coefficient=0.001, random_state=0)
+    est1 = SymbolicRegressor(population_size=100, generations=2,
+                             parsimony_coefficient=0.001, random_state=0)
     est1.fit(boston.data[:400, :], boston.target[:400])
     est1 = mean_absolute_error(est1.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    est2 = SymbolicRegressor(parsimony_coefficient=0.1, random_state=0)
+    est2 = SymbolicRegressor(population_size=100, generations=2,
+                             parsimony_coefficient='auto', random_state=0)
     est2.fit(boston.data[:400, :], boston.target[:400])
     est2 = mean_absolute_error(est2.predict(boston.data[400:, :]),
                                boston.target[400:])
 
-    est3 = SymbolicRegressor(parsimony_coefficient='auto', random_state=0)
-    est3.fit(boston.data[:400, :], boston.target[:400])
-    est3 = mean_absolute_error(est3.predict(boston.data[400:, :]),
-                               boston.target[400:])
-
-    assert_true(abs(est1 - est2) > 0.01)
-    assert_true(abs(est1 - est3) > 0.01)
-    assert_true(abs(est2 - est3) > 0.01)
+    assert(abs(est1 - est2) > 0.01)
 
 
 def test_early_stopping():
     """Check that early stopping works"""
 
-    est1 = SymbolicRegressor(stopping_criteria=10, random_state=0)
+    est1 = SymbolicRegressor(population_size=100, generations=2,
+                             stopping_criteria=10, random_state=0)
     est1.fit(boston.data[:400, :], boston.target[:400])
-    assert_true(len(est1._programs) == 1)
+    assert(len(est1._programs) == 1)
 
-    est1 = SymbolicTransformer(stopping_criteria=0.5, random_state=0)
+    est1 = SymbolicTransformer(population_size=100, generations=2,
+                               stopping_criteria=0.5, random_state=0)
     est1.fit(boston.data[:400, :], boston.target[:400])
-    assert_true(len(est1._programs) == 1)
+    assert(len(est1._programs) == 1)
+
+    est1 = SymbolicClassifier(population_size=100, generations=2,
+                              stopping_criteria=.9, random_state=0)
+    est1.fit(cancer.data[:400, :], cancer.target[:400])
+    assert(len(est1._programs) == 1)
 
 
 def test_verbose_output():
@@ -599,7 +774,8 @@ def test_verbose_output():
 
     old_stdout = sys.stdout
     sys.stdout = StringIO()
-    est = SymbolicRegressor(random_state=0, verbose=1)
+    est = SymbolicRegressor(population_size=100, generations=10,
+                            random_state=0, verbose=1)
     est.fit(boston.data, boston.target)
     verbose_output = sys.stdout
     sys.stdout = old_stdout
@@ -623,7 +799,7 @@ def test_verbose_output():
     assert_equal(true_header, header3)
 
     n_lines = sum(1 for l in verbose_output.readlines())
-    assert_equal(20, n_lines)
+    assert_equal(10, n_lines)
 
 
 def test_verbose_with_oob():
@@ -631,19 +807,21 @@ def test_verbose_with_oob():
 
     old_stdout = sys.stdout
     sys.stdout = StringIO()
-    est = SymbolicRegressor(max_samples=0.9, random_state=0, verbose=1)
+    est = SymbolicRegressor(population_size=100, generations=10,
+                            max_samples=0.9, random_state=0, verbose=1)
     est.fit(boston.data, boston.target)
     verbose_output = sys.stdout
     sys.stdout = old_stdout
 
     # check output
     verbose_output.seek(0)
-    header1 = verbose_output.readline().rstrip()
-    header2 = verbose_output.readline().rstrip()
-    header3 = verbose_output.readline().rstrip()
+    # Ignore header rows
+    _ = verbose_output.readline().rstrip()
+    _ = verbose_output.readline().rstrip()
+    _ = verbose_output.readline().rstrip()
 
     n_lines = sum(1 for l in verbose_output.readlines())
-    assert_equal(20, n_lines)
+    assert_equal(10, n_lines)
 
 
 def test_more_verbose_output():
@@ -653,7 +831,8 @@ def test_more_verbose_output():
     old_stderr = sys.stderr
     sys.stdout = StringIO()
     sys.stderr = StringIO()
-    est = SymbolicRegressor(random_state=0, verbose=2)
+    est = SymbolicRegressor(population_size=100, generations=10,
+                            random_state=0, verbose=2)
     est.fit(boston.data, boston.target)
     verbose_output = sys.stdout
     joblib_output = sys.stderr
@@ -662,16 +841,17 @@ def test_more_verbose_output():
 
     # check output
     verbose_output.seek(0)
-    header1 = verbose_output.readline().rstrip()
-    header2 = verbose_output.readline().rstrip()
-    header3 = verbose_output.readline().rstrip()
+    # Ignore header rows
+    _ = verbose_output.readline().rstrip()
+    _ = verbose_output.readline().rstrip()
+    _ = verbose_output.readline().rstrip()
 
     n_lines = sum(1 for l in verbose_output.readlines())
-    assert_equal(20, n_lines)
+    assert_equal(10, n_lines)
 
     joblib_output.seek(0)
     n_lines = sum(1 for l in joblib_output.readlines())
-    # New version of joblib appears to output sys.stderr 
+    # New version of joblib appears to output sys.stderr
     assert_equal(0, n_lines % 10)
 
 
@@ -709,12 +889,28 @@ def test_parallel_train():
     for len1, len2 in zip(lengths, lengths[1:]):
         assert_array_almost_equal(len1, len2)
 
+    # Check the classifier
+    ests = [
+        SymbolicClassifier(population_size=100, generations=4, n_jobs=n_jobs,
+                           random_state=0).fit(cancer.data[:100, :],
+                                               cancer.target[:100])
+        for n_jobs in [1, 2, 3, 8, 16]
+    ]
+
+    preds = [e.predict(cancer.data[500:, :]) for e in ests]
+    for pred1, pred2 in zip(preds, preds[1:]):
+        assert_array_almost_equal(pred1, pred2)
+    lengths = np.array([[gp.length_ for gp in e._programs[-1]] for e in ests])
+    for len1, len2 in zip(lengths, lengths[1:]):
+        assert_array_almost_equal(len1, len2)
+
 
 def test_pickle():
     """Check pickability"""
 
     # Check the regressor
-    est = SymbolicRegressor(generations=2, random_state=0)
+    est = SymbolicRegressor(population_size=100, generations=2,
+                            random_state=0)
     est.fit(boston.data[:100, :], boston.target[:100])
     score = est.score(boston.data[500:, :], boston.target[500:])
     pickle_object = pickle.dumps(est)
@@ -725,7 +921,8 @@ def test_pickle():
     assert_equal(score, score2)
 
     # Check the transformer
-    est = SymbolicTransformer(generations=2, random_state=0)
+    est = SymbolicTransformer(population_size=100, generations=2,
+                              random_state=0)
     est.fit(boston.data[:100, :], boston.target[:100])
     X_new = est.transform(boston.data[500:, :])
     pickle_object = pickle.dumps(est)
@@ -735,57 +932,17 @@ def test_pickle():
     X_new2 = est2.transform(boston.data[500:, :])
     assert_array_almost_equal(X_new, X_new2)
 
+    # Check the classifier
+    est = SymbolicClassifier(population_size=100, generations=2,
+                             random_state=0)
+    est.fit(cancer.data[:100, :], cancer.target[:100])
+    score = est.score(cancer.data[500:, :], cancer.target[500:])
+    pickle_object = pickle.dumps(est)
 
-def test_memory_layout():
-    """Check that it works no matter the memory layout"""
-
-    for Symbolic in [SymbolicTransformer, SymbolicRegressor]:
-        for dtype in [np.float64, np.float32]:
-            est = Symbolic(generations=2, random_state=0)
-
-            # Nothing
-            X = np.asarray(boston.data, dtype=dtype)
-            y = boston.target
-            est.fit(X, y)
-
-            # C-order
-            X = np.asarray(boston.data, order="C", dtype=dtype)
-            y = boston.target
-            est.fit(X, y)
-
-            # F-order
-            X = np.asarray(boston.data, order="F", dtype=dtype)
-            y = boston.target
-            est.fit(X, y)
-
-            # Contiguous
-            X = np.ascontiguousarray(boston.data, dtype=dtype)
-            y = boston.target
-            est.fit(X, y)
-
-            # Strided
-            X = np.asarray(boston.data[::3], dtype=dtype)
-            y = boston.target[::3]
-            est.fit(X, y)
-
-
-def test_input_shape():
-    """Check changed dimensions cause failure"""
-
-    random_state = check_random_state(415)
-    X = np.reshape(random_state.uniform(size=50), (5, 10))
-    y = random_state.uniform(size=5)
-    X2 = np.reshape(random_state.uniform(size=45), (5, 9))
-
-    # Check the regressor
-    est = SymbolicRegressor(generations=2, random_state=0)
-    est.fit(X, y)
-    assert_raises(ValueError, est.predict, X2)
-
-    # Check the transformer
-    est = SymbolicTransformer(generations=2, random_state=0)
-    est.fit(X, y)
-    assert_raises(ValueError, est.transform, X2)
+    est2 = pickle.loads(pickle_object)
+    assert_equal(type(est2), est.__class__)
+    score2 = est2.score(cancer.data[500:, :], cancer.target[500:])
+    assert_equal(score, score2)
 
 
 def test_output_shape():
@@ -796,9 +953,10 @@ def test_output_shape():
     y = random_state.uniform(size=5)
 
     # Check the transformer
-    est = SymbolicTransformer(n_components=5, generations=2, random_state=0)
+    est = SymbolicTransformer(population_size=100, generations=2,
+                              n_components=5, random_state=0)
     est.fit(X, y)
-    assert_true(est.transform(X).shape == (5, 5))
+    assert(est.transform(X).shape == (5, 5))
 
 
 def test_gridsearch():
@@ -808,7 +966,8 @@ def test_gridsearch():
     parameters = {'parsimony_coefficient': [0.001, 0.1, 'auto']}
     clf = SymbolicRegressor(population_size=50, generations=5,
                             tournament_size=5, random_state=0)
-    grid = GridSearchCV(clf, parameters, scoring='neg_mean_absolute_error')
+    grid = GridSearchCV(clf, parameters, cv=3,
+                        scoring='neg_mean_absolute_error')
     grid.fit(boston.data, boston.target)
     expected = {'parsimony_coefficient': 0.001}
     assert_equal(grid.best_params_, expected)
@@ -825,6 +984,15 @@ def test_pipeline():
                                           random_state=0))
     est.fit(boston.data, boston.target)
     assert_almost_equal(est.score(boston.data, boston.target), -4.00270923)
+
+    # Check the classifier
+    est = make_pipeline(StandardScaler(),
+                        SymbolicClassifier(population_size=50,
+                                           generations=5,
+                                           tournament_size=5,
+                                           random_state=0))
+    est.fit(cancer.data, cancer.target)
+    assert_almost_equal(est.score(cancer.data, cancer.target), 0.934973637961)
 
     # Check the transformer
     est = make_pipeline(SymbolicTransformer(population_size=50,
@@ -853,8 +1021,8 @@ def test_transformer_iterable():
     unfitted_iter = [gp.length_ for gp in est]
     expected_iter = []
 
-    assert_true(unfitted_len == 0)
-    assert_true(unfitted_iter == expected_iter)
+    assert(unfitted_len == 0)
+    assert(unfitted_iter == expected_iter)
 
     # Check fitted
     est.fit(X, y)
@@ -862,8 +1030,8 @@ def test_transformer_iterable():
     fitted_iter = [gp.length_ for gp in est]
     expected_iter = [8, 12, 2, 29, 9, 33, 9, 8, 4, 22]
 
-    assert_true(fitted_len == 10)
-    assert_true(fitted_iter == expected_iter)
+    assert(fitted_len == 10)
+    assert(fitted_iter == expected_iter)
 
     # Check IndexError
     assert_raises(IndexError, est.__getitem__, 10)
@@ -877,7 +1045,7 @@ def test_print_overloading_estimator():
     y = random_state.uniform(size=5)
 
     # Check the regressor
-    est = SymbolicRegressor(generations=2, random_state=0)
+    est = SymbolicRegressor(population_size=100, generations=2, random_state=0)
 
     # Unfitted
     orig_stdout = sys.stdout
@@ -909,12 +1077,13 @@ def test_print_overloading_estimator():
     finally:
         sys.stdout = orig_stdout
 
-    assert_true(output_unfitted != output_fitted)
-    assert_true(output_unfitted == est.__repr__())
-    assert_true(output_fitted == output_program)
+    assert(output_unfitted != output_fitted)
+    assert(output_unfitted == est.__repr__())
+    assert(output_fitted == output_program)
 
     # Check the transformer
-    est = SymbolicTransformer(generations=2, random_state=0)
+    est = SymbolicTransformer(population_size=100, generations=2,
+                              random_state=0)
 
     # Unfitted
     orig_stdout = sys.stdout
@@ -947,24 +1116,58 @@ def test_print_overloading_estimator():
     finally:
         sys.stdout = orig_stdout
 
-    assert_true(output_unfitted != output_fitted)
-    assert_true(output_unfitted == est.__repr__())
-    assert_true(output_fitted == output_program)
+    assert(output_unfitted != output_fitted)
+    assert(output_unfitted == est.__repr__())
+    assert(output_fitted == output_program)
+
+    # Check the classifier
+    y = (y > .5).astype(int)
+    est = SymbolicClassifier(population_size=100, generations=2, random_state=0)
+
+    # Unfitted
+    orig_stdout = sys.stdout
+    try:
+        out = StringIO()
+        sys.stdout = out
+        print(est)
+        output_unfitted = out.getvalue().strip()
+    finally:
+        sys.stdout = orig_stdout
+
+    # Fitted
+    est.fit(X, y)
+    orig_stdout = sys.stdout
+    try:
+        out = StringIO()
+        sys.stdout = out
+        print(est)
+        output_fitted = out.getvalue().strip()
+    finally:
+        sys.stdout = orig_stdout
+
+    orig_stdout = sys.stdout
+    try:
+        out = StringIO()
+        sys.stdout = out
+        print(est._program)
+        output_program = out.getvalue().strip()
+    finally:
+        sys.stdout = orig_stdout
+
+    assert(output_unfitted != output_fitted)
+    assert(output_unfitted == est.__repr__())
+    assert(output_fitted == output_program)
 
 
 def test_validate_functions():
     """Check that valid functions are accepted & invalid ones raise error"""
 
-    random_state = check_random_state(415)
-    X = np.reshape(random_state.uniform(size=50), (5, 10))
-    y = random_state.uniform(size=5)
-
     for Symbolic in (SymbolicRegressor, SymbolicTransformer):
         # These should be fine
-        est = Symbolic(generations=2, random_state=0,
+        est = Symbolic(population_size=100, generations=2, random_state=0,
                        function_set=(add2, sub2, mul2, div2))
         est.fit(boston.data, boston.target)
-        est = Symbolic(generations=2, random_state=0,
+        est = Symbolic(population_size=100, generations=2, random_state=0,
                        function_set=('add', 'sub', 'mul', div2))
         est.fit(boston.data, boston.target)
 
@@ -977,6 +1180,26 @@ def test_validate_functions():
         assert_raises(ValueError, est.fit, boston.data, boston.target)
         est = Symbolic(generations=2, random_state=0, function_set=())
         assert_raises(ValueError, est.fit, boston.data, boston.target)
+
+    # Now for the classifier... These should be fine
+    est = SymbolicClassifier(population_size=100, generations=2,
+                             random_state=0,
+                             function_set=(add2, sub2, mul2, div2))
+    est.fit(cancer.data, cancer.target)
+    est = SymbolicClassifier(population_size=100, generations=2,
+                             random_state=0,
+                             function_set=('add', 'sub', 'mul', div2))
+    est.fit(cancer.data, cancer.target)
+
+    # These should fail
+    est = SymbolicClassifier(generations=2, random_state=0,
+                             function_set=('ni', 'sub', 'mul', div2))
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(generations=2, random_state=0,
+                             function_set=(7, 'sub', 'mul', div2))
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
+    est = SymbolicClassifier(generations=2, random_state=0, function_set=())
+    assert_raises(ValueError, est.fit, cancer.data, cancer.target)
 
 
 def test_indices():
@@ -1013,7 +1236,7 @@ def test_indices():
 def test_run_details():
     """Check the run_details_ attribute works as expected."""
 
-    est = SymbolicRegressor(generations=5, random_state=415)
+    est = SymbolicRegressor(population_size=100, generations=5, random_state=0)
     est.fit(boston.data, boston.target)
     # Check generations are indexed as expected without warm_start
     assert_equal(est.run_details_['generation'], list(range(5)))
@@ -1029,7 +1252,7 @@ def test_run_details():
 def test_warm_start():
     """Check the warm_start functionality works as expected."""
 
-    est = SymbolicRegressor(generations=20, random_state=415)
+    est = SymbolicRegressor(population_size=50, generations=10, random_state=0)
     est.fit(boston.data, boston.target)
     cold_fitness = est._program.fitness_
     cold_program = est._program.__str__()
@@ -1039,13 +1262,13 @@ def test_warm_start():
     assert_raises(ValueError, est.fit, boston.data, boston.target)
 
     # Check fitting the same number of generations warns
-    est.set_params(generations=20, warm_start=True)
+    est.set_params(generations=10, warm_start=True)
     assert_warns(UserWarning, est.fit, boston.data, boston.target)
 
     # Check warm starts get the same result
-    est = SymbolicRegressor(generations=10, random_state=415)
+    est = SymbolicRegressor(population_size=50, generations=5, random_state=0)
     est.fit(boston.data, boston.target)
-    est.set_params(generations=20, warm_start=True)
+    est.set_params(generations=10, warm_start=True)
     est.fit(boston.data, boston.target)
     warm_fitness = est._program.fitness_
     warm_program = est._program.__str__()
@@ -1056,18 +1279,20 @@ def test_warm_start():
 def test_low_memory():
     """Check the low_memory functionality works as expected."""
 
-    est = SymbolicRegressor(generations=10,
+    est = SymbolicRegressor(population_size=50,
+                            generations=10,
                             random_state=56,
                             low_memory=True)
     # Check there are no parents
     est.fit(boston.data, boston.target)
-    assert_true(est._programs[-2] is None)
+    assert(est._programs[-2] is None)
 
 
 def test_low_memory_warm_start():
     """Check the warm_start functionality works as expected with low_memory."""
 
-    est = SymbolicRegressor(generations=20,
+    est = SymbolicRegressor(population_size=50,
+                            generations=20,
                             random_state=415,
                             low_memory=True)
     est.fit(boston.data, boston.target)
@@ -1075,8 +1300,9 @@ def test_low_memory_warm_start():
     cold_program = est._program.__str__()
 
     # Check warm start with low memory gets the same result
-    est = SymbolicRegressor(generations=10,
-                            random_state=415, 
+    est = SymbolicRegressor(population_size=50,
+                            generations=10,
+                            random_state=415,
                             low_memory=True)
     est.fit(boston.data, boston.target)
     est.set_params(generations=20, warm_start=True)
@@ -1085,8 +1311,3 @@ def test_low_memory_warm_start():
     warm_program = est._program.__str__()
     assert_almost_equal(cold_fitness, warm_fitness)
     assert_equal(cold_program, warm_program)
-
-
-if __name__ == "__main__":
-    import nose
-    nose.runmodule()

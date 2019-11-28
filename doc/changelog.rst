@@ -4,9 +4,31 @@
 Release History
 ===============
 
-Version 0.4.0
+Version 0.5.0
 -------------
 
+- Added the `class_weight` parameter :class:`genetic.SymbolicClassifier`
+  allowing users to easily compensate for imbalanced datasets.
+
+Version 0.4.1 - 1 Jun 2019
+---------------------------
+
+- Fixed a bug with multi-processing and custom functions, allowing pickling of
+  models with custom functions, fitness metrics or classifier transformaers.
+  ``joblib`` 0.13.0 or newer required in order to take advantage of this
+  release in order to wrap functions for pickling saved models.
+
+Version 0.4.0 - 23 Apr 2019
+---------------------------
+
+- Added the :class:`genetic.SymbolicClassifier` to use symbolic regression to
+  solve binary classification problems. This passes the outputs of a program
+  through a sigmoid function in order to translate the result into a
+  probability of either class.
+- Allow users to express feature names as strings rather than X0, X1, etc.
+  Graphviz and ``print()`` output can now be customized by setting
+  ``feature_names=[...]`` in :class:`genetic.SymbolicRegressor` or
+  :class:`genetic.SymbolicTransformer`.
 - Allow users to exclude constants from their programs by setting
   ``const_range=None`` in :class:`genetic.SymbolicRegressor` or
   :class:`genetic.SymbolicTransformer`.
@@ -22,9 +44,13 @@ Version 0.4.0
   generation program information. By
   `Bartol Karuza <https://github.com/bartolkaruza>`_ and
   `wulfihm <https://github.com/wulfihm>`_.
+- Drop support for Python 2.7 and Python 3.4 to ensure compatibility with
+  ``scikit-learn``. ``scikit-learn`` 0.20.0 or newer will also be required due
+  to recent changes in their testing suite. Additionally joblib 0.11 or newer
+  will be required due to scikit-learn devendoring it.
 
-Version 0.3.0
--------------
+Version 0.3.0 - 23 Nov 2017
+---------------------------
 
 - Fixed two bugs in :class:`genetic.SymbolicTransformer` where the final
   solution selection logic was incorrect and suboptimal. This fix will change
@@ -46,8 +72,8 @@ Version 0.3.0
   to support the latest release of ``scikit-learn`` 0.19 and avoid future test
   failures. By `hugovk <https://github.com/hugovk>`_.
 
-Version 0.2.0
--------------
+Version 0.2.0 - 30 Mar 2017
+---------------------------
 
 - Allow more generations to be evolved on top of those already trained using a
   previous call to fit. The :class:`genetic.SymbolicRegressor` and
@@ -79,8 +105,8 @@ Version 0.2.0
   programs stored in the estimator which helps for large populations, high
   number of generations, as well as for runs with significant bloat.
 
-Version 0.1.0
--------------
+Version 0.1.0 - 6 May 2015
+--------------------------
 
 - Initial public release supporting symbolic regression tasks through the
   :class:`genetic.SymbolicRegressor` class for regression problems and the

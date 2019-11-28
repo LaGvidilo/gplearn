@@ -15,23 +15,25 @@ solution, ``gplearn`` provides several means to examine the best programs and
 their parents. Most of these methods are illustrated
 :ref:`in the examples section <example>`.
 
-Both :class:`SymbolicRegressor` and :class:`SymbolicTransformer` overload the
-``print`` function to output a LISP-style flattened tree representation of the
-program. Simply ``print(est)`` the fitted estimator and the program will be
-output to your session.
+Each of :class:`SymbolicRegressor`, :class:`SymbolicClassifier` and
+:class:`SymbolicTransformer` overload the ``print`` function to output a
+LISP-style flattened tree representation of the program. Simply ``print(est)``
+the fitted estimator and the program will be output to your session.
 
 If you would like to see more details about the final programs, you can access
 the underlying ``_Program`` objects which contains several attributes and
 methods that can yield more information about them.
 
-:class:`SymbolicRegressor` has a private attribute ``_program`` which is a
-single ``_Program`` object that was the fittest found during evolution.
+:class:`SymbolicRegressor` and :class:`SymbolicClassifier` have a private
+attribute ``_program`` which is a single ``_Program`` object that was the
+fittest program found in the final generation of the evolution.
 
 :class:`SymbolicTransformer` on the other hand has a private attribute
 ``_best_programs`` which is a list of ``_Program`` objects of length
-``n_components`` being the least-correlated and fittest programs found during
-evolution. :class:`SymbolicTransformer` is also iterable so you can loop
-through the estimator itself to access each underlying ``_Program`` object.
+``n_components`` being the least-correlated and fittest programs found in the
+final generation of the evolution. :class:`SymbolicTransformer` is also
+iterable so you can loop through the estimator itself to access each underlying
+``_Program`` object.
 
 Each ``_Program`` object can also be printed as with the estimator themselves
 to get a readable representation of the programs. They also have several
@@ -150,6 +152,39 @@ You could plot its parent with the affected nodes indicated using::
     graph = pydotplus.graphviz.graph_from_dot_data(graph)
     Image(graph.create_png())
 
+.. _parallel:
+
+Running Evolution in Parallel
+-----------------------------
+
+It is easy to run your evolution parallel. All you need to do is to change
+the ``n_jobs`` parameter in :class:`SymbolicRegressor`,
+:class:`SymbolicClassifier` or :class:`SymbolicTransformer`. Whether this will
+reduce your run times depends a great deal upon the problem you are working on.
+
+Genetic programming is inherently an iterative process. One generation
+undergoes genetic operations with other members of the same generation in order
+to produce the next. When ran in parallel, gplearn splits the genetic
+operations into equal-sized batches that run in parallel, but the generations
+themselves must be completed before the next step can begin. For example, with
+three threads and three generations the processing would look like this:
+
+.. image:: images/parallel.png
+    :align: center
+
+Until all of the computation in Threads 1, 2 & 3 have completed, the next
+generation must wait for them all to complete.
+
+Spinning up all these extra processes in parallel is not free. There is a
+substantial overhead in running `gplearn` in parallel and because of the
+iterative nature of evolution one should test whether there is any advantage
+from doing so for your problem. In many cases the overhead of creating extra
+processes will exceed the savings of running in parallel.
+
+In general large populations or large programs can benefit from parallel
+processing. If you have small populations and keep your programs small however,
+you may actually have your runs go faster on a single thread!
+
 .. currentmodule:: gplearn
 
 .. _export:
@@ -157,10 +192,10 @@ You could plot its parent with the affected nodes indicated using::
 Exporting
 ---------
 
-If you want to save your program for later use, you can use the ``pickle`` or
-``cPickle`` libraries to achieve this::
+If you want to save your program for later use, you can use the ``pickle``
+library to achieve this::
 
-    import cPickle as pickle
+    import pickle
 
     est = SymbolicRegressor()
     est.fit(X_train, y_train)
@@ -214,6 +249,13 @@ function which must match the number of arguments that your function expects::
     logical = make_function(function=_logical,
                             name='logical',
                             arity=4)
+
+Due to the way that the default Python pickler works, by default ``gplearn``
+wraps your function to be serialised with cloudpickle. This can mean your
+evolution will run slightly more slowly. If you have no need to export your
+model after the run, or you are running single-threaded in an interactive
+Python session you may achieve a faster evolution time by setting the optional
+parameter ``wrap=False`` in :func:`functions.make_function()`.
 
 This can then be added to a ``gplearn`` estimator like so::
 
@@ -290,6 +332,12 @@ your specific needs by passing the new fitness object to the ``metric`` paramete
 when creating an estimator::
 
     est = SymbolicRegressor(metric=mape, verbose=1)
+
+As with custom functions, by default ``gplearn`` wraps your fitness metric to
+be serialised with cloudpickle. If you have no need to export your model after
+the run, or you are running single-threaded in an interactive Python session
+you may achieve a faster evolution time by setting the optional parameter
+``wrap=False`` in :func:`fitness.make_fitness()`.
 
 .. currentmodule:: gplearn.genetic
 
