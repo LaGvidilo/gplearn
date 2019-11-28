@@ -3,13 +3,12 @@ MANIFEST.in
 README.rst
 setup.py
 gplearn/GP.py
-gplearn/GPCTSCRM.py
+gplearn/GPTool.py
 gplearn/__init__.py
 gplearn/_program.py
 gplearn/fitness.py
 gplearn/functions.py
 gplearn/genetic.py
-gplearn/puzzlebrain1.py
 gplearn/utils.py
 gplearn.egg-info/PKG-INFO
 gplearn.egg-info/SOURCES.txt

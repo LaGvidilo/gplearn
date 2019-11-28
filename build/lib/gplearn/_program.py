@@ -122,6 +122,8 @@ class _Program(object):
                  p_point_replace,
                  parsimony_coefficient,
                  random_state,
+                 transformer=None,
+                 feature_names=None,
                  program=None):
 
         self.function_set = function_set
@@ -133,11 +135,13 @@ class _Program(object):
         self.metric = metric
         self.p_point_replace = p_point_replace
         self.parsimony_coefficient = parsimony_coefficient
+        self.transformer = transformer
+        self.feature_names = feature_names
         self.program = program
 
         if self.program is not None:
             if not self.validate_program():
-                raise ValueError('The supplied program is incomplete')
+                raise ValueError('The supplied program is incomplete.')
         else:
             # Create a naive random program
             self.program = self.build_program(random_state)
@@ -232,7 +236,10 @@ class _Program(object):
                 output += node.name + '('
             else:
                 if isinstance(node, int):
-                    output += 'X%s' % node
+                    if self.feature_names is None:
+                        output += 'X%s' % node
+                    else:
+                        output += self.feature_names[node]
                 else:
                     output += '%.3f' % node
                 terminals[-1] -= 1
@@ -262,7 +269,7 @@ class _Program(object):
         terminals = []
         if fade_nodes is None:
             fade_nodes = []
-        output = 'digraph program {\nnode [style=filled]'
+        output = 'digraph program {\nnode [style=filled]\n'
         for i, node in enumerate(self.program):
             fill = '#cecece'
             if isinstance(node, _Function):
@@ -275,8 +282,12 @@ class _Program(object):
                 if i not in fade_nodes:
                     fill = '#60a6f6'
                 if isinstance(node, int):
-                    output += ('%d [label="%s%s", fillcolor="%s"] ;\n'
-                               % (i, 'X', node, fill))
+                    if self.feature_names is None:
+                        feature_name = 'X%s' % node
+                    else:
+                        feature_name = self.feature_names[node]
+                    output += ('%d [label="%s", fillcolor="%s"] ;\n'
+                               % (i, feature_name, fill))
                 else:
                     output += ('%d [label="%.3f", fillcolor="%s"] ;\n'
                                % (i, node, fill))
@@ -440,6 +451,8 @@ class _Program(object):
 
         """
         y_pred = self.execute(X)
+        if self.transformer:
+            y_pred = self.transformer(y_pred)
         raw_fitness = self.metric(y, y_pred, sample_weight)
 
         return raw_fitness
@@ -484,6 +497,8 @@ class _Program(object):
         """
         if program is None:
             program = self.program
+        # Choice of crossover points follows Koza's (1992) widely used approach
+        # of choosing functions 90% of the time and leaves 10% of the time.
         probs = np.array([0.9 if isinstance(node, _Function) else 0.1
                           for node in program])
         probs = np.cumsum(probs / probs.sum())
@@ -501,7 +516,7 @@ class _Program(object):
 
     def reproduce(self):
         """Return a copy of the embedded program."""
-        return deepcopy(self.program)
+        return copy(self.program)
 
     def crossover(self, donor, random_state):
         """Perform the crossover genetic operation on the program.
@@ -611,13 +626,11 @@ class _Program(object):
             The flattened tree representation of the program.
 
         """
-        program = deepcopy(self.program)
+        program = copy(self.program)
 
         # Get the nodes to modify
-        mutate = np.where([True if (random_state.uniform() <
-                                    self.p_point_replace)
-                           else False
-                           for _ in range(len(program))])[0]
+        mutate = np.where(random_state.uniform(size=len(program)) <
+                          self.p_point_replace)[0]
 
         for node in mutate:
             if isinstance(program[node], _Function):

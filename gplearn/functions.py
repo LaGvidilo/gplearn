@@ -236,6 +236,11 @@ def _protected_inverse(x1):
     with np.errstate(divide='ignore', invalid='ignore'):
         return np.where(np.abs(x1) > 0.001, 1. / x1, 0.)
 
+def _sigmoid(x1):
+    """Special case of logistic function to transform to probabilities."""
+    with np.errstate(over='ignore', under='ignore'):
+        return 1 / (1 + np.exp(-x1))
+
 add2 = make_function(function=np.add, name='add', arity=2)
 sub2 = make_function(function=np.subtract, name='sub', arity=2)
 mul2 = make_function(function=np.multiply, name='mul', arity=2)
@@ -273,6 +278,7 @@ heaviside1 = make_function(function=heaviside, name='heaviside', arity=2)
 and1 = make_function(function=andB, name='and', arity=2)
 or1 = make_function(function=orB, name='or', arity=2)
 xor1 = make_function(function=xorB, name='xor', arity=2)
+sig1 = _Function(function=_sigmoid, name='sig', arity=1)
 _function_map = {'add': add2,
                  'sub': sub2,
                  'mul': mul2,
