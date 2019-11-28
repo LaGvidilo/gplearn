@@ -16,12 +16,9 @@
 .. image:: https://coveralls.io/repos/trevorstephens/gplearn/badge.svg
     :target: https://coveralls.io/r/trevorstephens/gplearn
     :alt: Test Coverage
-.. image:: https://landscape.io/github/trevorstephens/gplearn/master/landscape.svg?style=flat
-    :target: https://landscape.io/github/trevorstephens/gplearn/master
+.. image:: https://api.codacy.com/project/badge/Grade/19c43d7c42c44d15b1ec512656800d8d
+    :target: https://www.codacy.com/app/trevorstephens/gplearn
     :alt: Code Health
-.. image:: http://depsy.org/api/package/pypi/gplearn/badge.svg
-    :target: http://depsy.org/package/python/gplearn
-    :alt: Research software impact
 
 |
 
@@ -31,15 +28,8 @@
 
 |
 
-Welcome to gplearn(NewMath version)!
+Welcome to gplearn!
 ===================
-
-NewMath GPLearn : By Rick Sanchez
-Use my GPCTSCRM.py for easy use
-
-NEW: GP.py(is a POO interface for work easy)
-===================
-NEXT: Documentation for this
 
 `gplearn` implements Genetic Programming in Python, with a `scikit-learn <http://scikit-learn.org>`_ inspired and compatible API.
 
@@ -47,11 +37,9 @@ While Genetic Programming (GP) can be used to perform a `very wide variety of ta
 
 Symbolic regression is a machine learning technique that aims to identify an underlying mathematical expression that best describes a relationship. It begins by building a population of naive random formulas to represent a relationship between known independent variables and their dependent variable targets in order to predict new data. Each successive generation of programs is then evolved from the one that came before it by selecting the fittest individuals from the population to undergo genetic operations.
 
-gplearn retains the familiar scikit-learn `fit/predict` API and works with the existing scikit-learn `pipeline <http://scikit-learn.org/stable/modules/pipeline.html>`_ and `grid search <http://scikit-learn.org/stable/modules/grid_search.html>`_ modules. The package attempts to squeeze a lot of functionality into a scikit-learn-style API. While there are a lot of parameters to tweak, `reading the documentation <http://gplearn.readthedocs.io/>`_ should make the more relevant ones clear for your problem.
+gplearn retains the familiar scikit-learn `fit/predict` API and works with the existing scikit-learn `pipeline <https://scikit-learn.org/stable/modules/compose.html>`_ and `grid search <http://scikit-learn.org/stable/modules/grid_search.html>`_ modules. The package attempts to squeeze a lot of functionality into a scikit-learn-style API. While there are a lot of parameters to tweak, `reading the documentation <http://gplearn.readthedocs.io/>`_ should make the more relevant ones clear for your problem.
 
-gplearn currently supports regression through the SymbolicRegressor as well as transformation for automated feature engineering with the SymbolicTransformer, which is designed to support regression problems, but should also work for binary classification. Future versions of the package will expand this class to support more complicated multi-target classification problems, and much more is planned too.
+gplearn supports regression through the SymbolicRegressor, binary classification with the SymbolicClassifier, as well as transformation for automated feature engineering with the SymbolicTransformer, which is designed to support regression problems, but should also work for binary classification.
 
-gplearn is built on scikit-learn and a fairly recent copy (0.18.1+) is required for `installation <http://gplearn.readthedocs.io/en/stable/installation.html>`_. If you come across any issues in running or installing the package, `please submit a bug report <https://github.com/trevorstephens/gplearn/issues>`_.
-
-I hope you get some excellent results from using gplearn! If you do, please `drop me a line on my blog <http://trevorstephens.com>`_ about how you used it.
+gplearn is built on scikit-learn and a fairly recent copy (0.20.0+) is required for `installation <http://gplearn.readthedocs.io/en/stable/installation.html>`_. If you come across any issues in running or installing the package, `please submit a bug report <https://github.com/trevorstephens/gplearn/issues>`_.
 

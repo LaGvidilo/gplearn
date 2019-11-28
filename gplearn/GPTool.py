@@ -3,11 +3,11 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.0.0000"
+__version__ = "1.1.0000"
 
-import GP
+import gplearn.GP as GP
 
-print "Bienvenue dans GPCT-SRM v"+ __version__ 
+print("Bienvenue dans GPCT-SRM v"+ __version__)
 
 parammathdict = {
 	1: ('add','sub','mul','div'),
@@ -26,25 +26,25 @@ paramsecho = """
 
 
 def recherche():
-	sizepop = input("Taille de la population?: ")
-	numbergen = input("Nombre de generation?: ")
-	stpcrit = input("Critere d'arret de l'experience?: ")
-	njobs = input("Nombre de processus paralleles?: ")
+	sizepop = int(input("Taille de la population?: "))
+	numbergen = int(input("Nombre de generation?: "))
+	stpcrit = float(input("Critere d'arret de l'experience?: "))
+	njobs = int(input("Nombre de processus paralleles?: "))
 	if njobs>1:
 		verboz = 2
 	else:
 		verboz = 1
 
-	print "Ajuster les paramètres secondaires?(O/N): ",
-	ajustother = raw_input().lower()
+	print ("Ajuster les paramètres secondaires?(O/N): ")
+	ajustother = input().lower()
 	if ajustother == "o":
-		crossover = input("p_crossover: ")
-		subtreemutation = input("p_subtree_mutation: ")
-		hoistmutation = input("p_hoist_mutation: ")
-		pointmutation = input("p_point_mutation: ")
-		maxsamples = input("max_samples: ")
-		parsimonycoefficient = input("parsimony_coefficient: ")
-		randomstate = input("random_state: ")
+		crossover = float(input("p_crossover: "))
+		subtreemutation = float(input("p_subtree_mutation: "))
+		hoistmutation = float(input("p_hoist_mutation: "))
+		pointmutation = float(input("p_point_mutation: "))
+		maxsamples = float(input("max_samples: "))
+		parsimonycoefficient = float(input("parsimony_coefficient: "))
+		randomstate = int(input("random_state: "))
 	else:
 		warmstart=False
 		crossover=0.7
@@ -56,53 +56,53 @@ def recherche():
 		parsimonycoefficient=0.01
 		randomstate=0
 
-	parammath = input("\n"+paramsecho+"\nParametre de calcul a utiliser?: ")
+	parammath = int(input("\n"+paramsecho+"\nParametre de calcul a utiliser?: "))
 	#parammathdict[parammath]
 
 	gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], False, 
 			crossover, subtreemutation, hoistmutation, pointmutation, maxsamples,
 			verboz, parsimonycoefficient, randomstate, njobs)
 
-	print "Fichier CSV contenant les données a traiter?: ",
-	namef1 = raw_input()
+	print("Fichier CSV contenant les données a traiter?: ")
+	namef1 = input()
 
 	gp.load_csv(namef1)
-	print "Le traitement va commencer..."
+	print("Le traitement va commencer...")
 	gp.learn()
 	namef2 = str(namef1.split(".")[0])
-	print "Programme termine!"
+	print("Programme termine!")
 	gp.save(namef2+".model")
-	print "Sauvegarde du programme..."
+	print("Sauvegarde du programme...")
 	idiotstr = "y="+str(gp.get_program())
-	print idiotstr
+	print(idiotstr)
 	nbx = gp.nbX
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
-	print "Voici le programme: ", gp.print_program()
+	print("Voici le programme: ", gp.print_program())
 
 def amener():
 	gp = GP.GP_SymReg(500,100,0.01)
-	namef = raw_input("Nom du fichier model: ")
+	namef = input("Nom du fichier model: ")
 	gp.load(namef)
 
 	while (True):
-		IN = raw_input("Veuillez entrer les données de prédiction: ")
+		IN = input("Veuillez entrer les données de prédiction: ")
 		if len(IN)==0:
 			break
 		else:
 			z = ''.join(c for c in IN if (c.isdigit() or c==","))
 			z = z.split(",")
 			z = map(float, z)
-			print "Resultat: ", str(gp.predict(z))
+			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print "Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions"
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions")
 	choix = input("CHOIX> ") 
-	if choix == 1:
+	if int(choix) == 1:
 		recherche()
-	if choix == 2:
+	if int(choix) == 2:
 		amener()
 	else:
-		print "CHOIX FAUX!"
+		print("CHOIX FAUX!")
 
 
 

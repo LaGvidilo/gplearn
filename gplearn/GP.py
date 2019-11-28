@@ -28,13 +28,13 @@ R	S	T	U	V	W	X 	Y	Z
 18	19	20	21	22	23	24	25	26
 
 """
-__version__ = "1.3.8a"
+__version__ = "1.3.9a"
 
 
 def traduct(X,program = "y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
 	y=reinitrel(X,program)
 	#exec(program)
-	print "y=",y
+	print("y=",y)
 	exec("result="+y)
 	return result
 
@@ -57,10 +57,11 @@ def to_texpng(file="tmp.png" ,nX=1 ,program="y=sub(mul(add(div(div(X0, X0), sub(
 	f = open(file, 'w+b')
 	f.write(r.content)
 	f.close()
-
+	
+from math import *
+from operator import inv, neg
 def reinitrel(X,program):
-	from math import *
-	from operator import inv, neg
+
 	for i in range(0,len(X)):
 		exec("X"+str(i)+"="+str(X[i]*1.0))	
 	exec(program)
@@ -182,15 +183,15 @@ class GP_SymReg(object):
 		for i in range(0,maxmult+1):
 			keyx.append("x"+str(i))
 
-		print "Nombre de X:",maxmult+1
+		print("Nombre de X:",maxmult+1)
 		X,Y = [],[]
 		for i in DATA:
 			Y.append(string_to_float(i[name_y]))
 			for j in keyx:
 				X.append(string_to_float(i[j]))
 
-		print "X=",X
-		print "Y=",Y
+		print("X=",X)
+		print("Y=",Y)
 		l = maxmult+1
 		if maxmult>0:
 			A,B = len(X)/l,l
@@ -198,8 +199,8 @@ class GP_SymReg(object):
 			A,B = len(X),-1
 		self.x_ = np.array(X).reshape(A,B)
 		self.y_ = np.array(Y)
-		print "x_=",self.x_
-		print "y_=",self.y_
+		print("x_=",self.x_)
+		print("y_=",self.y_)
 		self.nbX = maxmult
 
 	def formula(self,formule="x0/2.0-x1/4.0"):
@@ -207,7 +208,7 @@ class GP_SymReg(object):
 		X_ = rng.uniform(-100, 100, 100).reshape(50,2)
 		for i in range(0,2):
 			formule = formule.replace("x"+str(i),"X_[:,"+str(i)+"]")
-		print "y_ =", formule
+		print("y_ =", formule)
 		exec("y_="+formule)
 		self.y_ = y_
 		self.x_ = X_
@@ -222,8 +223,8 @@ class GP_SymReg(object):
 			j+=1
 		self.x_ = np.array(self.x_).reshape(len(x)/2,multiple)
 		self.y_ = np.array(y)
-		print self.x_
-		print self.y_
+		print(self.x_)
+		print(self.y_)
 
 	def __init__(self,population_size=5000,
 					generations=20, stopping_criteria=0.01,
@@ -250,11 +251,11 @@ class GP_SymReg(object):
 						parsimony_coefficient=parsimony_coefficient, random_state=random_state,n_jobs=n_jobs)
 
 	def learn(self):
-		print "ENTRAINEMENT..."
+		print("ENTRAINEMENT...")
 		self.est_gp.fit(self.x_,self.y_)
-		print "ENTRAINEMENT TERMINE!"
+		print("ENTRAINEMENT TERMINE!")
 		self.BESTOF = self.est_gp.BESTOF
-		print "BESTOF:" , self.BESTOF
+		print("BESTOF:" , self.BESTOF)
 
 
 	def predict(self,X=[16,19],scale=1.):
@@ -269,20 +270,20 @@ class GP_SymReg(object):
 		f=open(filepath,'w+b')
 		f.write(pickle.dumps(self.est_gp))
 		f.close()
-		print "MODEL SAVE!("+filepath+")"
+		print("MODEL SAVE!("+filepath+")")
 
 	def load(self,filepath="temp.bin"):
 		l = os.stat(filepath).st_size
 		with open(filepath, 'rb') as f:
 			mm = mmap.mmap(f.fileno(),0,prot=mmap.PROT_READ)
 			self.est_gp = pickle.loads(mm.read(l))
-		print "MODEL LOAD!("+filepath+")"
+		print("MODEL LOAD!("+filepath+")")
 
 	def get_program(self):
 		return self.est_gp._program
 
 	def print_program(self):
-		print self.est_gp._program
+		print(self.est_gp._program)
 
 	def get_png_program(self,file_,nX=1):
 		to_texpng(file_,nX,str(self.est_gp._program))
@@ -293,7 +294,7 @@ class GP_SymReg(object):
 		for i in x:
 			y.append(f(i))
 		self.set_x_y(x,y)
-		print "SET DETERMINATION X(-100 to 100) Y(from f(x))."
+		print("SET DETERMINATION X(-100 to 100) Y(from f(x)).")
 
 	def approx_stat(self,x):
 		a,b=self.predict(X=x,scale=1),self.predict(X=x,scale=1/1000.)
@@ -307,7 +308,7 @@ class GP_SymReg(object):
 		for x in self.x_.tolist():
 			xprime = [self.approx_stat(x),self.y_.tolist()[j]]
 			f.write(str(xprime).replace('[','').replace(']','')+"\n")
-			print "MAKE CORRECTOR CSV:",(j/(len(self.y_.tolist())*1.0)),"%"
+			print("MAKE CORRECTOR CSV:",(j/(len(self.y_.tolist())*1.0)),"%")
 			j+=1
 		f.close()
 
@@ -338,7 +339,7 @@ def txtprime_to_csv(filepath="1-2088.txt"):
 	j=0
 	for i in BUFF.split("\n"):
 		j+=1
-		print j/(len(BUFF.split("\n"))*1.0),"%"
+		print(j/(len(BUFF.split("\n"))*1.0),"%")
 		f.write(str(j)+","+str(i)+"\n")
 	f.close()
 
