@@ -132,11 +132,11 @@ def recherche():
 	namef2 = str(namef1.split(".")[0])
 	print("Programme termine!")
 	gp.save(namef2+".model")
-	print("Sauvegarde du programme...")
+	print("Sauvegarde du programme....")
 	idiotstr = "y="+str(gp.get_program())
 	print(idiotstr)
 	nbx = gp.nbX
-	GP.to_texpng(namef2+".png", nbx, idiotstr)
+	GP.to_texpng(namef2+".png", nbx, "y="+idiotstr)
 	print("Voici le programme: ", gp.print_program())
 
 def amener():
