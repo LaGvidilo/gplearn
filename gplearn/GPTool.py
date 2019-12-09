@@ -15,13 +15,44 @@ parammathdict = {
 	3: ('add','sub','mul','div','hypot','sin','cos','tan'),
 	4: ('add','sub','mul','div','max','min','abs'),
 	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulo")
+	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','heaviside','hypot')
 }
+"""
+_function_map = {'add': add2,
+                 'sub': sub2,
+                 'mul': mul2,
+                 'div': div2,
+                 'sqrt': sqrt1,
+                 'log': log1,
+                 'abs': abs1,
+                 'neg': neg1,
+                 'inv': inv1,
+                 'max': max2,
+                 'min': min2,
+                 'sin': sin1,
+                 'cos': cos1,
+                 'tan': tan1,
+                 'ceil': ceil1,
+                 'fabs': fabs1,
+                 'floor': floor1,
+                 'trunc': trunc1,
+                 'cbrt': cbrt1,
+                 'hypot': hypot1,
+                 'heaviside': heaviside1,
+                 'zegax': zegax1,
+                 'modulox': modulo1,
+                 'sigmoid': sigmoid1,
+                 'and': and1,
+                 'or': or1,
+                 'xor': xor1 }#
+"""
 paramsecho = """
 			1 - Simple
 			2 - Total
 			3 - Geometrie
 			4 - Statistique
 			5 - Avance
+			6 - Cell
 			"""
 
 
@@ -38,13 +69,42 @@ def recherche():
 	print ("Ajuster les paramètres secondaires?(O/N): ")
 	ajustother = input().lower()
 	if ajustother == "o":
-		crossover = float(input("p_crossover: "))
-		subtreemutation = float(input("p_subtree_mutation: "))
-		hoistmutation = float(input("p_hoist_mutation: "))
-		pointmutation = float(input("p_point_mutation: "))
-		maxsamples = float(input("max_samples: "))
-		parsimonycoefficient = float(input("parsimony_coefficient: "))
-		randomstate = int(input("random_state: "))
+		try:
+			crossover = float(input("p_crossover[0.7]: "))
+		except ValueError:
+			crossover = 0.7
+
+		try:
+			subtreemutation = float(input("p_subtree_mutation[0.1]: "))
+		except ValueError:
+			subtreemutation = 0.1
+
+		try:
+			hoistmutation = float(input("p_hoist_mutation[0.05]: "))
+		except ValueError:
+			hoistmutation = 0.05
+
+		try:
+			pointmutation = float(input("p_point_mutation[0.1]: "))
+		except ValueError:
+			pointmutation = 0.1
+
+		try:
+			maxsamples = float(input("max_samples[0.9]: "))
+		except ValueError:
+			maxsamples = 0.9
+
+		try:
+			parsimonycoefficient = float(input("parsimony_coefficient[0.01]: "))
+		except ValueError:
+			parsimonycoefficient = 0.01
+
+		try:
+			randomstate = int(input("random_state[0]: "))
+		except ValueError:
+			randomstate = 0
+
+
 	else:
 		warmstart=False
 		crossover=0.7
