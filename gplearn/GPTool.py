@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.1.0000"
+__version__ = "1.1.0020"
 
 import gplearn.GP as GP
 
