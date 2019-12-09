@@ -49,6 +49,7 @@ def to_latex(XnMax=1,program="y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)),
 
 import os, requests 
 def to_texpng(file="tmp.png" ,nX=1 ,program="y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
+	if (program[0:2]!="y=") : program = "y=" +program
 	formula = to_latex(nX,program)
 	formula = formula.replace('\n', ' ')
 	r = requests.get( 'http://latex.codecogs.com/png.latex?\dpi{{780}} {formula}'.format(formula=formula))
