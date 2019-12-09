@@ -234,7 +234,7 @@ class GP_SymReg(object):
 					p_hoist_mutation=0.05, p_point_mutation=0.1,
 					max_samples=0.9, verbose=1,
 					parsimony_coefficient=0.01, random_state=0, n_jobs=1):
-		self.BESTOF = 0
+		#self.BESTOF = 0
 		self.y_ = None
 		#('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','sin','cos','tan')
 		if function_set == "logic":
@@ -254,8 +254,8 @@ class GP_SymReg(object):
 		print("ENTRAINEMENT...")
 		self.est_gp.fit(self.x_,self.y_)
 		print("ENTRAINEMENT TERMINE!")
-		self.BESTOF = self.est_gp.BESTOF
-		print("BESTOF:" , self.BESTOF)
+		#self.BESTOF = self.est_gp.BESTOF
+		#print("BESTOF:" , self.BESTOF)
 
 
 	def predict(self,X=[16,19],scale=1.):
