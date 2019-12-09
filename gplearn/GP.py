@@ -50,6 +50,7 @@ def to_latex(XnMax=1,program="y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)),
 		else:
 			program = "y" +program
 	exec(program)
+	python(program+"  <--- exec")
 	RESULT = py2tex(y)
 	return RESULT
 
