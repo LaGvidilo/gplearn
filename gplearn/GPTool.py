@@ -133,7 +133,7 @@ def recherche():
 	print("Programme termine!")
 	gp.save(namef2+".model")
 	print("Sauvegarde du programme....")
-	idiotstr = "y="+str(gp.get_program())
+	idiotstr = str(gp.get_program())
 	print(idiotstr)
 	nbx = gp.nbX
 	GP.to_texpng(namef2+".png", nbx, "y="+idiotstr)
