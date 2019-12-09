@@ -43,12 +43,6 @@ from pytexit import py2tex
 def to_latex(XnMax=1,program="y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
 	for i in range(0,XnMax+1):
 		exec("X"+str(i)+"="+"'X"+str(i)+"'")
-	if (program[0:2]!="y=") : program = "y=" +program
-	if (program[0]!="y") : 
-		if (program[1]!="=") :
-			program = "y=" +program
-		else:
-			program = "y" +program
 	exec(program)
 	print(program+"  <--- exec")
 	RESULT = py2tex(y)
