@@ -45,7 +45,7 @@ def to_latex(XnMax=1,program="y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)),
 		exec("X"+str(i)+"="+"'X"+str(i)+"'")
 	exec(program)
 	print(program+"  <--- exec")
-	RESULT = py2tex(y)
+	RESULT = py2tex(program)
 	return RESULT
 
 import os, requests 

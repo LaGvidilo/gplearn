@@ -136,7 +136,7 @@ def recherche():
 	idiotstr = str(gp.get_program())
 	print(idiotstr)
 	nbx = gp.nbX
-	GP.to_texpng(namef2+".png", nbx, "y="+idiotstr)
+	GP.to_texpng(namef2+".png", nbx, idiotstr)
 	print("Voici le programme: ", gp.print_program())
 
 def amener():
