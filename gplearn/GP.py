@@ -198,7 +198,13 @@ class GP_SymReg(object):
 			A,B = len(X)/l,l
 		else:
 			A,B = len(X),-1
-		self.x_ = np.array(X).reshape(A,B)
+		try:
+			self.x_ = np.array(X).reshape(A,B)
+		except TypeError:
+			A,B = int(A),int(B)
+			X = map(int, X)
+			self.x_ = np.array(X).reshape(A,B)
+
 		self.y_ = np.array(Y)
 		print("x_=",self.x_)
 		print("y_=",self.y_)
