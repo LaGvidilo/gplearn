@@ -14,7 +14,7 @@ parammathdict = {
 	2: "all",
 	3: ('add','sub','mul','div','hypot','sin','cos','tan'),
 	4: ('add','sub','mul','div','max','min','abs'),
-	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulo"),
+	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulox"),
 	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside')
 }
 """
