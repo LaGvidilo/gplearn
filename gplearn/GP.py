@@ -203,7 +203,7 @@ class GP_SymReg(object):
 		except TypeError:
 			A,B = int(A),int(B)
 			X = map(int, X)
-			self.x_ = np.array(X).reshape(A,B)
+			self.x_ = np.array(X)
 
 		self.y_ = np.array(Y)
 		print("x_=",self.x_)
