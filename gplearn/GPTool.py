@@ -17,35 +17,7 @@ parammathdict = {
 	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulox"),
 	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside')
 }
-"""
-_function_map = {'add': add2,
-                 'sub': sub2,
-                 'mul': mul2,
-                 'div': div2,
-                 'sqrt': sqrt1,
-                 'log': log1,
-                 'abs': abs1,
-                 'neg': neg1,
-                 'inv': inv1,
-                 'max': max2,
-                 'min': min2,
-                 'sin': sin1,
-                 'cos': cos1,
-                 'tan': tan1,
-                 'ceil': ceil1,
-                 'fabs': fabs1,
-                 'floor': floor1,
-                 'trunc': trunc1,
-                 'cbrt': cbrt1,
-                 'hypot': hypot1,
-                 'heaviside': heaviside1,
-                 'zegax': zegax1,
-                 'modulox': modulo1,
-                 'sigmoid': sigmoid1,
-                 'and': and1,
-                 'or': or1,
-                 'xor': xor1 }#
-"""
+
 paramsecho = """
 			1 - Simple
 			2 - Total
@@ -159,7 +131,7 @@ while(True):
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
-	if int(choix) == 2:
+	elif int(choix) == 2:
 		amener()
 	else:
 		print("CHOIX FAUX!")
