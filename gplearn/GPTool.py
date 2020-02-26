@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.1.0020"
+__version__ = "1.3.0011"
 
 import gplearn.GP as GP
 
@@ -111,6 +111,40 @@ def recherche():
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
 	print("Voici le programme: ", gp.print_program())
 
+	verifier(namef1,namef2+".model")
+
+def verifier(pathofcsv,pathofmodel):
+	gp = GP.GP_SymReg(500,100,0.01)
+	gp.load(pathofmodel)
+
+	f = open(pathofcsv,'r')
+	DATA = f.read().split('\n')
+	#posofytokill = 0
+	posofytokill = DATA[0].split(',').index('y')
+	yes, total = 0, 0
+	for i in DATA[1:]:
+		print((total/len(DATA[1:])*1.00)*100.0, "%")
+		if i.count(",") == 0:
+			break
+		famousY = i.split(",")[posofytokill]
+		#print("START:",i)
+		truc = i.split(",")
+		yy = truc.pop(posofytokill)
+		IN = ",".join(truc)
+		#print("OUT:", IN)
+		if len(IN)==0:
+			break
+		else:
+			z = ''.join(c for c in IN if (c.isdigit() or c==","))
+			z = z.split(",")
+			z = list(map(float, z))
+			#print("Resultat: ", str(gp.predict(z)))
+			if int(gp.predict(z)) == int(famousY):
+				yes+=1
+			total+=1
+	print("Programme précis à: "+str(yes/(total*1.00)*100.00)+" % (selon les données)")
+
+
 def amener():
 	gp = GP.GP_SymReg(500,100,0.01)
 	namef = input("Nom du fichier model: ")
@@ -127,12 +161,18 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
 	elif int(choix) == 2:
 		amener()
+	elif int(choix) == 3:
+		print("Fichier CSV contenant les données a traiter?: ")
+		namef1 = input()
+		print("Fichier model contenant le programme a traiter?: ")
+		namef2 = input()
+		verifier(namef1,namef2)
 	else:
 		print("CHOIX FAUX!")
 
