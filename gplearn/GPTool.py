@@ -139,9 +139,7 @@ def multi_part_verifier(i):
 		yy = truc.pop(posofytokill)
 		IN = ",".join(truc)
 		#print("OUT:", IN)
-		if len(IN)==0:
-			break
-		else:
+		if len(IN)!=0:
 			z = ''.join(c for c in IN if (c.isdigit() or c==","))
 			z = z.split(",")
 			z = list(map(float, z))
