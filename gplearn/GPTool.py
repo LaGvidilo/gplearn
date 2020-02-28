@@ -201,7 +201,7 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Tester un model(multi-thread enabled)")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
