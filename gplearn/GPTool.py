@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.4.0002"
+__version__ = "1.4.0004"
 
 import gplearn.GP as GP
 from multiprocessing import Pool
@@ -114,12 +114,12 @@ def recherche():
 
 	verifier(namef1,namef2+".model")
 
-
+"""
 shared_total, shared_yes = 0, 0
 shared_posofytokill = 0
+shared_pathofmodel = ""
 def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
-	gp = GP.GP_SymReg(500,100,0.01)
-	gp.load(pathofmodel)
+	shared_pathofmodel = pathofmodel
 
 	f = open(pathofcsv,'r')
 	DATA = f.read().split('\n')
@@ -133,6 +133,8 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 
 def multi_part_verifier(i):
+	gp = GP.GP_SymReg(500,100,0.01)
+	gp.load(shared_pathofmodel)
 	famousY = i.split(",")[shared_posofytokill]
 	#print("START:",i)
 	truc = i.split(",")
@@ -147,7 +149,7 @@ def multi_part_verifier(i):
 		shared_yes+=1
 	shared_total+=1
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
-
+"""
 
 
 
@@ -211,6 +213,7 @@ while(True):
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
 		verifier(namef1,namef2)
+	"""
 	elif int(choix) == 4:
 		print("Fichier CSV contenant les données a traiter?: ")
 		namef1 = input()
@@ -219,6 +222,7 @@ while(True):
 		print("Nombre de worker?: ")
 		n_work = input()
 		shared_verifier(namef1,namef2,n_work)
+	"""
 	else:
 		print("CHOIX FAUX!")
 
