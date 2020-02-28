@@ -213,18 +213,18 @@ while(True):
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
 		verifier(namef1,namef2)
-	"""
-	elif int(choix) == 4:
-		print("Fichier CSV contenant les données a traiter?: ")
-		namef1 = input()
-		print("Fichier model contenant le programme a traiter?: ")
-		namef2 = input()
-		print("Nombre de worker?: ")
-		n_work = input()
-		shared_verifier(namef1,namef2,n_work)
-	"""
 	else:
 		print("CHOIX FAUX!")
 
+"""
+elif int(choix) == 4:
+	print("Fichier CSV contenant les données a traiter?: ")
+	namef1 = input()
+	print("Fichier model contenant le programme a traiter?: ")
+	namef2 = input()
+	print("Nombre de worker?: ")
+	n_work = input()
+	shared_verifier(namef1,namef2,n_work)
+"""
 
 
