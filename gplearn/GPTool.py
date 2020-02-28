@@ -3,9 +3,10 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.3.0011"
+__version__ = "1.4.0002"
 
 import gplearn.GP as GP
+from multiprocessing import Pool
 
 print("Bienvenue dans GPCT-SRM v"+ __version__)
 
@@ -113,6 +114,46 @@ def recherche():
 
 	verifier(namef1,namef2+".model")
 
+
+shared_total, shared_yes = 0, 0
+def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
+	gp = GP.GP_SymReg(500,100,0.01)
+	gp.load(pathofmodel)
+
+	f = open(pathofcsv,'r')
+	DATA = f.read().split('\n')
+	#posofytokill = 0
+	posofytokill = DATA[0].split(',').index('y')
+	shared_yes, shared_total = 0, 0
+	print("Verification avec multi-thread du model face aux donnees en cours...")
+	with Pool(n_worker) as p:
+		p.map(multi_part_verifier, DATA[1:])
+
+	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
+
+def multi_part_verifier(i):
+	if i.count(",") == 0:
+		break
+	famousY = i.split(",")[posofytokill]
+	#print("START:",i)
+	truc = i.split(",")
+	yy = truc.pop(posofytokill)
+	IN = ",".join(truc)
+	#print("OUT:", IN)
+	if len(IN)==0:
+		break
+	else:
+		z = ''.join(c for c in IN if (c.isdigit() or c==","))
+		z = z.split(",")
+		z = list(map(float, z))
+		#print("Resultat: ", str(gp.predict(z)))
+		if int(gp.predict(z)) == int(famousY):
+			shared_yes+=1
+		shared_total+=1
+
+
+
+
 def verifier(pathofcsv,pathofmodel):
 	gp = GP.GP_SymReg(500,100,0.01)
 	gp.load(pathofmodel)
@@ -161,7 +202,7 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Tester un model(multi-thread enabled)")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
@@ -173,6 +214,14 @@ while(True):
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
 		verifier(namef1,namef2)
+	elif int(choix) == 4:
+		print("Fichier CSV contenant les données a traiter?: ")
+		namef1 = input()
+		print("Fichier model contenant le programme a traiter?: ")
+		namef2 = input()
+		print("Nombre de worker?: ")
+		n_work = input()
+		shared_verifier(namef1,namef2,n_work)
 	else:
 		print("CHOIX FAUX!")
 
