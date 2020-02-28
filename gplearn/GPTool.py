@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.4.0004"
+__version__ = "1.5.0001"
 
 import gplearn.GP as GP
 from multiprocessing import Pool
@@ -110,7 +110,7 @@ def recherche():
 	print(idiotstr)
 	nbx = gp.nbX
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
-	print("Voici le programme: ", gp.print_program())
+	print("Voici le programme: ", str(gp.print_program()))
 
 	verifier(namef1,namef2+".model")
 
@@ -151,7 +151,10 @@ def multi_part_verifier(i):
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 """
 
-
+def extraire_prog(pathofmodel):
+	gp = GP.GP_SymReg(500,100,0.01)
+	gp.load(pathofmodel)
+	print("Voici le programme: ", str(gp.print_program()))
 
 def verifier(pathofcsv,pathofmodel):
 	gp = GP.GP_SymReg(500,100,0.01)
@@ -201,7 +204,7 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Extraire un programme d'un model")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
@@ -213,6 +216,10 @@ while(True):
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
 		verifier(namef1,namef2)
+	elif int(choix) == 4:
+		print("Fichier model contenant le programme a extraire?: ")
+		namef2 = input()
+		extraire_prog(namef2)
 	else:
 		print("CHOIX FAUX!")
 
