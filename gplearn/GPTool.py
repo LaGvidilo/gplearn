@@ -116,37 +116,37 @@ def recherche():
 
 
 shared_total, shared_yes = 0, 0
+shared_posofytokill = 0
 def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	gp = GP.GP_SymReg(500,100,0.01)
 	gp.load(pathofmodel)
 
 	f = open(pathofcsv,'r')
 	DATA = f.read().split('\n')
-	#posofytokill = 0
-	posofytokill = DATA[0].split(',').index('y')
+	#shared_posofytokill = 0
+	shared_posofytokill = DATA[0].split(',').index('y')
 	shared_yes, shared_total = 0, 0
 	print("Verification avec multi-thread du model face aux donnees en cours...")
 	with Pool(int(n_worker)) as p:
-		p.map(multi_part_verifier, DATA[1:])
+		p.map(multi_part_verifier, [i for i in DATA[1:]])
 
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 
 def multi_part_verifier(i):
-	if i.count(",") != 0:
-		famousY = i.split(",")[posofytokill]
-		#print("START:",i)
-		truc = i.split(",")
-		yy = truc.pop(posofytokill)
-		IN = ",".join(truc)
-		#print("OUT:", IN)
-		if len(IN)!=0:
-			z = ''.join(c for c in IN if (c.isdigit() or c==","))
-			z = z.split(",")
-			z = list(map(float, z))
-			#print("Resultat: ", str(gp.predict(z)))
-			if int(gp.predict(z)) == int(famousY):
-				shared_yes+=1
-			shared_total+=1
+	famousY = i.split(",")[shared_posofytokill]
+	#print("START:",i)
+	truc = i.split(",")
+	yy = truc.pop(shared_posofytokill)
+	IN = ",".join(truc)
+
+	z = ''.join(c for c in IN if (c.isdigit() or c==","))
+	z = z.split(",")
+	z = list(map(float, z))
+	#print("Resultat: ", str(gp.predict(z)))
+	if int(gp.predict(z)) == int(famousY):
+		shared_yes+=1
+	shared_total+=1
+	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 
 
 
