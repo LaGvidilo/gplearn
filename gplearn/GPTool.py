@@ -132,24 +132,23 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 
 def multi_part_verifier(i):
-	if i.count(",") == 0:
-		break
-	famousY = i.split(",")[posofytokill]
-	#print("START:",i)
-	truc = i.split(",")
-	yy = truc.pop(posofytokill)
-	IN = ",".join(truc)
-	#print("OUT:", IN)
-	if len(IN)==0:
-		break
-	else:
-		z = ''.join(c for c in IN if (c.isdigit() or c==","))
-		z = z.split(",")
-		z = list(map(float, z))
-		#print("Resultat: ", str(gp.predict(z)))
-		if int(gp.predict(z)) == int(famousY):
-			shared_yes+=1
-		shared_total+=1
+	if i.count(",") != 0:
+		famousY = i.split(",")[posofytokill]
+		#print("START:",i)
+		truc = i.split(",")
+		yy = truc.pop(posofytokill)
+		IN = ",".join(truc)
+		#print("OUT:", IN)
+		if len(IN)==0:
+			break
+		else:
+			z = ''.join(c for c in IN if (c.isdigit() or c==","))
+			z = z.split(",")
+			z = list(map(float, z))
+			#print("Resultat: ", str(gp.predict(z)))
+			if int(gp.predict(z)) == int(famousY):
+				shared_yes+=1
+			shared_total+=1
 
 
 
