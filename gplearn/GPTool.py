@@ -126,7 +126,7 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	posofytokill = DATA[0].split(',').index('y')
 	shared_yes, shared_total = 0, 0
 	print("Verification avec multi-thread du model face aux donnees en cours...")
-	with Pool(n_worker) as p:
+	with Pool(int(n_worker)) as p:
 		p.map(multi_part_verifier, DATA[1:])
 
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
