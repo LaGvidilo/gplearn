@@ -110,7 +110,8 @@ def recherche():
 	print(idiotstr)
 	nbx = gp.nbX
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
-	print("Voici le programme: ", str(gp.print_program()))
+	print("Voici le programme: ")
+	gp.print_program()
 
 	verifier(namef1,namef2+".model")
 
@@ -154,7 +155,8 @@ def multi_part_verifier(i):
 def extraire_prog(pathofmodel):
 	gp = GP.GP_SymReg(500,100,0.01)
 	gp.load(pathofmodel)
-	print("Voici le programme: ", str(gp.print_program()))
+	print("Voici le programme: ")
+	gp.print_program()
 
 def verifier(pathofcsv,pathofmodel):
 	gp = GP.GP_SymReg(500,100,0.01)
