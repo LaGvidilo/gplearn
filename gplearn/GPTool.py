@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.5.0001"
+__version__ = "1.6.0001"
 
 import gplearn.GP as GP
 from multiprocessing import Pool
@@ -158,6 +158,11 @@ def extraire_prog(pathofmodel):
 	print("Voici le programme: ")
 	gp.print_program()
 
+def tolatek(pathofimage="tmp.png"):
+	gp = GP.GP_SymReg(500,100,0.01)
+	gp.load(pathofmodel)
+	GP.force_totex(pathofimage,str(gp.get_program()))
+
 def verifier(pathofcsv,pathofmodel):
 	gp = GP.GP_SymReg(500,100,0.01)
 	gp.load(pathofmodel)
@@ -206,7 +211,7 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Extraire un programme d'un model")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Extraire un programme d'un model\n5 - Sauvegarder une image LaTex d'un model")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
@@ -222,6 +227,9 @@ while(True):
 		print("Fichier model contenant le programme a extraire?: ")
 		namef2 = input()
 		extraire_prog(namef2)
+	elif int(choix) == 5:
+		tolatek()
+		print("Image sauvegardée !")
 	else:
 		print("CHOIX FAUX!")
 

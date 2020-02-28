@@ -58,6 +58,14 @@ def to_texpng(file="tmp.png" ,nX=1 ,program="y=sub(mul(add(div(div(X0, X0), sub(
 	f = open(file, 'w+b')
 	f.write(r.content)
 	f.close()
+
+def force_totex(filepath,program):
+	formula = py2tex(program)
+	formula = formula.replace('\n', ' ')
+	r = requests.get( 'http://latex.codecogs.com/png.latex?\dpi{{780}} {formula}'.format(formula=formula))
+	f = open(file, 'w+b')
+	f.write(r.content)
+	f.close()
 	
 from math import *
 from operator import inv, neg

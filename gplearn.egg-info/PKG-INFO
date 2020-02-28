@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: gplearn
-Version: 0.27.Sanchez0Mac1
+Version: 0.28.Sanchez0Mac1
 Summary: Genetic Programming in Python, with a scikit-learn inspired API
 Home-page: https://github.com/trevorstephens/gplearn
 Author: Trevor Stephens & Rick Sanchez
