@@ -43,23 +43,31 @@ gplearn supports regression through the SymbolicRegressor, binary classification
 
 gplearn is built on scikit-learn and a fairly recent copy (0.20.0+) is required for `installation <http://gplearn.readthedocs.io/en/stable/installation.html>`_. If you come across any issues in running or installing the package, `please submit a bug report <https://github.com/trevorstephens/gplearn/issues>`_.
 
-# Rick's here on... euhhh say ???
+|
 
+Rick's here on... euhhh say ???
+===================
 Party night is code in dark room, in a location outside of time !
-Life is a little bit and insignifiant part of ocean of shit... So cheat with this ocean and surf on wave of data science ! Nevermind if life is difficult, just consider if you can do, do it, for fun, learn, explore, and don't forget if you are not happy and if you think about killing yourself: YOU ARE NOT ALLONE IN THIS CASE ON EARTH ! Take care. 
+Life is a little bit and insignifiant part of ocean of shit... So cheat with this ocean and surf on wave of data science ! Nevermind if life is difficult, just consider if you can do, do it, for fun, learn, explore, and don't forget if you are not happy and if you think about killing yourself: YOU ARE NOT ALONE IN THIS CASE ON EARTH ! Take care. 
 ===
 An important thing is never give up.
 -Rick Sanchez
 
 ===================
 
-# For install with pip from this git repository
+|
+
+For install with pip from this git repository
+===================
 
 ```
 $ sudo python3 setup.py install
 ```
 
-# For use the terminal command tools
+|
+
+For use the terminal command tools
+===================
 
 ```
 $ python3
