@@ -268,7 +268,9 @@ class GP_Classifier(object):
 
 	def learn(self):
 		print("ENTRAINEMENT...")
-		self.est_gp.fit(self.x_,self.y_)
+		rng = check_random_state(0)
+		perm = rng.permutation(len(self.x_))
+		self.est_gp.fit(self.x_[perm],self.y_[perm])
 		print("ENTRAINEMENT TERMINE!")
 		#self.BESTOF = self.est_gp.BESTOF
 		#print("BESTOF:" , self.BESTOF)

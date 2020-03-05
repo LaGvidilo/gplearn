@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.6.0007"
+__version__ = "1.6.0008"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -356,7 +356,7 @@ def amener():
 			print("Resultat: ", str(gp.predict(z)))
 
 while(True):
-	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Extraire un programme d'un model\n5 - Sauvegarder une image LaTex d'un model")
+	print("Que voulez vous faire ?\n1 - Faire une experience\n2 - Faire des predictions\n3 - Tester un model\n4 - Extraire un programme d'un model\n5 - Sauvegarder une image LaTex d'un model\n6 - Faire une experience avec le classifieur(experimental)")
 	choix = input("CHOIX> ") 
 	if int(choix) == 1:
 		recherche()
