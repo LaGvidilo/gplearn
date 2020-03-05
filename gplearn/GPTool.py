@@ -122,9 +122,9 @@ def recherche_GC():
 	stopping_criteria = float(input("Critere d'arret de l'experience?: "))
 	n_jobs = int(input("Nombre de processus paralleles?: "))
 	if n_jobs>1:
-		verboz = 2
+		verbose = 2
 	else:
-		verboz = 1
+		verbose = 1
 
 	print ("Ajuster les paramètres secondaires?(O/N): ")
 	ajustother = input().lower()
