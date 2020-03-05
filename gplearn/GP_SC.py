@@ -161,7 +161,7 @@ class dataset(object):
 
 
 
-class GP_SymReg(object):
+class GP_Classifier(object):
 	def load_csv(self,filepath="test.csv",name_y='y'):
 		DATA = []
 		with open(filepath) as csvfile:
@@ -257,11 +257,73 @@ class GP_SymReg(object):
 			function_set = ("and","or","xor")
 		if function_set == "all":
 			function_set = ('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','inv','max','min','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt','hypot',"modulox")
-		self.est_gp = SymbolicClassifier(population_size=population_size,
-						generations=generations, stopping_criteria=stopping_criteria,
-						function_set=function_set,
-						warm_start=warm_start,
-						p_crossover=p_crossover, p_subtree_mutation=p_subtree_mutation,
-						p_hoist_mutation=p_hoist_mutation, p_point_mutation=p_point_mutation,
-						max_samples=max_samples, verbose=verbose,
-						parsimony_coefficient=parsimony_coefficient, random_state=random_state,n_jobs=n_jobs)
+		self.est_gp = SymbolicClassifier(population_size=population_size, generations=generations, 
+			tournament_size=tournament_size, stopping_criteria=stopping_criteria, 
+			const_range=const_range, init_depth=init_depth, 
+			init_method=init_method, function_set=function_set, 
+			transformer=transformer, metric=metric, parsimony_coefficient=parsimony_coefficient1, 
+			p_crossover=p_crossover, p_subtree_mutation=p_subtree_mutation, p_hoist_mutation=p_hoist_mutation, 
+			p_point_mutation=p_point_mutation, p_point_replace=p_point_replace, max_samples=max_samples, feature_names=feature_names, 
+			warm_start=warm_start, low_memory=low_memory, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
+
+	def learn(self):
+		print("ENTRAINEMENT...")
+		self.est_gp.fit(self.x_,self.y_)
+		print("ENTRAINEMENT TERMINE!")
+		#self.BESTOF = self.est_gp.BESTOF
+		#print("BESTOF:" , self.BESTOF)
+
+
+	def predict(self,X=[16,19],scale=1.):
+		u = []
+		for i in range(0,len(X)):
+			u.append(np.arange(X[i], X[i]+1, scale))
+		u = tuple(u)
+		self.y_gp = self.est_gp.predict(np.c_[u]).reshape(u[0].shape)
+		return mean(self.y_gp)
+
+	def save(self,filepath="temp.bin"):
+		f=open(filepath,'w+b')
+		f.write(pickle.dumps(self.est_gp))
+		f.close()
+		print("MODEL SAVE!("+filepath+")")
+
+	def load(self,filepath="temp.bin"):
+		l = os.stat(filepath).st_size
+		with open(filepath, 'rb') as f:
+			mm = mmap.mmap(f.fileno(),0,prot=mmap.PROT_READ)
+			self.est_gp = pickle.loads(mm.read(l))
+		print("MODEL LOAD!("+filepath+")")
+
+	def get_program(self):
+		return self.est_gp._program
+
+	def print_program(self):
+		print(self.est_gp._program)
+
+	def get_png_program(self,file_,nX=1):
+		to_texpng(file_,nX,str(self.est_gp._program))
+
+	def determination(self):
+		x,y=[],[]
+		x=range(-100,100+1)
+		for i in x:
+			y.append(f(i))
+		self.set_x_y(x,y)
+		print("SET DETERMINATION X(-100 to 100) Y(from f(x)).")
+
+	def approx_stat(self,x):
+		a,b=self.predict(X=x,scale=1),self.predict(X=x,scale=1/1000.)
+		return mean([a,b])
+
+	def make_from_csv_for_corrector(self,filepath="newcorrect.csv"):
+		f = open(filepath,"w+b")
+		f.write("x0,")
+		f.write("y\n")	
+		j=0	
+		for x in self.x_.tolist():
+			xprime = [self.approx_stat(x),self.y_.tolist()[j]]
+			f.write(str(xprime).replace('[','').replace(']','')+"\n")
+			print("MAKE CORRECTOR CSV:",(j/(len(self.y_.tolist())*1.0)),"%")
+			j+=1
+		f.close()

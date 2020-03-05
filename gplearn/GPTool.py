@@ -3,9 +3,10 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.6.0003"
+__version__ = "1.6.0005"
 
 import gplearn.GP as GP
+import gplearn.GP_SC as GC
 from multiprocessing import Pool
 
 print("Bienvenue dans GPCT-SRM v"+ __version__)
@@ -110,6 +111,143 @@ def recherche():
 	print(idiotstr)
 	nbx = gp.nbX
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
+	print("Voici le programme: ")
+	gp.print_program()
+
+	verifier(namef1,namef2+".model")
+
+def recherche_GC():
+	population_size = int(input("Taille de la population?: "))
+	generations = int(input("Nombre de generation?: "))
+	stopping_criteria = float(input("Critere d'arret de l'experience?: "))
+	n_jobs = int(input("Nombre de processus paralleles?: "))
+	if njobs>1:
+		verboz = 2
+	else:
+		verboz = 1
+
+	print ("Ajuster les paramètres secondaires?(O/N): ")
+	ajustother = input().lower()
+	feature_names=None
+	if ajustother == "o":
+		try:
+			tournament_size = float(input("tournament_size[20]: "))
+		except ValueError:
+			tournament_size = 20
+
+		try:
+			const_range = tuple(input("const_range[(-1.0, 1.0)]: "))
+		except ValueError:
+			const_range = (-1.0, 1.0)
+
+		try:
+			init_depth = float(input("init_depth[(2, 6)]: "))
+		except ValueError:
+			init_depth = (2, 6)
+
+		try:
+			init_method = float(input("init_method[half and half]: "))
+		except ValueError:
+			init_method = "half and half"
+
+		try:
+			transformer = float(input("transformer[sigmoid]: "))
+		except ValueError:
+			transformer = "sigmoid"
+
+		try:
+			metric = float(input("transformer[log loss]: "))
+		except ValueError:
+			metric='log loss'
+
+		try:
+			parsimony_coefficient = float(input("parsimony_coefficient[0.01]: "))
+		except ValueError:
+			parsimony_coefficient = 0.01
+
+		try:
+			p_crossover = float(input("p_crossover[0.9]: "))
+		except ValueError:
+			p_crossover = 0.9
+
+		try:
+			p_subtree_mutation = float(input("p_subtree_mutation[0.01]: "))
+		except ValueError:
+			p_subtree_mutation = 0.01
+
+		try:
+			p_hoist_mutation = float(input("p_hoist_mutation[0.01]: "))
+		except ValueError:
+			p_hoist_mutation = 0.01
+
+		try:
+			p_point_mutation = float(input("p_point_mutation[0.01]: "))
+		except ValueError:
+			p_point_mutation = 0.01
+
+		try:
+			p_point_replace = float(input("p_point_mutation[0.05]: "))
+		except ValueError:
+			p_point_replace=0.05
+
+		try:
+			max_samples = float(input("max_samples[1.0]: "))
+		except ValueError:
+			max_samples = 1.0
+
+		try:
+			warm_start = float(input("warm_start[False]: "))
+		except ValueError:
+			warm_start=False
+
+		try:
+			random_state = int(input("random_state[None]: "))
+		except ValueError:
+			random_state=None
+
+		try:
+			low_memory = int(input("low_memory[False]: "))
+		except ValueError:
+			low_memory=False
+
+
+	else:
+		warmstart=False
+		crossover=0.7
+		subtreemutation=0.1
+		hoistmutation=0.05
+		pointmutation=0.1
+		maxsamples=0.9
+		verboz=1
+		parsimony_coefficient=0.01
+		randomstate=0
+
+	parammath = int(input("\n"+paramsecho+"\nParametre de calcul a utiliser?: "))
+	#parammathdict[parammath]
+
+	gp = GC.GP_Classifier(population_size=population_size, generations=generations, 
+			tournament_size=tournament_size, stopping_criteria=stopping_criteria, 
+			const_range=const_range, init_depth=init_depth, 
+			init_method=init_method, function_set=parammathdict[parammath], 
+			transformer=transformer, metric=metric, parsimony_coefficient=parsimony_coefficient, 
+			p_crossover=p_crossover, p_subtree_mutation=p_subtree_mutation, p_hoist_mutation=p_hoist_mutation, 
+			p_point_mutation=p_point_mutation, p_point_replace=p_point_replace, max_samples=max_samples, feature_names=feature_names, 
+			warm_start=warm_start, low_memory=low_memory, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
+
+	print("Fichier CSV contenant les données a traiter?: ")
+	namef1 = input()
+
+	gp.load_csv(namef1)
+	print("Le traitement va commencer...")
+	gp.learn()
+	namef2 = str(namef1.split(".")[0])
+	print("Programme termine!")
+	gp.save(namef2+".model")
+	print("Sauvegarde du programme....")
+	idiotstr = str(gp.get_program())
+	print(idiotstr)
+	nbx = gp.nbX
+	GC.to_texpng(namef2+".png", nbx, idiotstr)
 	print("Voici le programme: ")
 	gp.print_program()
 
@@ -235,6 +373,8 @@ while(True):
 		if namef1 == "": namef1 = "tmp"
 		tolatek(namef2,namef1+".png")
 		print("Image sauvegardée !")
+	elif int(choix) == 6:
+		recherche_GC()
 	else:
 		print("CHOIX FAUX!")
 
