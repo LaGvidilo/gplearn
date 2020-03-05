@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.6.0005"
+__version__ = "1.6.0007"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -121,7 +121,7 @@ def recherche_GC():
 	generations = int(input("Nombre de generation?: "))
 	stopping_criteria = float(input("Critere d'arret de l'experience?: "))
 	n_jobs = int(input("Nombre de processus paralleles?: "))
-	if njobs>1:
+	if n_jobs>1:
 		verboz = 2
 	else:
 		verboz = 1
@@ -212,15 +212,22 @@ def recherche_GC():
 
 
 	else:
-		warmstart=False
-		crossover=0.7
-		subtreemutation=0.1
-		hoistmutation=0.05
-		pointmutation=0.1
-		maxsamples=0.9
-		verboz=1
-		parsimony_coefficient=0.01
-		randomstate=0
+		tournament_size = 20
+		const_range = (-1.0, 1.0)
+		init_depth = (2, 6)
+		init_method = "half and half"
+		transformer = "sigmoid"
+		metric='log loss'
+		parsimony_coefficient = 0.01
+		p_crossover = 0.9
+		p_subtree_mutation = 0.01
+		p_hoist_mutation = 0.01
+		p_point_mutation = 0.01
+		p_point_replace=0.05
+		max_samples = 1.0
+		warm_start=False
+		random_state=None
+		low_memory=False
 
 	parammath = int(input("\n"+paramsecho+"\nParametre de calcul a utiliser?: "))
 	#parammathdict[parammath]

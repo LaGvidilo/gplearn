@@ -1,8 +1,8 @@
 Metadata-Version: 2.1
 Name: gplearn
-Version: 0.28.Sanchez0Mac1
+Version: 0.29.Sanchez0Mac1
 Summary: Genetic Programming in Python, with a scikit-learn inspired API
-Home-page: https://github.com/trevorstephens/gplearn
+Home-page: https://github.com/LaGvidilo/gplearn
 Author: Trevor Stephens & Rick Sanchez
 Author-email: trev.stephens@gmail.com
 License: new BSD
@@ -36,7 +36,7 @@ Description: .. image:: https://img.shields.io/pypi/v/gplearn.svg
         
         |
         
-        Welcome to gplearn!
+        Welcome to gplearn! (Rick Sanchez version)
         ===================
         
         `gplearn` implements Genetic Programming in Python, with a `scikit-learn <http://scikit-learn.org>`_ inspired and compatible API.
@@ -51,9 +51,46 @@ Description: .. image:: https://img.shields.io/pypi/v/gplearn.svg
         
         gplearn is built on scikit-learn and a fairly recent copy (0.20.0+) is required for `installation <http://gplearn.readthedocs.io/en/stable/installation.html>`_. If you come across any issues in running or installing the package, `please submit a bug report <https://github.com/trevorstephens/gplearn/issues>`_.
         
+        |
+        
+        Rick's here on... euhhh say ???
+        ===================
+        Party night is code in dark room, in a location outside of time !
+        Life is a little bit and insignifiant part of ocean of shit... So cheat with this ocean and surf on wave of data science ! Nevermind if life is difficult, just consider if you can do, do it, for fun, learn, explore, and don't forget if you are not happy and if you think about killing yourself: YOU ARE NOT ALONE IN THIS CASE ON EARTH ! Take care. 
+        ===
+        An important thing is never give up.
+        -Rick Sanchez
+        
+        ===================
+        
+        |
+        
+        For install with pip from this git repository
+        ===================
+        
+        ```
+        $ sudo python3 setup.py install
+        ```
+        
+        |
+        
+        For use the terminal command tools
+        ===================
+        
+        ```
+        $ python3
+        Python 3.7.6 (default, Dec 30 2019, 19:38:28) 
+        [Clang 11.0.0 (clang-1100.0.33.16)] on darwin
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>> import gplearn.GPTool
+        ```
+        
+        
+        
         
 Platform: UNKNOWN
-Classifier: Development Status :: 3 - Alpha
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Console
 Classifier: Intended Audience :: Science/Research
 Classifier: Intended Audience :: Developers
 Classifier: License :: OSI Approved

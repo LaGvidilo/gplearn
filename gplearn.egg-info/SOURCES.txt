@@ -4,6 +4,7 @@ README.rst
 setup.py
 gplearn/GP.py
 gplearn/GPTool.py
+gplearn/GP_SC.py
 gplearn/__init__.py
 gplearn/_program.py
 gplearn/fitness.py
