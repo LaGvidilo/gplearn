@@ -261,7 +261,7 @@ class GP_Classifier(object):
 			tournament_size=tournament_size, stopping_criteria=stopping_criteria, 
 			const_range=const_range, init_depth=init_depth, 
 			init_method=init_method, function_set=function_set, 
-			transformer=transformer, metric=metric, parsimony_coefficient=parsimony_coefficient1, 
+			transformer=transformer, metric=metric, parsimony_coefficient=parsimony_coefficient, 
 			p_crossover=p_crossover, p_subtree_mutation=p_subtree_mutation, p_hoist_mutation=p_hoist_mutation, 
 			p_point_mutation=p_point_mutation, p_point_replace=p_point_replace, max_samples=max_samples, feature_names=feature_names, 
 			warm_start=warm_start, low_memory=low_memory, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
