@@ -28,7 +28,7 @@ R	S	T	U	V	W	X 	Y	Z
 18	19	20	21	22	23	24	25	26
 
 """
-__version__ = "1.3.11a"
+__version__ = "1.4.01a"
 
 
 def traduct(X,program = "y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
@@ -248,8 +248,11 @@ class GP_SymReg(object):
 					p_crossover=0.7, p_subtree_mutation=0.1,
 					p_hoist_mutation=0.05, p_point_mutation=0.1,
 					max_samples=0.9, verbose=1,
-					parsimony_coefficient=0.01, random_state=0, n_jobs=1):
+					parsimony_coefficient=0.01, random_state=0, n_jobs=1, warmreduce=False, pkldump=False):
 		#self.BESTOF = 0
+		self.warmreduce = warmreduce
+		self.pkldump = pkldump
+		self.warm_start = warm_start
 		self.y_ = None
 		#('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','sin','cos','tan')
 		if function_set == "logic":
@@ -265,10 +268,26 @@ class GP_SymReg(object):
 						max_samples=max_samples, verbose=verbose,
 						parsimony_coefficient=parsimony_coefficient, random_state=random_state,n_jobs=n_jobs)
 
+
 	def learn(self):
+		if self.pkldump:
+			with open(self.filepkl, 'rb') as f:
+				self.est_gp = pickle.load(f)
+
 		print("ENTRAINEMENT...")
 		self.est_gp.fit(self.x_,self.y_)
 		print("ENTRAINEMENT TERMINE!")
+		if self.warmreduce:
+			print("Reduction de l'espace du fichier...")
+			delattr(self.est_gp,'_programs')
+			print("OK.")
+
+		if self.warm_start:
+			if not self.pkldump:
+				with open(self.filepkl, 'wb') as f:
+					pickle.dump(self.est_gp, f)
+
+
 		#self.BESTOF = self.est_gp.BESTOF
 		#print("BESTOF:" , self.BESTOF)
 
@@ -326,6 +345,9 @@ class GP_SymReg(object):
 			print("MAKE CORRECTOR CSV:",(j/(len(self.y_.tolist())*1.0)),"%")
 			j+=1
 		f.close()
+
+	def define_filepkl(self,filepkl):
+		self.filepkl = filepkl
 
 
 def round_predict(FILEg,FILEh,x=[]):

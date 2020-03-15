@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.6.0008"
+__version__ = "1.7.0001"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -78,8 +78,31 @@ def recherche():
 		except ValueError:
 			randomstate = 0
 
+		try:
+			warm_start = bool(input("warm_start(sauvegarde & continue)[False]: "))
+			if warm_start:
+				print("WARM START ENABLED !")
+				print("Reduce the file size of the pickled object by removing the evolution information?")
+				print("======\n")
+				reponse = input("Voulez vous utiliser un fichier pickle ?(O/N):")
+				if reponse.lower() == "o":
+					namefilepkl = str(input("Chemin, nom et extention du fichier: "))
+					reponse = input("Vous voulez alléger le fichier ?(O/N):")
+					if reponse.lower() == "o":
+						warmreduce=True
+					reponse = input("Voulez vous charger le fichier pkl ?(O/N):")
+					if reponse.lower() == "o":
+						pkldump=True
+					else:
+						print("Il s'agit donc d'un fichier a sauvegarder.")
+
+		except ValueError:
+			warm_start=False
 
 	else:
+		namefilepkl = ""
+		pkldump=False
+		warmreduce=False
 		warmstart=False
 		crossover=0.7
 		subtreemutation=0.1
@@ -93,9 +116,11 @@ def recherche():
 	parammath = int(input("\n"+paramsecho+"\nParametre de calcul a utiliser?: "))
 	#parammathdict[parammath]
 
-	gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], False, 
+	gp = GP.GP_SymReg(sizepop, numbergen, stpcrit, parammathdict[parammath], warmstart, 
 			crossover, subtreemutation, hoistmutation, pointmutation, maxsamples,
-			verboz, parsimonycoefficient, randomstate, njobs)
+			verboz, parsimonycoefficient, randomstate, njobs,warmreduce, pkldump)
+
+	gp.define_filepkl(namefilepkl)
 
 	print("Fichier CSV contenant les données a traiter?: ")
 	namef1 = input()
