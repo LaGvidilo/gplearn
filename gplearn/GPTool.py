@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.7.0001"
+__version__ = "1.7.0002"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -79,8 +79,8 @@ def recherche():
 			randomstate = 0
 
 		try:
-			warm_start = bool(input("warm_start(sauvegarde & continue)[False]: "))
-			if warm_start:
+			warmstart = bool(input("warm_start(sauvegarde & continue)[False]: "))
+			if warmstart:
 				print("WARM START ENABLED !")
 				print("Reduce the file size of the pickled object by removing the evolution information?")
 				print("======\n")
@@ -97,7 +97,7 @@ def recherche():
 						print("Il s'agit donc d'un fichier a sauvegarder.")
 
 		except ValueError:
-			warm_start=False
+			warmstart=False
 
 	else:
 		namefilepkl = ""
