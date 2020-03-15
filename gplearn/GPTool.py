@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.7.0002"
+__version__ = "1.7.0003"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -90,11 +90,15 @@ def recherche():
 					reponse = input("Vous voulez alléger le fichier ?(O/N):")
 					if reponse.lower() == "o":
 						warmreduce=True
+					else:
+						warmreduce=False
 					reponse = input("Voulez vous charger le fichier pkl ?(O/N):")
 					if reponse.lower() == "o":
 						pkldump=True
 					else:
 						print("Il s'agit donc d'un fichier a sauvegarder.")
+				else:
+					namefilepkl = ""
 
 		except ValueError:
 			warmstart=False
