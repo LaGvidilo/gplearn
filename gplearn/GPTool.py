@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.7.0003"
+__version__ = "1.7.0004"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -97,6 +97,7 @@ def recherche():
 						pkldump=True
 					else:
 						print("Il s'agit donc d'un fichier a sauvegarder.")
+						pkldump=False
 				else:
 					namefilepkl = ""
 
