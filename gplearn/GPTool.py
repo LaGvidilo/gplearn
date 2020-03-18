@@ -376,7 +376,7 @@ def verifier(pathofcsv,pathofmodel):
 			z = z.split(",")
 			z = list(map(float, z))
 			#print("Resultat: ", str(gp.predict(z)))
-			if int(gp.predict(z)) == int(famousY):
+			if float(gp.predict(z)) == float(famousY):
 				yes+=1
 			total+=1
 	print("Programme précis à: "+str(yes/(total*1.00)*100.00)+" % (selon les données)")
