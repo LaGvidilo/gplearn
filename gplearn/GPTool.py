@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.7.0004"
+__version__ = "1.8.0001"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -17,7 +17,8 @@ parammathdict = {
 	3: ('add','sub','mul','div','hypot','sin','cos','tan'),
 	4: ('add','sub','mul','div','max','min','abs'),
 	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulox"),
-	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside')
+	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside'),
+	7: ('sigmoid','and','or','xor','add','sub','mul','div','abs','add','mul','div','sub','hypot','heaviside')
 }
 
 paramsecho = """
@@ -27,6 +28,7 @@ paramsecho = """
 			4 - Statistique
 			5 - Avance
 			6 - Cell
+			7 - Cell2
 			"""
 
 
@@ -35,6 +37,10 @@ def recherche():
 	numbergen = int(input("Nombre de generation?: "))
 	stpcrit = float(input("Critere d'arret de l'experience?: "))
 	njobs = int(input("Nombre de processus paralleles?: "))
+	try:
+		verif = bool(input("Verifier le model apres apprentissage[1/0]: "))
+	except ValueError:
+		verif = 0
 	if njobs>1:
 		verboz = 2
 	else:
@@ -79,6 +85,9 @@ def recherche():
 			randomstate = 0
 
 		try:
+			warmreduce=False
+			pkldump=False
+			namefilepkl = ""
 			warmstart = bool(input("warm_start(sauvegarde & continue)[False]: "))
 			if warmstart:
 				print("WARM START ENABLED !")
@@ -143,8 +152,8 @@ def recherche():
 	GP.to_texpng(namef2+".png", nbx, idiotstr)
 	print("Voici le programme: ")
 	gp.print_program()
-
-	verifier(namef1,namef2+".model")
+	if verif:
+		verifier(namef1,namef2+".model")
 
 def recherche_GC():
 	population_size = int(input("Taille de la population?: "))
@@ -155,7 +164,10 @@ def recherche_GC():
 		verbose = 2
 	else:
 		verbose = 1
-
+	try:
+		verif = bool(input("Verifier le model apres apprentissage[1/0]: "))
+	except ValueError:
+		verif = 0
 	print ("Ajuster les paramètres secondaires?(O/N): ")
 	ajustother = input().lower()
 	feature_names=None
@@ -287,8 +299,8 @@ def recherche_GC():
 	GC.to_texpng(namef2+".png", nbx, idiotstr)
 	print("Voici le programme: ")
 	gp.print_program()
-
-	verifier(namef1,namef2+".model")
+	if verif:
+		verifier(namef1,namef2+".model")
 
 """
 shared_total, shared_yes = 0, 0
