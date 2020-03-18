@@ -28,7 +28,7 @@ paramsecho = """
 			4 - Statistique
 			5 - Avance
 			6 - Cell
-			7 - Cell2
+			7 - Cell + Simple
 			"""
 
 
