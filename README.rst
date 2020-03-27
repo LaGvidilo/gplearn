@@ -79,3 +79,8 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 
 
+
+
+.. image:: https://api.codacy.com/project/badge/Grade/adc883be4cb94dec86d90b6f134dcaf9
+   :alt: Codacy Badge
+   :target: https://app.codacy.com/manual/LaGvidilo/gplearn?utm_source=github.com&utm_medium=referral&utm_content=LaGvidilo/gplearn&utm_campaign=Badge_Grade_Dashboard
