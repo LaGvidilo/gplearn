@@ -60,6 +60,6 @@ An important thing is never give up.
 For install with pip from this git repository
 ===================
 
-
+<https://github.com/LaGvidilo/gplearn/blob/master/INSTALL.md>
 
 
