@@ -16,9 +16,9 @@
 .. image:: https://coveralls.io/repos/trevorstephens/gplearn/badge.svg
     :target: https://coveralls.io/r/trevorstephens/gplearn
     :alt: Test Coverage
-.. image:: https://api.codacy.com/project/badge/Grade/19c43d7c42c44d15b1ec512656800d8d
-    :target: https://www.codacy.com/app/trevorstephens/gplearn
-    :alt: Code Health
+.. image:: https://api.codacy.com/project/badge/Grade/403bd807dfaf4d829f00b3a9964637b3    
+    :target: https://www.codacy.com/manual/LaGvidilo/gplearn?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LaGvidilo/gplearn&amp;utm_campaign=Badge_Grade
+    :alt: Codacy Badge
 
 |
 
@@ -60,22 +60,6 @@ An important thing is never give up.
 For install with pip from this git repository
 ===================
 
-```
-$ sudo python3 setup.py install
-```
-
-|
-
-For use the terminal command tools
-===================
-
-```
-$ python3
-Python 3.7.6 (default, Dec 30 2019, 19:38:28) 
-[Clang 11.0.0 (clang-1100.0.33.16)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>> import gplearn.GPTool
-```
 
 
 
