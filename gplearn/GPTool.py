@@ -50,7 +50,7 @@ def recherche():
 	else:
 		verboz = 1
 
-	print ("Ajuster les paramètres secondaires?(O/N): ")
+	print ("Ajuster les parametres secondaires?(O/N): ")
 	ajustother = input().lower()
 	if ajustother == "o":
 		try:
