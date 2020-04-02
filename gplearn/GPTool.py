@@ -1,6 +1,7 @@
 #coding: utf-8
 """
 Genetic Programming Complete Tool for Scientific Research in Mathematics
+
 """
 __version__ = "1.8.0001"
 
@@ -307,6 +308,7 @@ shared_posofytokill = 0
 shared_pathofmodel = ""
 def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	shared_pathofmodel = pathofmodel
+
 	f = open(pathofcsv,'r')
 	DATA = f.read().split('\n')
 	#shared_posofytokill = 0
@@ -315,7 +317,9 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	print("Verification avec multi-thread du model face aux donnees en cours...")
 	with Pool(int(n_worker)) as p:
 		p.map(multi_part_verifier, [i for i in DATA[1:]])
+
 	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
+
 def multi_part_verifier(i):
 	gp = GP.GP_SymReg(500,100,0.01)
 	gp.load(shared_pathofmodel)
@@ -324,6 +328,7 @@ def multi_part_verifier(i):
 	truc = i.split(",")
 	yy = truc.pop(shared_posofytokill)
 	IN = ",".join(truc)
+
 	z = ''.join(c for c in IN if (c.isdigit() or c==","))
 	z = z.split(",")
 	z = list(map(float, z))
@@ -432,3 +437,5 @@ elif int(choix) == 4:
 	n_work = input()
 	shared_verifier(namef1,namef2,n_work)
 """
+
+
