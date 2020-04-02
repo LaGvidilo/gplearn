@@ -27,7 +27,7 @@ def recherche():
 	else:
 		verboz = 1
 
-	print ("Ajuster les param√®tres secondaires?(O/N): ")
+	print ("Ajuster les paramètres secondaires?(O/N): ")
 	ajustother = input().lower()
 	if ajustother == "o":
 		try:
@@ -77,7 +77,7 @@ def recherche():
 				reponse = input("Voulez vous utiliser un fichier pickle ?(O/N):")
 				if reponse.lower() == "o":
 					namefilepkl = str(input("Chemin, nom et extention du fichier: "))
-					reponse = input("Vous voulez all√©ger le fichier ?(O/N):")
+					reponse = input("Vous voulez alléger le fichier ?(O/N):")
 					if reponse.lower() == "o":
 						warmreduce=True
 					else:
@@ -117,7 +117,7 @@ def recherche():
 
 	gp.define_filepkl(namefilepkl)
 
-	print("Fichier CSV contenant les donn√©es a traiter?: ")
+	print("Fichier CSV contenant les données a traiter?: ")
 	namef1 = input()
 
 	gp.load_csv(namef1)
@@ -149,7 +149,7 @@ def recherche_GC():
 		verif = bool(input("Verifier le model apres apprentissage[1/0]: "))
 	except ValueError:
 		verif = 0
-	print ("Ajuster les param√®tres secondaires?(O/N): ")
+	print ("Ajuster les paramètres secondaires?(O/N): ")
 	ajustother = input().lower()
 	feature_names=None
 	if ajustother == "o":
@@ -264,7 +264,7 @@ def recherche_GC():
 			p_point_mutation=p_point_mutation, p_point_replace=p_point_replace, max_samples=max_samples, feature_names=feature_names, 
 			warm_start=warm_start, low_memory=low_memory, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
 
-	print("Fichier CSV contenant les donn√©es a traiter?: ")
+	print("Fichier CSV contenant les données a traiter?: ")
 	namef1 = input()
 
 	gp.load_csv(namef1)
@@ -299,7 +299,7 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	with Pool(int(n_worker)) as p:
 		p.map(multi_part_verifier, [i for i in DATA[1:]])
 
-	print("Programme pr√©cis √†: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les donn√©es)")
+	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 
 def multi_part_verifier(i):
 	gp = GP.GP_SymReg(500,100,0.01)
@@ -317,7 +317,7 @@ def multi_part_verifier(i):
 	if int(gp.predict(z)) == int(famousY):
 		shared_yes+=1
 	shared_total+=1
-	print("Programme pr√©cis √†: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les donn√©es)")
+	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
 """
 
 def extraire_prog(pathofmodel):
@@ -360,7 +360,7 @@ def verifier(pathofcsv,pathofmodel):
 			if float(gp.predict(z)) == float(famousY):
 				yes+=1
 			total+=1
-	print("Programme pr√©cis √†: "+str(yes/(total*1.00)*100.00)+" % (selon les donn√©es)")
+	print("Programme précis à: "+str(yes/(total*1.00)*100.00)+" % (selon les données)")
 
 
 def amener():
@@ -369,7 +369,7 @@ def amener():
 	gp.load(namef)
 
 	while (True):
-		IN = input("Veuillez entrer les donn√©es de pr√©diction: ")
+		IN = input("Veuillez entrer les données de prédiction: ")
 		if len(IN)==0:
 			break
 		else:
@@ -386,7 +386,7 @@ while(True):
 	elif int(choix) == 2:
 		amener()
 	elif int(choix) == 3:
-		print("Fichier CSV contenant les donn√©es a traiter?: ")
+		print("Fichier CSV contenant les données a traiter?: ")
 		namef1 = input()
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
@@ -402,7 +402,7 @@ while(True):
 		namef1 = input()
 		if namef1 == "": namef1 = "tmp"
 		tolatek(namef2,namef1+".png")
-		print("Image sauvegard√©e !")
+		print("Image sauvegardée !")
 	elif int(choix) == 6:
 		recherche_GC()
 	else:
@@ -410,7 +410,7 @@ while(True):
 
 """
 elif int(choix) == 4:
-	print("Fichier CSV contenant les donn√©es a traiter?: ")
+	print("Fichier CSV contenant les données a traiter?: ")
 	namef1 = input()
 	print("Fichier model contenant le programme a traiter?: ")
 	namef2 = input()
