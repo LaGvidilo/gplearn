@@ -129,10 +129,7 @@ def modulox(a,b):
 	return "modulox("+str(a)+","+str(b)+")"
 def xor(a,b):
 	return "xor("+str(a)+","+str(b)+")"
-def and(a,b):
-	return "and("+str(a)+","+str(b)+")"
-def or(a,b):
-	return "or("+str(a)+","+str(b)+")"
+
 	
 def string_to_float(x):
     z = ""
