@@ -172,7 +172,7 @@ def recherche_GC():
 		verif = bool(input("Verifier le model apres apprentissage[1/0]: "))
 	except ValueError:
 		verif = 0
-	print ("Ajuster les paramètres secondaires?(O/N): ")
+	print ("Ajuster les parametres secondaires?(O/N): ")
 	ajustother = input().lower()
 	feature_names=None
 	if ajustother == "o":
@@ -287,7 +287,7 @@ def recherche_GC():
 			p_point_mutation=p_point_mutation, p_point_replace=p_point_replace, max_samples=max_samples, feature_names=feature_names, 
 			warm_start=warm_start, low_memory=low_memory, n_jobs=n_jobs, verbose=verbose, random_state=random_state)
 
-	print("Fichier CSV contenant les données a traiter?: ")
+	print("Fichier CSV contenant les donnees a traiter?: ")
 	namef1 = input()
 
 	gp.load_csv(namef1)
@@ -383,7 +383,7 @@ def verifier(pathofcsv,pathofmodel):
 			if float(gp.predict(z)) == float(famousY):
 				yes+=1
 			total+=1
-	print("Programme précis à: "+str(yes/(total*1.00)*100.00)+" % (selon les données)")
+	print("Programme precis à: "+str(yes/(total*1.00)*100.00)+" % (selon les donnees)")
 
 
 def amener():
@@ -392,7 +392,7 @@ def amener():
 	gp.load(namef)
 
 	while (True):
-		IN = input("Veuillez entrer les données de prédiction: ")
+		IN = input("Veuillez entrer les donnees de prédiction: ")
 		if len(IN)==0:
 			break
 		else:
@@ -409,7 +409,7 @@ while(True):
 	elif int(choix) == 2:
 		amener()
 	elif int(choix) == 3:
-		print("Fichier CSV contenant les données a traiter?: ")
+		print("Fichier CSV contenant les donnees a traiter?: ")
 		namef1 = input()
 		print("Fichier model contenant le programme a traiter?: ")
 		namef2 = input()
