@@ -3,7 +3,7 @@
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
 """
-__version__ = "1.8.0001"
+__version__ = "1.9.0002"
 
 import gplearn.GP as GP
 import gplearn.GP_SC as GC
@@ -18,7 +18,9 @@ parammathdict = {
 	4: ('add','sub','mul','div','max','min','abs'),
 	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulox"),
 	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside'),
-	7: ('sigmoid','and','or','xor','add','sub','mul','div','abs','add','mul','div','sub','hypot','heaviside')
+	7: ('sigmoid','and','or','xor','add','sub','mul','div','abs','add','mul','div','sub','hypot','heaviside'),
+        8: ('and','or','xor'),
+        9: ('sigmoid','and','or','xor','add','sub','mul','div','heaviside')
 }
 
 paramsecho = """
@@ -29,6 +31,8 @@ paramsecho = """
 			5 - Avance
 			6 - Cell
 			7 - Cell + Simple
+			8 - logic
+			9 - IA try
 			"""
 
 
