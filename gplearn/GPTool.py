@@ -100,7 +100,7 @@ def recherche():
 				reponse = input("Voulez vous utiliser un fichier pickle ?(O/N):")
 				if reponse.lower() == "o":
 					namefilepkl = str(input("Chemin, nom et extention du fichier: "))
-					reponse = input("Vous voulez alléger le fichier ?(O/N):")
+					reponse = input("Vous voulez all√©ger le fichier ?(O/N):")
 					if reponse.lower() == "o":
 						warmreduce=True
 					else:
@@ -140,7 +140,7 @@ def recherche():
 
 	gp.define_filepkl(namefilepkl)
 
-	print("Fichier CSV contenant les données a traiter?: ")
+	print("Fichier CSV contenant les donn√©es a traiter?: ")
 	namef1 = input()
 
 	gp.load_csv(namef1)
@@ -322,7 +322,7 @@ def shared_verifier(pathofcsv,pathofmodel,n_worker=2):
 	with Pool(int(n_worker)) as p:
 		p.map(multi_part_verifier, [i for i in DATA[1:]])
 
-	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
+	print("Programme pr√©cis √†: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les donn√©es)")
 
 def multi_part_verifier(i):
 	gp = GP.GP_SymReg(500,100,0.01)
@@ -340,7 +340,7 @@ def multi_part_verifier(i):
 	if int(gp.predict(z)) == int(famousY):
 		shared_yes+=1
 	shared_total+=1
-	print("Programme précis à: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les données)")
+	print("Programme pr√©cis √†: "+str(shared_yes/(shared_total*1.00)*100.00)+" % (selon les donn√©es)")
 """
 
 def extraire_prog(pathofmodel):
@@ -383,7 +383,7 @@ def verifier(pathofcsv,pathofmodel):
 			if float(gp.predict(z)) == float(famousY):
 				yes+=1
 			total+=1
-	print("Programme precis à: "+str(yes/(total*1.00)*100.00)+" % (selon les donnees)")
+	print("Programme precis √†: "+str(yes/(total*1.00)*100.00)+" % (selon les donnees)")
 
 
 def amener():
@@ -392,7 +392,7 @@ def amener():
 	gp.load(namef)
 
 	while (True):
-		IN = input("Veuillez entrer les donnees de prédiction: ")
+		IN = input("Veuillez entrer les donnees de pr√©diction: ")
 		if len(IN)==0:
 			break
 		else:
@@ -425,7 +425,7 @@ while(True):
 		namef1 = input()
 		if namef1 == "": namef1 = "tmp"
 		tolatek(namef2,namef1+".png")
-		print("Image sauvegardée !")
+		print("Image sauvegard√©e !")
 	elif int(choix) == 6:
 		recherche_GC()
 	else:
@@ -433,7 +433,7 @@ while(True):
 
 """
 elif int(choix) == 4:
-	print("Fichier CSV contenant les données a traiter?: ")
+	print("Fichier CSV contenant les donn√©es a traiter?: ")
 	namef1 = input()
 	print("Fichier model contenant le programme a traiter?: ")
 	namef2 = input()
