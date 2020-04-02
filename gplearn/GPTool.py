@@ -1,4 +1,4 @@
-#coding: utf-8
+#coding: utf-8 
 """
 Genetic Programming Complete Tool for Scientific Research in Mathematics
 
@@ -19,6 +19,7 @@ parammathdict = {
 	5: ('add','sub','mul','div','sqrt','log','abs','neg','inv','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt',"modulox"),
 	6: ('sigmoid','and','or','xor','abs','add','mul','div','sub','hypot','heaviside'),
 	7: ('sigmoid','and','or','xor','add','sub','mul','div','abs','add','mul','div','sub','hypot','heaviside')
+	9: ('sigmoid','and','or','xor','add','mul','div','sub','heaviside')
 }
 
 paramsecho = """
