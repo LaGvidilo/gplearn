@@ -23,7 +23,7 @@ __version__ = "1.7.08b"
 
 
 from translateFn import translateFunctions
-def toGoodRepresentationFunc(XnMax=1,program):
+def toGoodRepresentationFunc(XnMax,program):
 	varia={}
 	for i in range(0,XnMax+1):
 		varia["X"+str(i)] = "X"+str(i)
