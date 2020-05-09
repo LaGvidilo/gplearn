@@ -10,6 +10,7 @@ gplearn/_program.py
 gplearn/fitness.py
 gplearn/functions.py
 gplearn/genetic.py
+gplearn/translateFn.py
 gplearn/utils.py
 gplearn.egg-info/PKG-INFO
 gplearn.egg-info/SOURCES.txt

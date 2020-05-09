@@ -8,7 +8,7 @@ import gplearn
 DESCRIPTION = __doc__
 VERSION = gplearn.__version__
 
-setup(name='gplearn',
+setup(name='gplearn-internal',
       version=VERSION,
       description=DESCRIPTION,
       long_description=open("README.rst").read(),

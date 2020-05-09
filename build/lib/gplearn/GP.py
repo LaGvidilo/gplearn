@@ -19,16 +19,16 @@ import csv
 	+20 april, add latex generator
 
 """
+__version__ = "1.7.08b"
 
-"""
-A	B	C	D	E	F	G	H	I	J	K	L	M	N	O	P	Q
-1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	
 
-R	S	T	U	V	W	X 	Y	Z	
-18	19	20	21	22	23	24	25	26
-
-"""
-__version__ = "1.5.08b"
+from translateFn import translateFunctions
+def toGoodRepresentationFunc(XnMax=1,program):
+	varia={}
+	for i in range(0,XnMax+1):
+		varia["X"+str(i)] = "X"+str(i)
+	tsf = translateFunctions(program,varia)
+	return tsf.getter()
 
 
 def traduct(X,program = "y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
@@ -60,6 +60,7 @@ def to_texpng(file="tmp.png" ,nX=1 ,program="y=sub(mul(add(div(div(X0, X0), sub(
 	f.close()
 
 def force_totex(filepath,program):
+	program = toGoodRepresentationFunc(program.count("X"),program)
 	formula = py2tex(program)
 	formula = formula.replace('\n', ' ')
 	r = requests.get( 'http://latex.codecogs.com/png.latex?\dpi{{780}} {formula}'.format(formula=formula))
@@ -320,7 +321,7 @@ class GP_SymReg(object):
 		return self.est_gp._program
 
 	def print_program(self):
-		print(self.est_gp._program)
+		print(toGoodRepresentationFunc(self.est_gp._program.count("X"),self.est_gp._program))
 
 	def get_png_program(self,file_,nX=1):
 		to_texpng(file_,nX,str(self.est_gp._program))

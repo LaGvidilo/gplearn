@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: gplearn
-Version: 0.322.Sanchez0Mac1
+Version: 0.401.Sanchez0Mac1
 Summary: Genetic Programming in Python, with a scikit-learn inspired API
 Home-page: https://github.com/LaGvidilo/gplearn
 Author: Trevor Stephens & Rick Sanchez
@@ -72,6 +72,10 @@ Description: .. image:: https://img.shields.io/pypi/v/gplearn.svg
         
         
         
+        
+        .. image:: https://api.codacy.com/project/badge/Grade/adc883be4cb94dec86d90b6f134dcaf9
+           :alt: Codacy Badge
+           :target: https://app.codacy.com/manual/LaGvidilo/gplearn?utm_source=github.com&utm_medium=referral&utm_content=LaGvidilo/gplearn&utm_campaign=Badge_Grade_Dashboard
 Platform: UNKNOWN
 Classifier: Development Status :: 4 - Beta
 Classifier: Environment :: Console
