@@ -7,15 +7,6 @@
 .. image:: https://readthedocs.org/projects/gplearn/badge/?version=stable
     :target: http://gplearn.readthedocs.io/
     :alt: Documentation Status
-.. image:: https://travis-ci.org/trevorstephens/gplearn.svg?branch=master
-    :target: https://travis-ci.org/trevorstephens/gplearn
-    :alt: Test Status
-.. image:: https://ci.appveyor.com/api/projects/status/wqq9xxaxuyyt7nya?svg=true
-    :target: https://ci.appveyor.com/project/trevorstephens/gplearn
-    :alt: Windows Test Status
-.. image:: https://coveralls.io/repos/trevorstephens/gplearn/badge.svg
-    :target: https://coveralls.io/r/trevorstephens/gplearn
-    :alt: Test Coverage
 .. image:: https://api.codacy.com/project/badge/Grade/403bd807dfaf4d829f00b3a9964637b3    
     :target: https://www.codacy.com/manual/LaGvidilo/gplearn?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LaGvidilo/gplearn&amp;utm_campaign=Badge_Grade
     :alt: Codacy Badge
@@ -28,8 +19,8 @@
 
 |
 
-Welcome to gplearn! (Rick Sanchez version)
-===================
+#Welcome to gplearn-internal! (Rick Sanchez version) is a new math version of gplearn! Use GPTool for experimentation fast.
+
 
 `gplearn` implements Genetic Programming in Python, with a `scikit-learn <http://scikit-learn.org>`_ inspired and compatible API.
 
@@ -46,10 +37,10 @@ gplearn is built on scikit-learn and a fairly recent copy (0.20.0+) is required 
 |
 
 Rick's here on... euhhh say ???
-===================
+
 Party night is code in dark room, in a location outside of time !
 Life is a little bit and insignifiant part of ocean of shit... So cheat with this ocean and surf on wave of data science ! Nevermind if life is difficult, just consider if you can do, do it, for fun, learn, explore, and don't forget if you are not happy and if you think about killing yourself: YOU ARE NOT ALONE IN THIS CASE ON EARTH ! Take care. 
-===
+
 An important thing is never give up.
 -Rick Sanchez
 
@@ -58,7 +49,7 @@ An important thing is never give up.
 |
 
 For install with pip from this git repository
-===================
+
 
 <https://github.com/LaGvidilo/gplearn/blob/master/INSTALL.md>
 
