@@ -22,12 +22,12 @@ import csv
 __version__ = "1.7.08b"
 
 
-from translateFn import translateFunctions
+import gplearn.translateFn as translateFn
 def toGoodRepresentationFunc(XnMax,program):
 	varia={}
 	for i in range(0,XnMax+1):
 		varia["X"+str(i)] = "X"+str(i)
-	tsf = translateFunctions(program,varia)
+	tsf = translateFn.translateFunctions(program,varia)
 	return tsf.getter()
 
 
