@@ -28,7 +28,7 @@ R	S	T	U	V	W	X 	Y	Z
 18	19	20	21	22	23	24	25	26
 
 """
-__version__ = "1.4.01a"
+__version__ = "1.5.08b"
 
 
 def traduct(X,program = "y=sub(mul(add(div(div(X0, X0), sub(0.112, 0.165)), -0.785), div(mul(X0, div(X0, -0.507)), mul(X0, X0))), mul(mul(add(-0.491, 0.352), div(sub(-0.410, X0), div(0.165, div(0.501, X0)))), sub(sub(sub(X0, X0), div(-0.108, -0.261)), add(div(-0.013, sub(sub(X0, X0), 0.417)), div(X0, X0)))))"):
@@ -73,7 +73,7 @@ def reinitrel(X,program):
 
 	for i in range(0,len(X)):
 		exec("X"+str(i)+"="+str(X[i]*1.0))	
-	exec(program)
+	y = str(program)
 	return y
 
 def cbrt(a):
@@ -142,6 +142,9 @@ def tan(a):
 
 def modulox(a,b):
 	return "modulox("+str(a)+","+str(b)+")"
+def xor(a,b):
+	return "xor("+str(a)+","+str(b)+")"
+
 
 def string_to_float(x):
     z = ""
