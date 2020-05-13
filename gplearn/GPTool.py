@@ -295,6 +295,9 @@ def recherche_GC():
 	gp.save(namef2+".model")
 	print("Sauvegarde du programme....")
 	idiotstr = str(gp.get_program())
+	replacetok = [["moyenne2(","moyenne("],["moyenne3(","moyenne("],["moyenne4(","moyenne("],["moyenne5(","moyenne("],["moyenne6(","moyenne("],["moyenne7(","moyenne("],["moyenne8(","moyenne("],["moyenne9(","moyenne("],["moyenne10(","moyenne("]]
+	for i in replacetok:
+		idiotstr = idiotstr.replace(i[0],i[1])
 	print(idiotstr)
 	nbx = gp.nbX
 	GC.to_texpng(namef2+".png", nbx, idiotstr)
@@ -438,5 +441,3 @@ elif int(choix) == 4:
 	n_work = input()
 	shared_verifier(namef1,namef2,n_work)
 """
-
-

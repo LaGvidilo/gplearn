@@ -3,6 +3,6 @@
 ``gplearn`` is a set of algorithms for learning genetic programming models.
 
 """
-__version__ = '0.5.5'
+__version__ = '0.5.7'
 
 __all__ = ['genetic', 'functions', 'fitness']

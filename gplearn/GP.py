@@ -164,7 +164,8 @@ def moyenne9(a,b,c,d,e,f,g,h,j):
 	return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j]))+")"
 def moyenne10(a,b,c,d,e,f,g,h,j,k):
 	return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j,k]))+")"
-
+def moyenne(*argu):
+	return "mean("+",".join(map(str,argu))+")"
 
 def string_to_float(x):
     z = ""

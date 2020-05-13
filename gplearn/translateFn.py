@@ -3,8 +3,9 @@
 class translateFunctions:
 	def __init__(self,funct, kwargs):
 		for k,v in kwargs.items():
+			exec(str(k)+"=0")
 			exec(str(k)+"="+str(v))
-		replacetok = [["cbrt(","self.cbrt("],["hypot(","self.hypot("],["sigmoid(","self.sigmoid("],["ceil(","self.ceil("],["fabs(","self.fabs("],["floor(","self.floor("],["trunc(","self.trunc("],["sub(","self.sub("],["add(","self.add("],["mul(","self.mul("],["div(","self.div("],["sqrt(","self.sqrt("],["log(","self.log("],["abs(","self.abs("],["neg(","self.neg("],["inv(","self.inv("],["max(","self.max("],["min(","self.min("],["sin(","self.sin("],["cos(","self.cos("],["tan(","self.tan("],["modulox(","self.modulox("],["xor(","self.xor("],["or(","self.or("],["and(","self.and("],["heaviside(","self.heaviside("],["zegax(","self.zegax("]]
+		replacetok = [["cbrt(","self.cbrt("],["hypot(","self.hypot("],["sigmoid(","self.sigmoid("],["ceil(","self.ceil("],["fabs(","self.fabs("],["floor(","self.floor("],["trunc(","self.trunc("],["sub(","self.sub("],["add(","self.add("],["mul(","self.mul("],["div(","self.div("],["sqrt(","self.sqrt("],["log(","self.log("],["abs(","self.abs("],["neg(","self.neg("],["inv(","self.inv("],["max(","self.max("],["min(","self.min("],["sin(","self.sin("],["cos(","self.cos("],["tan(","self.tan("],["modulox(","self.modulox("],["xor(","self.xor("],["or(","self.or("],["and(","self.and("],["heaviside(","self.heaviside("],["zegax(","self.zegax("],["moyenne2(","self.moyenne2("],["moyenne3(","self.moyenne3("],["moyenne4(","self.moyenne4("],["moyenne5(","self.moyenne5("],["moyenne6(","self.moyenne6("],["moyenne7(","self.moyenne7("],["moyenne8(","self.moyenne8("],["moyenne9(","self.moyenne9("],["moyenne10(","self.moyenne10("],["moyenne(","self.moyenne("]]
 		for i in replacetok:
 			funct = funct.replace(i[0],i[1])
 		exec("self.y="+funct)
@@ -64,9 +65,27 @@ class translateFunctions:
 		return "heaviside("+str(a)+","+str(b)+")"
 	def zegax(self,a,b):
 		return "zegax("+str(a)+","+str(b)+")"
+	def moyenne2(self,a,b):
+		return "mean("+",".join(map(str,[a,b]))+")"
+	def moyenne3(self,a,b,c):
+		return "mean("+",".join(map(str,[a,b,c]))+")"
+	def moyenne4(self,a,b,c,d):
+		return "mean("+",".join(map(str,[a,b,c,d]))+")"
+	def moyenne5(self,a,b,c,d,e):
+		return "mean("+",".join(map(str,[a,b,c,d,e]))+")"
+	def moyenne6(self,a,b,c,d,e,f):
+		return "mean("+",".join(map(str,[a,b,c,d,e,f]))+")"
+	def moyenne7(self,a,b,c,d,e,f,g):
+		return "mean("+",".join(map(str,[a,b,c,d,e,f,g]))+")"
+	def moyenne8(self,a,b,c,d,e,f,g,h):
+		return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h]))+")"
+	def moyenne9(self,a,b,c,d,e,f,g,h,j):
+		return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j]))+")"
+	def moyenne10(self,a,b,c,d,e,f,g,h,j,k):
+		return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j,k]))+")"
+	def moyenne(self,*argu):
+		return "mean("+",".join(map(str,argu))+")"
 
-"""
 #exemple
-tsf = translateFunctions("div(div(div(div(div(X1, X0), hypot(X1, div(X1, X0))), tan(hypot(-0.549, -0.102))), mul(hypot(X0, X0), mul(hypot(mul(hypot(X0, X0), mul(hypot(X0, div(mul(div(mul(hypot(X0, X0), mul(hypot(mul(hypot(X0, X0), mul(hypot(X0, div(mul(sin(X0), mul(hypot(mul(-0.102, sin(X1)), div(div(X1, X0), hypot(X1, X1))), div(div(div(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), X0), hypot(hypot(-0.549, -0.102), div(X0, X0))), hypot(X1, X1)))), hypot(mul(hypot(X0, hypot(-0.549, -0.102)), hypot(tan(hypot(div(hypot(-0.549, -0.102), tan(tan(sub(X0, -0.161)))), -0.191)), -0.102)), X1))), tan(hypot(-0.549, -0.102)))), div(div(X1, X0), hypot(X1, X1))), tan(hypot(-0.549, -0.102)))), hypot(X1, X1)), mul(hypot(mul(-0.102, sin(X1)), div(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), hypot(X1, X1))), div(div(div(X1, X0), hypot(X1, div(X1, X0))), hypot(X1, X1)))), hypot(X1, hypot(X0, mul(X1, X0))))), tan(hypot(-0.549, -0.102)))), div(div(X1, X0), hypot(X1, X1))), tan(hypot(-0.549, -0.102))))), mul(hypot(X0, X0), mul(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), hypot(tan(hypot(-0.549, -0.102)), -0.102))))",{'X0':4,'X1':2})
+tsf = translateFunctions("moyenne(moyenne(div(div(div(X1, X0), hypot(X1, div(X1, X0))), tan(hypot(-0.549, -0.102))), mul(hypot(X0, X0), mul(hypot(mul(hypot(X0, X0), mul(hypot(X0, div(mul(div(mul(hypot(X0, X0), mul(hypot(mul(hypot(X0, X0), mul(hypot(X0, div(mul(sin(X0), mul(hypot(mul(-0.102, sin(X1)), div(div(X1, X0), hypot(X1, X1))), div(div(div(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), X0), hypot(hypot(-0.549, -0.102), div(X0, X0))), hypot(X1, X1)))), hypot(mul(hypot(X0, hypot(-0.549, -0.102)), hypot(tan(hypot(div(hypot(-0.549, -0.102), tan(tan(sub(X0, -0.161)))), -0.191)), -0.102)), X1))), tan(hypot(-0.549, -0.102)))), div(div(X1, X0), hypot(X1, X1))), tan(hypot(-0.549, -0.102)))), hypot(X1, X1)), mul(hypot(mul(-0.102, sin(X1)), div(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), hypot(X1, X1))), div(div(div(X1, X0), hypot(X1, div(X1, X0))), hypot(X1, X1)))), hypot(X1, hypot(X0, mul(X1, X0))))), tan(hypot(-0.549, -0.102)))), div(div(X1, X0), hypot(X1, X1))), tan(hypot(-0.549, -0.102))))), mul(hypot(X0, X0), mul(hypot(X0, mul(hypot(X0, X0), hypot(-0.549, -0.102))), hypot(tan(hypot(-0.549, -0.102)), -0.102))))",{'X0':4,'X1':2})
 print (tsf.getter())
-"""
