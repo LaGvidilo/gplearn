@@ -142,10 +142,12 @@ class _Function(object):
         return self.function(*args)
 
 def make_function_multiple_arity(function, name, arity_range=(2,4), wrap=True):
+    funco=""
     for i in range(arity_range[0],arity_range[1]):
-        functoexec = name+str(i)+" = make_function("+function+",\""+name+"\","+str(i)+",noarityerror=True)"
+        functoexec = name+str(i)+" = make_function("+function+",\""+name+str(i)+"\","+str(i)+",noarityerror=True)"
         #print(functoexec)
-        exec(functoexec)
+        funco = funco + functoexec + "\n"
+    return funco
     
     
 def make_function(function, name, arity, wrap=True, noarityerror=False):
@@ -291,6 +293,7 @@ or1 = make_function(function=orB, name='or', arity=2)
 xor1 = make_function(function=xorB, name='xor', arity=2)
 sig1 = _Function(function=_sigmoid, name='sig', arity=1)
 moyenne = make_function_multiple_arity(function="means", name='moyenne', arity_range=(2,11))
+exec(moyenne)
 _function_map = {'add': add2,
                  'sub': sub2,
                  'mul': mul2,
@@ -317,4 +320,7 @@ _function_map = {'add': add2,
                  'sigmoid': sigmoid1,
                  'and': and1,
                  'or': or1,
-                 'xor': xor1 }#'modulo': modulo1,
+                 'xor': xor1}#'modulo': modulo1,
+for i in range(2,11):
+    exec('_function_map["moyenne'+str(i)+'"] = moyenne'+str(i))
+    #print('_function_map["moyenne'+str(i)+'"] = moyenne'+str(i))

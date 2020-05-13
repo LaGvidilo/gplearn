@@ -146,6 +146,25 @@ def modulox(a,b):
 def xor(a,b):
 	return "xor("+str(a)+","+str(b)+")"
 
+def moyenne2(a,b):
+	return "mean("+",".join(map(str,[a,b]))+")"
+def moyenne3(a,b,c):
+	return "mean("+",".join(map(str,[a,b,c]))+")"
+def moyenne4(a,b,c,d):
+	return "mean("+",".join(map(str,[a,b,c,d]))+")"
+def moyenne5(a,b,c,d,e):
+	return "mean("+",".join(map(str,[a,b,c,d,e]))+")"
+def moyenne6(a,b,c,d,e,f):
+	return "mean("+",".join(map(str,[a,b,c,d,e,f]))+")"
+def moyenne7(a,b,c,d,e,f,g):
+	return "mean("+",".join(map(str,[a,b,c,d,e,f,g]))+")"
+def moyenne8(a,b,c,d,e,f,g,h):
+	return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h]))+")"
+def moyenne9(a,b,c,d,e,f,g,h,j):
+	return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j]))+")"
+def moyenne10(a,b,c,d,e,f,g,h,j,k):
+	return "mean("+",".join(map(str,[a,b,c,d,e,f,g,h,j,k]))+")"
+
 
 def string_to_float(x):
     z = ""
@@ -321,7 +340,8 @@ class GP_SymReg(object):
 		return self.est_gp._program
 
 	def print_program(self):
-		print(toGoodRepresentationFunc(self.est_gp._program.count("X"),self.est_gp._program))
+		prog=str(self.est_gp._program)
+		print(toGoodRepresentationFunc(prog.count("X"),prog))
 
 	def get_png_program(self,file_,nX=1):
 		to_texpng(file_,nX,str(self.est_gp._program))
