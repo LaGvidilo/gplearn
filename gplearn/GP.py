@@ -262,7 +262,7 @@ class GP_SymReg(object):
 		if function_set == "logic":
 			function_set = ("and","or","xor")
 		if function_set == "all":
-			function_set = ('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','inv','max','min','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt','hypot',"modulox")
+			function_set = ('add', 'sub', 'mul', 'div','sqrt','log','abs','neg','inv','max','min','sin','cos','tan','sigmoid','ceil','fabs','floor','trunc','cbrt','hypot',"modulox","moyenne2","moyenne3","moyenne4","moyenne5","moyenne6","moyenne7","moyenne8","moyenne9","moyenne10")
 		self.est_gp = SymbolicRegressor(population_size=population_size,
 						generations=generations, stopping_criteria=stopping_criteria,
 						function_set=function_set,

@@ -15,6 +15,7 @@ from joblib import wrap_non_picklable_objects
 #from sklearn.externals import six
 import operator
 import math
+from numpy import mean
 
 __all__ = ['make_function']
 from sympy import *
@@ -94,6 +95,8 @@ def orB(a,b):
 def xorB(a,b):
     return -b+a+np.float32(np.logical_xor(a,b))-a+b
 
+def means(*args):
+    return np.float32(mean(args),axis=1)
 
 """
 import GP as IAMANHPI
@@ -138,8 +141,14 @@ class _Function(object):
     def __call__(self, *args):
         return self.function(*args)
 
-
-def make_function(function, name, arity, wrap=True):
+def make_function_multiple_arity(function, name, arity_range=(2,4), wrap=True):
+    for i in range(arity_range[0],arity_range[1]):
+        functoexec = name+str(i)+" = make_function("+function+",\""+name+"\","+str(i)+",noarityerror=True)"
+        #print(functoexec)
+        exec(functoexec)
+    
+    
+def make_function(function, name, arity, wrap=True, noarityerror=False):
     """Make a function node, a representation of a mathematical relationship.
 
     This factory function creates a function node, one of the core nodes in any
@@ -169,13 +178,14 @@ def make_function(function, name, arity, wrap=True):
         `False` for faster runs.
 
     """
-    if not isinstance(arity, int):
-        raise ValueError('arity must be an int, got %s' % type(arity))
-    if not isinstance(function, np.ufunc):
-        if function.__code__.co_argcount != arity:
-            raise ValueError('arity %d does not match required number of '
-                             'function arguments of %d.'
-                             % (arity, function.__code__.co_argcount))
+    if not noarityerror:
+        if not isinstance(arity, int):
+            raise ValueError('arity must be an int, got %s' % type(arity))
+        if not isinstance(function, np.ufunc):
+            if function.__code__.co_argcount != arity:
+                raise ValueError('arity %d does not match required number of '
+                                'function arguments of %d.'
+                                % (arity, function.__code__.co_argcount))
     if not isinstance(name, str):
         raise ValueError('name must be a string, got %s' % type(name))
     if not isinstance(wrap, bool):
@@ -188,12 +198,13 @@ def make_function(function, name, arity, wrap=True):
     except ValueError:
         raise ValueError('supplied function %s does not support arity of %d.'
                          % (name, arity))
-    if not hasattr(function(*args), 'shape'):
-        raise ValueError('supplied function %s does not return a numpy array.'
-                         % name)
-    if function(*args).shape != (10,):
-        raise ValueError('supplied function %s does not return same shape as '
-                         'input vectors.' % name)
+    if not noarityerror:
+        if not hasattr(function(*args), 'shape'):
+            raise ValueError('supplied function %s does not return a numpy array.'
+                            % name)
+        if function(*args).shape != (10,):
+            raise ValueError('supplied function %s does not return same shape as '
+                            'input vectors.' % name)
 
     # Check closure for zero & negative input arguments
     args = [np.zeros(10) for _ in range(arity)]
@@ -279,6 +290,7 @@ and1 = make_function(function=andB, name='and', arity=2)
 or1 = make_function(function=orB, name='or', arity=2)
 xor1 = make_function(function=xorB, name='xor', arity=2)
 sig1 = _Function(function=_sigmoid, name='sig', arity=1)
+moyenne = make_function_multiple_arity(function="means", name='moyenne', arity_range=(2,11))
 _function_map = {'add': add2,
                  'sub': sub2,
                  'mul': mul2,
